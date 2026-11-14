@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
 import { FlashcardStudy } from '@/components/flashcard/flashcard-study'
+import { RequireAuth } from '@/components/hango/app-shell'
 
 export const metadata: Metadata = { title: 'Học từ vựng | HANGO' }
 
 export default function FlashcardPage() {
-  return <FlashcardStudy />
+  return (
+    <RequireAuth>
+      <FlashcardStudy />
+    </RequireAuth>
+  )
 }

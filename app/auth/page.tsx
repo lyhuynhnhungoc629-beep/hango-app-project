@@ -14,8 +14,16 @@ const floatingChars = [
   { char: '나', className: 'left-[48%] top-[6%] text-5xl [animation-delay:-5s]' },
 ]
 
-export default async function AuthPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
-  const { tab } = await searchParams
+export default async function AuthPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string; notice?: string; redirect?: string }>
+}) {
+  const { tab, notice, redirect } = await searchParams
+  const guestNotice =
+    notice === 'login_required'
+      ? 'Vui lòng đăng nhập hoặc đăng ký tài khoản học viên để sử dụng chức năng này'
+      : undefined
   return (
     <main className="flex min-h-screen flex-col lg:flex-row">
       <section className="relative flex min-h-64 items-center justify-center overflow-hidden bg-gradient-to-br from-[#1A0A2E] to-[#0F0F1A] px-8 py-16 lg:w-2/5">
@@ -46,7 +54,11 @@ export default async function AuthPage({ searchParams }: { searchParams: Promise
         <div className="mb-6 w-full max-w-md lg:absolute lg:left-8 lg:top-8 lg:mb-0 lg:w-auto">
           <BackButton showHomeLink={false} label="Quay lại Trang chủ" />
         </div>
-        <AuthForm initialTab={tab === 'register' ? 'register' : 'login'} />
+        <AuthForm
+          initialTab={tab === 'register' ? 'register' : 'login'}
+          guestNotice={guestNotice}
+          redirectTo={redirect}
+        />
       </section>
     </main>
   )

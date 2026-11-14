@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowUpRight, Brain, FileText, Mic, Timer } from 'lucide-react'
+import { useAuth } from '@/lib/auth-context'
 
 const features = [
   {
@@ -29,6 +32,9 @@ const features = [
 ]
 
 export function Features() {
+  const { user, profile } = useAuth()
+  const isAuthenticated = Boolean(user || profile)
+
   return (
     <section id="tinh-nang" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-20 md:px-6">
       <div className="mx-auto max-w-2xl text-center">
@@ -39,24 +45,29 @@ export function Features() {
         </p>
       </div>
       <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {features.map(({ icon: Icon, title, description, href }) => (
-          <li key={title}>
-            <Link
-              href={href}
-              className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10"
-            >
-              <span className="flex size-12 items-center justify-center rounded-xl bg-primary/15 text-violet-300 transition-colors group-hover:bg-primary group-hover:text-white">
-                <Icon className="size-6" aria-hidden="true" />
-              </span>
-              <h3 className="mt-5 text-lg font-semibold leading-snug">{title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{description}</p>
-              <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-violet-300">
-                Khám phá
-                <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
-              </span>
-            </Link>
-          </li>
-        ))}
+        {features.map(({ icon: Icon, title, description, href }) => {
+          const targetHref = isAuthenticated
+            ? href
+            : `/auth?notice=login_required&redirect=${encodeURIComponent(href)}`
+          return (
+            <li key={title}>
+              <Link
+                href={targetHref}
+                className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10"
+              >
+                <span className="flex size-12 items-center justify-center rounded-xl bg-primary/15 text-violet-300 transition-colors group-hover:bg-primary group-hover:text-white">
+                  <Icon className="size-6" aria-hidden="true" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold leading-snug">{title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-violet-300">
+                  Khám phá
+                  <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                </span>
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </section>
   )

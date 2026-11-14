@@ -1,0 +1,12 @@
+﻿TopicId,TopicCode,TopicNameVi,TopicNameKo,Description,IconName,ColorCode,DisplayOrder,IsActive
+1,"GIA_DINH","Gia đình & Bản thân","가족 và 나","Từ vựng về thành viên gia đình, xưng hô, độ tuổi và con người trong đời sống.","Users","#EC4899",1,1
+2,"TRUONG_HOC","Trường học & Giáo dục","학교 và 교육","Từ vựng về trường lớp, thầy cô, dụng cụ học tập, môn học và thi cử.","GraduationCap","#3B82F6",2,1
+3,"AM_THUC","Ẩm thực & Ăn uống","음식 và 식생활","Món ăn, đồ uống, hương vị, nguyên liệu và các hoạt động ăn uống nấu nướng.","Utensils","#F97316",3,1
+4,"DU_LICH","Du lịch & Nơi chốn, Giao thông","여행, 장소 và 교통","Địa điểm, phương tiện di chuyển, phương hướng, du lịch và tham quan.","Plane","#06B6D4",4,1
+5,"MUA_SAM","Mua sắm & Tiền tệ, Giá cả","쇼핑 và 경제","Tiền bạc, giá cả, mua bán đồ đạc, cửa hàng và chi tiêu sinh hoạt.","ShoppingBag","#10B981",5,1
+6,"NGHE_NGHIEP","Nghề nghiệp & Công việc","직업 và 직장","Nghề nghiệp, công việc, công ty, đồng nghiệp và đời sống đi làm.","Briefcase","#8B5CF6",6,1
+7,"SUC_KHOE","Sức khỏe & Cơ thể, Thể thao","건강, 신체 và 운동","Các bộ phận cơ thể, thể dục thể thao, trạng thái sức khỏe và y tế.","HeartPulse","#EF4444",7,1
+8,"GIAO_TIEP","Giao tiếp hằng ngày","일상 회화","Lời chào hỏi, cảm ơn, xin lỗi, câu hỏi thường dùng và giao tiếp xã giao thường nhật.","MessageCircle","#6366F1",8,1
+9,"THOI_GIAN","Thời gian & Con số","시간 và 숫자","Từ chỉ mốc thời gian, ngày tháng năm, giờ giấc, thứ tự và các con số cơ bản.","Clock","#F59E0B",9,1
+10,"DONG_VAT_THIEN_NHIEN","Động vật & Thiên nhiên","동물 và 자연","Các loài động vật quen thuộc, cây cỏ, thời tiết và cảnh quan thiên nhiên.","TreePine","#14B8A6",10,1
+11,"CHUA_PHAN_LOAI","Chưa phân loại (Từ ngữ pháp / Trừu tượng)","미분류 (문법/추상어)","Các trợ động từ, liên từ nối, hư từ hoặc từ vựng trừu tượng chưa phù hợp phân vào chủ đề đời sống thông thường.","HelpCircle","#64748B",11,0

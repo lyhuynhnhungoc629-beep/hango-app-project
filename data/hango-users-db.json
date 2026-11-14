@@ -1,0 +1,93 @@
+{
+  "users": {
+    "hango_root_admin_001": {
+      "uid": "hango_root_admin_001",
+      "displayName": "Quản trị viên",
+      "email": "admin@gmail.com",
+      "passwordHash": "9d7c500acd4e997d98c2a0fa0b87f5ab:100000:869960c8615f8d476928da86251c08d5178f9bb4b3b011698d6b82dc7efcaea3398eadcc72c9c26e02480b011c2ddc4baee7d4b2e4ccde5c4e15f44d51a0e787",
+      "photoURL": null,
+      "provider": "password",
+      "role": "admin",
+      "isRootAdmin": true,
+      "locked": false,
+      "level": 1,
+      "xp": 15,
+      "streak": 1,
+      "lastStudyDate": "2026-11-13",
+      "totalStudyMinutes": 0,
+      "learnedVocabCount": 1,
+      "createdAt": "2026-11-12T15:05:22.987Z",
+      "lastLoginAt": "2026-11-12T20:56:31.736Z",
+      "updatedAt": "2026-11-13T07:55:38.335Z"
+    },
+    "MyaOaictDgSomIkD8YJL1uCiKA62": {
+      "uid": "MyaOaictDgSomIkD8YJL1uCiKA62",
+      "displayName": "nhungoc lyhuynh",
+      "email": "lyhuynhnhungoc629@gmail.com",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJkxmdIO2-lvS65Dtiosr1IwCtyTsgPCTIXzjFouyriOJ33iA=s96-c",
+      "provider": "google.com",
+      "role": "student",
+      "isRootAdmin": false,
+      "locked": false,
+      "level": 1,
+      "xp": 0,
+      "streak": 0,
+      "lastStudyDate": null,
+      "totalStudyMinutes": 0,
+      "learnedVocabCount": 0,
+      "createdAt": "2026-11-12T15:23:41.252Z",
+      "lastLoginAt": "2026-11-14T09:52:54.477Z",
+      "updatedAt": "2026-11-14T09:52:54.477Z"
+    }
+  },
+  "progress": {
+    "hango_root_admin_001": {
+      "uid": "hango_root_admin_001",
+      "srsProgress": {
+        "vocab-01": {
+          "vocabId": "vocab-01",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-14T07:55:38.334Z",
+          "NgayOnTiepTheoHienThi": "14/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.6,
+          "MucDoNho": "remember",
+          "NgayOnGanNhat": "2026-11-13T07:55:38.334Z",
+          "wordKo": "안녕하세요",
+          "meaning": "Xin chào",
+          "updatedAt": "2026-11-13T07:55:38.335Z"
+        }
+      },
+      "pomodoroSessions": [],
+      "handwritingRecords": {},
+      "topikResults": [],
+      "studyHistory": [
+        {
+          "id": "srs_1794556538336_vocab-01",
+          "type": "srs",
+          "title": "Học từ mới: 안녕하세요 (Xin chào)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 14/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-13T07:55:38.335Z"
+        }
+      ]
+    },
+    "MyaOaictDgSomIkD8YJL1uCiKA62": {
+      "uid": "MyaOaictDgSomIkD8YJL1uCiKA62",
+      "srsProgress": {},
+      "pomodoroSessions": [],
+      "handwritingRecords": {},
+      "topikResults": [],
+      "studyHistory": [
+        {
+          "id": "act_1794497021252",
+          "type": "account",
+          "title": "Đăng ký tài khoản HANGO",
+          "detail": "Tài khoản học viên (lyhuynhnhungoc629@gmail.com) được khởi tạo.",
+          "xpEarned": 0,
+          "timestamp": "2026-11-12T15:23:41.252Z"
+        }
+      ]
+    }
+  }
+}

@@ -15,13 +15,12 @@ const pages = [
   { href: '/ai', label: 'AI Luyện tập' },
   { href: '/study-room', label: 'Phòng học' },
   { href: '/dashboard', label: 'Dashboard' },
-  { href: '/admin', label: 'Admin' },
 ]
 
 export default function Page() {
-  const { user, loading } = useAuth()
+  const { user, profile, loading } = useAuth()
 
-  if (!loading && user) {
+  if (!loading && (user || profile)) {
     return <AuthenticatedHome />
   }
 
@@ -39,11 +38,17 @@ export default function Page() {
             <p className="mt-2 text-sm text-muted-foreground">© 2026 HANGO. Học tiếng Hàn miễn phí cho mọi người.</p>
           </div>
           <nav aria-label="Liên kết trang" className="flex flex-wrap gap-x-6 gap-y-2">
-            {pages.map((p) => (
-              <Link key={p.href} href={p.href} className="text-sm text-muted-foreground hover:text-foreground">
-                {p.label}
-              </Link>
-            ))}
+            {pages.map((p) => {
+              const targetHref =
+                p.href === '/auth'
+                  ? p.href
+                  : `/auth?notice=login_required&redirect=${encodeURIComponent(p.href)}`
+              return (
+                <Link key={p.href} href={targetHref} className="text-sm text-muted-foreground hover:text-foreground">
+                  {p.label}
+                </Link>
+              )
+            })}
           </nav>
         </div>
       </footer>

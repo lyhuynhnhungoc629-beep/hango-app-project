@@ -30,4 +30,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Raw dataset archive (>100MB)
+dataset/*.zip
+
+
 

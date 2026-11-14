@@ -114,7 +114,15 @@ function translateFirebaseError(err: unknown): string {
   }
 }
 
-export function AuthForm({ initialTab }: { initialTab: Tab }) {
+export function AuthForm({
+  initialTab,
+  guestNotice,
+  redirectTo,
+}: {
+  initialTab: Tab
+  guestNotice?: string
+  redirectTo?: string
+}) {
   const router = useRouter()
   const {
     isConfigured,
@@ -139,6 +147,7 @@ export function AuthForm({ initialTab }: { initialTab: Tab }) {
 
   const isLogin = tab === 'login'
   const busy = submitting || socialLoading !== null
+  const safeRedirect = redirectTo && redirectTo.startsWith('/') && !redirectTo.startsWith('//') ? redirectTo : '/'
 
   const switchTab = (nextTab: Tab) => {
     setTab(nextTab)
@@ -169,7 +178,7 @@ export function AuthForm({ initialTab }: { initialTab: Tab }) {
       } else {
         await registerWithEmail(name, email, password)
       }
-      router.push('/')
+      router.push(safeRedirect)
     } catch (err) {
       setError(translateFirebaseError(err))
     } finally {
@@ -185,7 +194,7 @@ export function AuthForm({ initialTab }: { initialTab: Tab }) {
       if (provider === 'google') await loginWithGoogle()
       if (provider === 'facebook') await loginWithFacebook()
       if (provider === 'apple') await loginWithApple()
-      router.push('/')
+      router.push(safeRedirect)
     } catch (err) {
       setError(translateFirebaseError(err))
     } finally {
@@ -241,6 +250,16 @@ export function AuthForm({ initialTab }: { initialTab: Tab }) {
           </button>
         ))}
       </div>
+
+      {guestNotice && (
+        <div
+          role="alert"
+          className="mt-5 flex items-start gap-3 rounded-xl border border-violet-500/40 bg-violet-500/15 p-4 text-sm leading-relaxed text-violet-100 shadow-lg shadow-primary/10"
+        >
+          <AlertCircle className="mt-0.5 size-5 shrink-0 text-violet-300" aria-hidden="true" />
+          <span className="font-medium">{guestNotice}</span>
+        </div>
+      )}
 
       {!isConfigured && (
         <div className="mt-6 flex items-start gap-3 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3.5 text-xs leading-relaxed text-amber-200">

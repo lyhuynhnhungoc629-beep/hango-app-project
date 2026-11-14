@@ -9,8 +9,10 @@ import {
   Clock,
   FileText,
   Flame,
+  Layers,
   MessageSquare,
   Mic,
+  PenTool,
   ShieldCheck,
   Sparkles,
   Timer,
@@ -18,13 +20,24 @@ import {
 } from 'lucide-react'
 import { AppShell } from '@/components/hango/app-shell'
 import { ProfileBanner } from '@/components/dashboard/profile-banner'
+import { useAuth } from '@/lib/auth-context'
 
 const navCards = [
+  {
+    href: '/learning-path',
+    title: 'Lộ trình học 7 Chặng (Hangeul → TOPIK II)',
+    desc: 'Hành trình dọc 7 chặng từ bảng chữ cái Hangeul 9 buổi đến TOPIK 6급, mở khóa tuần tự theo điểm kiểm tra >= 80%.',
+    badge: '7 Chặng · SQL Server',
+    icon: Layers,
+    gradient: 'from-emerald-500/30 via-emerald-500/10 to-transparent',
+    iconBg: 'bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white',
+    cta: 'Vào lộ trình học',
+  },
   {
     href: '/flashcard',
     title: 'Học từ vựng Flashcard',
     desc: 'Lật thẻ 3D thông minh (SRS), nghe phát âm và ghi nhớ từ vựng TOPIK.',
-    badge: '24/100 từ hôm nay',
+    badge: 'Ôn tập SRS thông minh',
     icon: BookOpen,
     gradient: 'from-violet-600/30 via-violet-600/10 to-transparent',
     iconBg: 'bg-violet-500/20 text-violet-300 group-hover:bg-primary group-hover:text-white',
@@ -54,17 +67,27 @@ const navCards = [
     href: '/ai?tab=pronounce',
     title: 'AI Chấm điểm phát âm',
     desc: 'Thu âm giọng đọc tiếng Hàn và nhận phân tích chi tiết từng âm tiết.',
-    badge: 'Điểm gần nhất: 85/100',
+    badge: 'Nhận diện giọng nói AI',
     icon: Mic,
     gradient: 'from-emerald-500/25 via-emerald-500/10 to-transparent',
     iconBg: 'bg-emerald-500/20 text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white',
     cta: 'Luyện phát âm ngay',
   },
   {
+    href: '/ai?tab=handwriting',
+    title: 'Luyện viết chữ Hàn (PE92)',
+    desc: 'Viết chữ Hàn trên bảng ô ly, đối chiếu mẫu viết tay SQL Server PE92 và chấm điểm nét bút.',
+    badge: 'Dataset 134.400 mẫu',
+    icon: PenTool,
+    gradient: 'from-rose-500/25 via-rose-500/10 to-transparent',
+    iconBg: 'bg-rose-500/20 text-rose-300 group-hover:bg-rose-500 group-hover:text-white',
+    cta: 'Tập viết chữ Hàn',
+  },
+  {
     href: '/study-room',
     title: 'Phòng học ảo Pomodoro',
     desc: 'Tập trung học bài với đồng hồ Pomodoro, nhạc Lofi/tiếng mưa và mục tiêu ngày.',
-    badge: '3/5 mục tiêu hoàn thành',
+    badge: '+100 XP / phiên 25p',
     icon: Timer,
     gradient: 'from-amber-500/25 via-amber-500/10 to-transparent',
     iconBg: 'bg-amber-500/20 text-amber-300 group-hover:bg-amber-500 group-hover:text-white',
@@ -74,19 +97,12 @@ const navCards = [
     href: '/dashboard',
     title: 'Thống kê & Tiến độ (Dashboard)',
     desc: 'Theo dõi biểu đồ giờ học hàng tuần, lịch sử điểm thi thử và từ vựng đã thuộc.',
-    badge: '42.5 giờ tích lũy',
+    badge: 'Dữ liệu cá nhân thực tế',
     icon: BarChart3,
     gradient: 'from-indigo-500/25 via-indigo-500/10 to-transparent',
     iconBg: 'bg-indigo-500/20 text-indigo-300 group-hover:bg-indigo-500 group-hover:text-white',
     cta: 'Xem thống kê',
   },
-]
-
-const quickStats = [
-  { label: 'Tổng giờ học', value: '42.5 giờ', sub: '+2.3h tuần này', icon: Clock },
-  { label: 'Từ đã thuộc', value: '847 từ', sub: '+32 tuần này', icon: Brain },
-  { label: 'Điểm TB thi thử', value: '72/100', sub: '+5 điểm', icon: Trophy },
-  { label: 'Chuỗi ngày học', value: '15 ngày', sub: 'Duy trì mỗi ngày', icon: Flame },
 ]
 
 const reviewWords = [
@@ -98,6 +114,41 @@ const reviewWords = [
 ]
 
 export function AuthenticatedHome() {
+  const { profile } = useAuth()
+  const isAdmin = Boolean(profile?.role === 'admin' || profile?.isRootAdmin)
+
+  const totalStudyMinutes = profile?.totalStudyMinutes ?? 0
+  const learnedVocabCount = profile?.learnedVocabCount ?? 0
+  const xp = profile?.xp ?? 0
+  const streak = profile?.streak ?? 0
+
+  const quickStats = [
+    {
+      label: 'Tổng thời gian học',
+      value: `${totalStudyMinutes} phút`,
+      sub: `Cấp độ hiện tại: Cấp ${profile?.level ?? 1}`,
+      icon: Clock,
+    },
+    {
+      label: 'Từ vựng đã học (SRS)',
+      value: `${learnedVocabCount} từ`,
+      sub: 'Đồng bộ thời gian thực',
+      icon: Brain,
+    },
+    {
+      label: 'Tổng điểm tích lũy',
+      value: `${xp.toLocaleString('vi-VN')} XP`,
+      sub: `Vai trò: ${isAdmin ? 'Quản trị viên' : 'Học viên'}`,
+      icon: Trophy,
+    },
+    {
+      label: 'Chuỗi ngày học',
+      value: `${streak} ngày`,
+      sub: 'Duy trì liên tiếp',
+      icon: Flame,
+    },
+  ]
+
   return (
     <AppShell>
       <main className="flex flex-col gap-8 p-4 md:p-8">
@@ -109,13 +160,15 @@ export function AuthenticatedHome() {
             </span>
             <h1 className="mt-2 text-2xl font-bold md:text-3xl">Hôm nay bạn muốn học gì?</h1>
           </div>
-          <Link
-            href="/admin"
-            className="inline-flex h-10 items-center gap-2 rounded-xl border border-border bg-card px-4 text-sm font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
-          >
-            <ShieldCheck className="size-4 text-violet-400" aria-hidden="true" />
-            Trang Quản trị (Admin)
-          </Link>
+          {isAdmin && (
+            <Link
+              href="/admin"
+              className="inline-flex h-10 items-center gap-2 rounded-xl border border-primary/40 bg-primary/15 px-4 text-sm font-semibold text-violet-200 transition-colors hover:bg-primary hover:text-white"
+            >
+              <ShieldCheck className="size-4 text-violet-300" aria-hidden="true" />
+              Trang Quản trị Hệ thống (Admin)
+            </Link>
+          )}
         </div>
 
         <ProfileBanner />

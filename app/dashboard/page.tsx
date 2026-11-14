@@ -1,18 +1,13 @@
-import type { Metadata } from 'next'
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Brain, Clock, FileText, Trophy } from 'lucide-react'
 import { AppShell } from '@/components/hango/app-shell'
 import { TestScoresChart, WeeklyStudyChart } from '@/components/dashboard/charts'
 import { ProfileBanner } from '@/components/dashboard/profile-banner'
-
-export const metadata: Metadata = { title: 'Dashboard | HANGO' }
-
-const stats = [
-  { label: 'Tổng giờ học', value: '42.5 giờ', delta: '+2.3h tuần này', icon: Clock, gradient: 'from-violet-600/30 to-violet-600/5' },
-  { label: 'Từ đã thuộc', value: '847 từ', delta: '+32 tuần này', icon: Brain, gradient: 'from-fuchsia-600/30 to-fuchsia-600/5' },
-  { label: 'Điểm TB thi thử', value: '72/100', delta: '+5 điểm', icon: Trophy, gradient: 'from-amber-500/25 to-amber-500/5' },
-  { label: 'Bài thi đã làm', value: '18 đề', delta: 'TOPIK I & II', icon: FileText, gradient: 'from-sky-500/25 to-sky-500/5' },
-]
+import { useAuth } from '@/lib/auth-context'
+import type { UserLearningProgress } from '@/lib/backend/user-store'
 
 const reviewWords = [
   { ko: '사과', vi: 'Quả táo' },
@@ -23,6 +18,66 @@ const reviewWords = [
 ]
 
 export default function DashboardPage() {
+  const { profile, token } = useAuth()
+  const [progress, setProgress] = useState<UserLearningProgress | null>(null)
+
+  useEffect(() => {
+    if (!token) return
+    fetch('/api/srs/review', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.success && json.progress) {
+          setProgress(json.progress)
+        }
+      })
+      .catch(() => {
+        // ignore
+      })
+  }, [token])
+
+  const totalMinutes = profile?.totalStudyMinutes ?? 0
+  const learnedVocab = profile?.learnedVocabCount ?? 0
+  const topikList = progress?.topikResults || []
+  const avgScore =
+    topikList.length > 0
+      ? Math.round(topikList.reduce((acc, r) => acc + r.score, 0) / topikList.length)
+      : 0
+
+  const stats = [
+    {
+      label: 'Tổng thời gian học',
+      value: `${totalMinutes} phút`,
+      delta: `${progress?.pomodoroSessions.length ?? 0} phiên Pomodoro hoàn thành`,
+      icon: Clock,
+      gradient: 'from-violet-600/30 to-violet-600/5',
+    },
+    {
+      label: 'Từ vựng đã học (SRS)',
+      value: `${learnedVocab} từ`,
+      delta: 'Theo dõi qua thuật toán SM-2',
+      icon: Brain,
+      gradient: 'from-fuchsia-600/30 to-fuchsia-600/5',
+    },
+    {
+      label: 'Điểm TB thi thử TOPIK',
+      value: topikList.length > 0 ? `${avgScore}/200` : 'Chưa thi',
+      delta: topikList.length > 0 ? topikList[0].levelAchieved : 'Hãy làm đề thi thử đầu tiên',
+      icon: Trophy,
+      gradient: 'from-amber-500/25 to-amber-500/5',
+    },
+    {
+      label: 'Bài thi đã làm',
+      value: `${topikList.length} đề`,
+      delta: 'TOPIK I & II',
+      icon: FileText,
+      gradient: 'from-sky-500/25 to-sky-500/5',
+    },
+  ]
+
   return (
     <AppShell>
       <main className="flex flex-col gap-6 p-4 md:p-8">

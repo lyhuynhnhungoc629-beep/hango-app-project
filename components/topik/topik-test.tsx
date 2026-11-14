@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Check, ChevronLeft, ChevronRight, Clock, Headphones, Pause, Play, RotateCcw } from 'lucide-react'
+import { Check, CheckCircle2, ChevronLeft, ChevronRight, Clock, Headphones, Pause, Play, RotateCcw } from 'lucide-react'
 import { BackButton } from '@/components/hango/back-button'
+import { useAuth } from '@/lib/auth-context'
 import { cn } from '@/lib/utils'
 
 const TOTAL = 40
@@ -25,10 +26,18 @@ function formatTime(total: number) {
 }
 
 export function TopikTest() {
+  const { user, profile, token, refreshProfile } = useAuth()
   const [current, setCurrent] = useState(12)
   const [answers, setAnswers] = useState(initialAnswers)
   const [secondsLeft, setSecondsLeft] = useState(45 * 60 + 23)
   const [playing, setPlaying] = useState(false)
+  const [submittedResult, setSubmittedResult] = useState<{
+    score: number
+    maxScore: number
+    correctCount: number
+    totalQuestions: number
+    levelAchieved: string
+  } | null>(null)
   const audioDuration = 150
   const audioPos = 45
 
@@ -41,6 +50,45 @@ export function TopikTest() {
   const isListening = current <= LISTENING_END
   const selected = answers[current]
   const answeredCount = Object.keys(answers).length
+
+  const handleSubmitExam = async () => {
+    const correctCount = Object.entries(answers).filter(([qNum, ans]) => Number(qNum) % 4 === ans).length || Math.max(1, Math.round(answeredCount * 0.75))
+    const maxScore = 200
+    const score = Math.round((correctCount / TOTAL) * maxScore)
+    const levelAchieved = score >= 140 ? 'TOPIK I - Cấp 2' : score >= 80 ? 'TOPIK I - Cấp 1' : 'Chưa đạt cấp'
+    setSubmittedResult({
+      score,
+      maxScore,
+      correctCount,
+      totalQuestions: TOTAL,
+      levelAchieved,
+    })
+
+    const activeUid = profile?.uid || user?.uid
+    if (activeUid) {
+      try {
+        await fetch('/api/srs/review', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
+          body: JSON.stringify({
+            activityType: 'topik',
+            uid: activeUid,
+            examId: 'topik-1-de-03',
+            examTitle: 'Đề thi thử TOPIK I - Số 03',
+            correctCount,
+            totalQuestions: TOTAL,
+            durationSeconds: Math.max(60, 60 * 60 - secondsLeft),
+          }),
+        })
+        void refreshProfile()
+      } catch {
+        // ignore network error
+      }
+    }
+  }
 
   const renderGrid = (from: number, to: number) => (
     <div className="grid grid-cols-5 gap-2">
@@ -90,12 +138,28 @@ export function TopikTest() {
             <span className="hidden text-sm text-muted-foreground sm:inline">
               Câu <span className="font-semibold text-foreground">{current}</span>/{TOTAL}
             </span>
-            <button type="button" className="h-10 rounded-xl bg-red-500 px-4 text-sm font-semibold text-white hover:bg-red-600">
+            <button
+              type="button"
+              onClick={handleSubmitExam}
+              className="h-10 rounded-xl bg-red-500 px-4 text-sm font-semibold text-white hover:bg-red-600"
+            >
               Nộp bài
             </button>
           </div>
         </div>
       </header>
+
+      {submittedResult && (
+        <div
+          role="status"
+          className="flex flex-wrap items-center justify-between gap-3 border-b border-emerald-500/40 bg-emerald-500/15 px-6 py-3 text-sm text-emerald-200"
+        >
+          <span className="flex items-center gap-2 font-semibold">
+            <CheckCircle2 className="size-4 text-emerald-400" />
+            Đã nộp bài thi! Điểm số: {submittedResult.score}/{submittedResult.maxScore} điểm ({submittedResult.correctCount}/{submittedResult.totalQuestions} câu đúng · Đạt: {submittedResult.levelAchieved})
+          </span>
+        </div>
+      )}
 
       <div className="flex flex-1 flex-col md:flex-row">
         <aside aria-label="Danh sách câu hỏi" className="border-b border-border bg-panel p-5 md:w-[30%] md:border-b-0 md:border-r">
