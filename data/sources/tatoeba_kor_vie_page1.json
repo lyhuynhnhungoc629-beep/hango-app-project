@@ -1,0 +1,514 @@
+{
+  "paging": {
+    "Sentences": {
+      "count": 1000,
+      "current": 10,
+      "perPage": 10,
+      "page": 1,
+      "requestedPage": 1,
+      "pageCount": 100,
+      "start": 1,
+      "end": 10,
+      "prevPage": false,
+      "nextPage": true,
+      "sort": null,
+      "direction": null,
+      "sortDefault": false,
+      "directionDefault": false,
+      "completeSort": [],
+      "limit": null,
+      "scope": null,
+      "finder": "all"
+    }
+  },
+  "results": [
+    {
+      "id": 13111664,
+      "text": "예!",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 12069740,
+            "text": "Vâng!",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 8994210,
+            "text": "Đẹp quá!",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "LeviHighway"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 12213650,
+      "text": "예.",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 11534972,
+            "text": "Vâng.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 11534973,
+            "text": "Dạ.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 11235502,
+            "text": "Có.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "Adelpa"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 10622072,
+      "text": "응.",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 11534972,
+            "text": "Vâng.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 11534973,
+            "text": "Dạ.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 6216674,
+            "text": "Ừ.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 11535040,
+            "text": "Ô kê.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "Adelpa"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 5951679,
+      "text": "네",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 11534972,
+            "text": "Vâng.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 11534973,
+            "text": "Dạ.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "alvations"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 5548650,
+      "text": "가!",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 11535022,
+            "text": "Đi đi!",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "YUJIHEE"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 1054233,
+      "text": "네.",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 11534972,
+            "text": "Vâng.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 11534973,
+            "text": "Dạ.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "Brian255"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 13319305,
+      "text": "아야!",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 8839441,
+            "text": "Đau!",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "Jamlo555"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 13319304,
+      "text": "ㅇ?",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 12188264,
+            "text": "Hử?",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "Jamlo555"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 13252705,
+      "text": "추워.",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 5840,
+            "text": "Lạnh.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          },
+          {
+            "id": 12557903,
+            "text": "Rất lạnh",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "atitarev"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    },
+    {
+      "id": 13211652,
+      "text": "아뇨.",
+      "lang": "kor",
+      "correctness": 0,
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "translations": [
+        [],
+        [
+          {
+            "id": 11534971,
+            "text": "Không.",
+            "lang": "vie",
+            "correctness": 0,
+            "script": null,
+            "transcriptions": [],
+            "audios": [],
+            "lang_name": "Vietnamese",
+            "dir": "ltr",
+            "lang_tag": "vi"
+          }
+        ]
+      ],
+      "transcriptions": [],
+      "audios": [],
+      "user": {
+        "username": "atitarev"
+      },
+      "lang_name": "Korean",
+      "dir": "ltr",
+      "lang_tag": "ko",
+      "is_favorite": null,
+      "is_owned_by_current_user": false,
+      "permissions": null,
+      "max_visible_translations": 5,
+      "current_user_review": null
+    }
+  ]
+}
