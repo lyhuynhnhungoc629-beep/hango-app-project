@@ -31,6 +31,8 @@ const statusStyle: Record<Status, { cls: string; icon: typeof Check; label: stri
 const R = 54
 const C = 2 * Math.PI * R
 
+const formatSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
+
 export function PronunciationPractice() {
   const [recording, setRecording] = useState(false)
   const [score, setScore] = useState<number | null>(null) // Ban đầu chưa có điểm, chờ người dùng nói
@@ -47,6 +49,139 @@ export function PronunciationPractice() {
   const recognitionRef = useRef<any>(null)
   const lastSampleClickRef = useRef<number>(0)
 
+  // ===== Thu âm giọng nói thật (MediaRecorder) + sóng âm trực tiếp =====
+  const [recordingUrl, setRecordingUrl] = useState<string | null>(null)
+  const [recordSeconds, setRecordSeconds] = useState(0)
+  const [playingRecording, setPlayingRecording] = useState(false)
+  const mediaStreamRef = useRef<MediaStream | null>(null)
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null)
+  const chunksRef = useRef<Blob[]>([])
+  const audioCtxRef = useRef<AudioContext | null>(null)
+  const rafRef = useRef<number | null>(null)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const playbackRef = useRef<HTMLAudioElement | null>(null)
+
+  const stopAudioCapture = () => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    rafRef.current = null
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = null
+    try {
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop()
+      }
+    } catch {
+      // ignore
+    }
+    mediaStreamRef.current?.getTracks().forEach((t) => t.stop())
+    mediaStreamRef.current = null
+    audioCtxRef.current?.close().catch(() => {})
+    audioCtxRef.current = null
+  }
+
+  const drawWaveform = (analyser: AnalyserNode) => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+    const data = new Uint8Array(analyser.frequencyBinCount)
+    const bars = 48
+    const render = () => {
+      analyser.getByteFrequencyData(data)
+      const { width, height } = canvas
+      ctx.clearRect(0, 0, width, height)
+      const step = Math.floor(data.length / bars)
+      const barW = width / bars
+      for (let i = 0; i < bars; i++) {
+        const v = data[i * step] / 255
+        const h = Math.max(3, v * height)
+        ctx.fillStyle = `rgba(239, 68, 68, ${0.35 + v * 0.65})`
+        ctx.fillRect(i * barW + 1, (height - h) / 2, barW - 2, h)
+      }
+      rafRef.current = requestAnimationFrame(render)
+    }
+    render()
+  }
+
+  const startAudioCapture = async () => {
+    if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) return
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      mediaStreamRef.current = stream
+
+      // Sóng âm trực tiếp
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext
+      if (AudioCtx) {
+        const audioCtx: AudioContext = new AudioCtx()
+        audioCtxRef.current = audioCtx
+        const source = audioCtx.createMediaStreamSource(stream)
+        const analyser = audioCtx.createAnalyser()
+        analyser.fftSize = 256
+        source.connect(analyser)
+        drawWaveform(analyser)
+      }
+
+      // Ghi âm để nghe lại
+      if (typeof MediaRecorder !== 'undefined') {
+        chunksRef.current = []
+        const recorder = new MediaRecorder(stream)
+        recorder.ondataavailable = (e) => {
+          if (e.data.size > 0) chunksRef.current.push(e.data)
+        }
+        recorder.onstop = () => {
+          const blob = new Blob(chunksRef.current, { type: recorder.mimeType || 'audio/webm' })
+          if (blob.size > 0) {
+            setRecordingUrl((prev) => {
+              if (prev) URL.revokeObjectURL(prev)
+              return URL.createObjectURL(blob)
+            })
+          }
+        }
+        mediaRecorderRef.current = recorder
+        recorder.start()
+      }
+
+      setRecordSeconds(0)
+      timerRef.current = setInterval(() => setRecordSeconds((s) => s + 1), 1000)
+    } catch {
+      // Nếu không lấy được micro, SpeechRecognition sẽ tự báo lỗi quyền truy cập
+    }
+  }
+
+  const playRecording = () => {
+    const el = playbackRef.current
+    if (!el || !recordingUrl) return
+    if (playingRecording) {
+      el.pause()
+      el.currentTime = 0
+      setPlayingRecording(false)
+      return
+    }
+    window.speechSynthesis?.cancel()
+    el.play().then(() => setPlayingRecording(true)).catch(() => setPlayingRecording(false))
+  }
+
+  // Nghe mẫu rồi nghe giọng mình ngay sau để so sánh
+  const compareWithSample = () => {
+    if (!recordingUrl || typeof window === 'undefined' || !('speechSynthesis' in window)) return
+    window.speechSynthesis.cancel()
+    const utterance = new SpeechSynthesisUtterance(TARGET_SENTENCE)
+    utterance.lang = 'ko-KR'
+    utterance.rate = 0.9
+    const voice = getKoreanVoice()
+    if (voice) utterance.voice = voice
+    utterance.onstart = () => setSpeakingSample(true)
+    utterance.onend = () => {
+      setSpeakingSample(false)
+      setTimeout(() => {
+        playbackRef.current?.play().then(() => setPlayingRecording(true)).catch(() => {})
+      }, 400)
+    }
+    utterance.onerror = () => setSpeakingSample(false)
+    window.speechSynthesis.speak(utterance)
+  }
+
   useEffect(() => {
     return () => {
       if (recognitionRef.current) {
@@ -56,9 +191,16 @@ export function PronunciationPractice() {
           // ignore
         }
       }
+      stopAudioCapture()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  useEffect(() => {
+    return () => {
+      if (recordingUrl) URL.revokeObjectURL(recordingUrl)
+    }
+  }, [recordingUrl])
   // Tìm voice tiếng Hàn chuẩn
   const getKoreanVoice = () => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return null
@@ -165,6 +307,7 @@ export function PronunciationPractice() {
         }
       }
       setRecording(false)
+      stopAudioCapture()
       return
     }
 
@@ -216,6 +359,7 @@ export function PronunciationPractice() {
 
       recognition.onerror = (event: any) => {
         setRecording(false)
+        stopAudioCapture()
         if (event.error === 'not-allowed') {
           setErrorMessage('Vui lòng cấp quyền sử dụng Micro trên thanh địa chỉ trình duyệt để AI có thể nghe bạn nói!')
         } else if (event.error === 'no-speech') {
@@ -227,13 +371,16 @@ export function PronunciationPractice() {
 
       recognition.onend = () => {
         setRecording(false)
+        stopAudioCapture()
       }
 
       recognitionRef.current = recognition
       recognition.start()
+      void startAudioCapture()
     } catch (err) {
       console.error(err)
       setRecording(false)
+      stopAudioCapture()
       setErrorMessage('Không thể mở micro. Vui lòng tải lại trang hoặc kiểm tra thiết bị thu âm.')
     }
   }
@@ -336,11 +483,51 @@ export function PronunciationPractice() {
           </div>
           <p className="mt-4 font-semibold text-sm">
             {recording ? (
-              <span className="text-red-400 animate-pulse font-bold">🔴 Đang thu âm... Hãy nói tiếng Hàn!</span>
+              <span className="text-red-400 animate-pulse font-bold">
+                🔴 Đang thu âm {formatSeconds(recordSeconds)}... Hãy nói tiếng Hàn!
+              </span>
             ) : (
               'Bấm Micro để đọc'
             )}
           </p>
+          <canvas
+            ref={canvasRef}
+            width={240}
+            height={48}
+            aria-hidden="true"
+            className={cn('mt-3 h-12 w-60 transition-opacity', recording ? 'opacity-100' : 'opacity-0')}
+          />
+          {recordingUrl && !recording && (
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
+              <audio
+                ref={playbackRef}
+                src={recordingUrl}
+                onEnded={() => setPlayingRecording(false)}
+                onPause={() => setPlayingRecording(false)}
+                className="hidden"
+              />
+              <button
+                type="button"
+                onClick={playRecording}
+                className={cn(
+                  'inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer',
+                  playingRecording
+                    ? 'border-red-400 bg-red-500/15 text-red-300'
+                    : 'border-border bg-background hover:border-primary/50',
+                )}
+              >
+                {playingRecording ? <Square className="size-3.5 fill-current" /> : <PlayCircle className="size-3.5" />}
+                {playingRecording ? 'Dừng' : 'Nghe lại giọng tôi'}
+              </button>
+              <button
+                type="button"
+                onClick={compareWithSample}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-semibold transition-all hover:border-primary/50 cursor-pointer"
+              >
+                <Volume2 className="size-3.5 text-violet-400" /> So sánh với mẫu
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col items-center">

@@ -38,6 +38,26 @@
       "createdAt": "2026-11-12T15:23:41.252Z",
       "lastLoginAt": "2026-11-14T09:52:54.477Z",
       "updatedAt": "2026-11-14T09:52:54.477Z"
+    },
+    "usr_52aad2d411ca6d09acb0": {
+      "uid": "usr_52aad2d411ca6d09acb0",
+      "displayName": "nguyễnngọckhánh",
+      "email": "khanhnnk12345@gmail.com",
+      "passwordHash": "656f452545addf8f86418181ebdfd4d7:100000:6e8c8e9d27cca835c3016b7b35c8724a6c996913072bdfe9e1dcc424d3798fef198620100db957a1edde8b472e7ef3aef2bfe8edff25244aca1ce4e1b014947e",
+      "photoURL": null,
+      "provider": "password",
+      "role": "student",
+      "isRootAdmin": false,
+      "locked": false,
+      "level": 1,
+      "xp": 0,
+      "streak": 0,
+      "lastStudyDate": null,
+      "totalStudyMinutes": 0,
+      "learnedVocabCount": 0,
+      "createdAt": "2026-11-17T08:18:32.444Z",
+      "lastLoginAt": "2026-11-17T08:18:32.444Z",
+      "updatedAt": "2026-11-17T08:18:32.444Z"
     }
   },
   "progress": {
@@ -86,6 +106,23 @@
           "detail": "Tài khoản học viên (lyhuynhnhungoc629@gmail.com) được khởi tạo.",
           "xpEarned": 0,
           "timestamp": "2026-11-12T15:23:41.252Z"
+        }
+      ]
+    },
+    "usr_52aad2d411ca6d09acb0": {
+      "uid": "usr_52aad2d411ca6d09acb0",
+      "srsProgress": {},
+      "pomodoroSessions": [],
+      "handwritingRecords": {},
+      "topikResults": [],
+      "studyHistory": [
+        {
+          "id": "act_1794903512559",
+          "type": "account",
+          "title": "Đăng ký tài khoản HANGO",
+          "detail": "Tài khoản học viên (khanhnnk12345@gmail.com) được khởi tạo.",
+          "xpEarned": 0,
+          "timestamp": "2026-11-17T08:18:32.444Z"
         }
       ]
     }
