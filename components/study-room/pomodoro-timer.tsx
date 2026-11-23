@@ -247,23 +247,12 @@ export function PomodoroTimer() {
         <button
           type="button"
           onClick={() => setRunning((r) => !r)}
-          className="flex h-12 items-center gap-2 rounded-full bg-primary px-7 font-semibold shadow-lg shadow-primary/30 hover:bg-primary/90"
+          className="flex h-12 items-center gap-2 rounded-full bg-primary px-7 font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90"
         >
           {running ? <Pause className="size-5" aria-hidden="true" /> : <Play className="size-5" aria-hidden="true" />}
           {running ? 'Tạm dừng' : 'Bắt đầu'}
         </button>
       </div>
-
-      {/* Nút hoàn thành nhanh phiên học để kiểm thử / demo API lưu Pomodoro + cộng XP & Streak */}
-      <button
-        type="button"
-        disabled={saving}
-        onClick={() => finishPomodoroSession(25)}
-        className="mt-3 inline-flex items-center gap-1.5 rounded-xl border border-violet-500/30 bg-violet-500/10 px-3.5 py-2 text-xs font-semibold text-violet-300 transition-colors hover:bg-primary hover:text-white disabled:opacity-50"
-      >
-        <Zap className="size-3.5" aria-hidden="true" />
-        {saving ? 'Đang lưu phiên học...' : 'Hoàn thành nhanh phiên (+XP & Streak)'}
-      </button>
 
       <div className="mt-5 flex items-center gap-2" aria-label={`${completed % 4 || 4} trên 4 pomodoro trong chu kỳ`}>
         {[0, 1, 2, 3].map((i) => (

@@ -100,6 +100,7 @@ export async function POST(request: Request) {
       explanationKo: body.explanationKo ?? body.grammarNote ?? null,
       exampleSentenceKo: body.exampleSentenceKo ?? body.exKo ?? '',
       exampleSentenceVi: body.exampleSentenceVi ?? body.exVi ?? '',
+      imageUrl: body.imageUrl ?? null,
       topikLevel: body.topikLevel ?? body.level ?? 'TOPIK I - Cấp 1',
       niklLevel: body.niklLevel ?? null,
       primaryTopicId: body.primaryTopicId ? Number(body.primaryTopicId) : null,

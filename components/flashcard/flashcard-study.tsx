@@ -40,6 +40,10 @@ import {
   X,
 } from 'lucide-react'
 import { FlashcardAdminView } from '@/components/flashcard/flashcard-admin-view'
+import {
+  getTopicIllustrationTheme,
+  getVocabVisualInfo,
+} from '@/components/flashcard/flashcard-visuals'
 import { AppShell } from '@/components/hango/app-shell'
 import { useAuth } from '@/lib/auth-context'
 import { INITIAL_VOCABULARIES, type VocabularyItem } from '@/lib/backend/vocabulary-data'
@@ -70,6 +74,7 @@ interface StudentTopicOption {
   description: string
   iconName: string
   colorCode: string
+  imageUrl?: string | null
   activeWordsCount: number
   levels?: string[]
   levelCounts?: Record<string, number>
@@ -80,6 +85,7 @@ type ExtendedVocabularyItem = VocabularyItem & {
   vocabId?: number
   vocabCode?: string
   hanja?: string | null
+  imageUrl?: string | null
   niklLevel?: string | null
   sourceName?: string
   topicId?: number
@@ -522,32 +528,33 @@ export function FlashcardStudy() {
 
   return (
     <AppShell>
+      <div className="min-h-screen w-full px-3 py-6 text-slate-900 md:px-8">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
         {/* =====================================================================
             MÀN HÌNH 1: THƯ VIỆN CHỦ ĐỀ TỪ VỰNG (VOCABULARY TOPIC LIBRARY)
            ===================================================================== */}
         {viewMode === 'library' && (
           <>
-            {/* PHẦN ĐẦU TRANG: TIÊU ĐỀ, MÔ TẢ & 3 THẺ THỐNG KÊ (Đồng bộ bố cục với Admin) */}
-            <section className="rounded-3xl border border-violet-500/25 bg-card p-6 shadow-sm">
+            {/* PHẦN ĐẦU TRANG: TIÊU ĐỀ, MÔ TẢ & 4 THẺ THỐNG KÊ (Đồng bộ bố cục với Admin & Lộ trình Hình 1) */}
+            <section className="rounded-2xl border-[1.5px] border-slate-800 bg-card p-5 shadow-[0_2px_0_rgba(15,23,42,0.06)] md:p-6">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div className="flex items-start gap-4">
-                  <span className="flex size-13 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7C3AED] to-violet-600 text-white shadow-md shadow-violet-500/25">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-slate-800 bg-[#2563EB] text-white shadow-sm">
                     <BookOpen className="size-6" aria-hidden="true" />
                   </span>
                   <div>
                     <h1 className="text-2xl font-black tracking-tight text-foreground md:text-3xl">
                       Khám phá từ vựng tiếng Hàn
                     </h1>
-                    <p className="mt-1 text-sm text-muted-foreground">
+                    <p className="mt-1.5 text-sm text-muted-foreground">
                       Chọn chủ đề yêu thích để xem danh sách từ vựng, nghe phát âm và luyện tập ghi nhớ mỗi ngày.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* 3 THẺ THỐNG KÊ TỔNG QUAN */}
-              <div className="mt-5 grid gap-4 sm:grid-cols-3">
+              {/* 4 THẺ THỐNG KÊ TỔNG QUAN CÂN ĐỐI */}
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-500/10 to-card p-4">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-wider text-violet-300">
@@ -585,7 +592,7 @@ export function FlashcardStudy() {
                 <div className="rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 to-card p-4">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-wider text-emerald-300">
-                      Tiến độ ôn tập SRS
+                      Đã ôn tập SRS
                     </span>
                     <span className="flex size-9 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300">
                       <CheckCircle2 className="size-5" aria-hidden="true" />
@@ -595,35 +602,34 @@ export function FlashcardStudy() {
                     {totalLearnedAllTopics}
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
+                    Số từ vựng bạn đã học và ghi nhớ
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-br from-amber-500/10 to-card p-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-300">
+                      Cần ôn hôm nay
+                    </span>
+                    <span className="flex size-9 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300">
+                      <CalendarClock className="size-5" aria-hidden="true" />
+                    </span>
+                  </div>
+                  <p className="mt-2 text-3xl font-black text-amber-400">
+                    {totalDueAllTopics}
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     {totalDueAllTopics > 0
-                      ? `${totalDueAllTopics} từ đến hạn cần ôn tập hôm nay`
-                      : 'Số từ bạn đã học và ghi nhớ'}
+                      ? 'Từ vựng đã đến lịch nhắc ôn tập'
+                      : 'Chưa có từ nào quá hạn ôn tập'}
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* THANH BỘ LỌC CẤP ĐỘ & TÌM KIẾM CHỦ ĐỀ (Cùng một hàng giống Admin) */}
-            <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-violet-500/25 bg-card p-2.5 shadow-sm">
-              <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Bộ lọc cấp độ TOPIK">
-                {LEVELS.map((lv) => (
-                  <button
-                    key={lv}
-                    type="button"
-                    onClick={() => setLibraryLevelFilter(lv)}
-                    className={cn(
-                      'inline-flex items-center rounded-xl px-3.5 py-2 text-xs font-bold transition-all',
-                      libraryLevelFilter === lv
-                        ? 'bg-[#7C3AED] text-white shadow-sm shadow-violet-500/25'
-                        : 'text-muted-foreground hover:bg-violet-500/10 hover:text-violet-300',
-                    )}
-                  >
-                    {lv}
-                  </button>
-                ))}
-              </div>
-
-              <div className="relative w-full sm:w-72">
+            {/* THANH TÌM KIẾM CHỦ ĐỀ */}
+            <div className="rounded-2xl border border-violet-500/25 bg-card p-2.5 shadow-sm">
+              <div className="relative w-full">
                 <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                 <input
                   type="search"
@@ -631,7 +637,7 @@ export function FlashcardStudy() {
                   onChange={(e) => setTopicSearchQuery(e.target.value)}
                   placeholder="Tìm kiếm chủ đề tiếng Hàn / Việt..."
                   aria-label="Tìm kiếm chủ đề"
-                  className="h-9 w-full rounded-xl border border-white/10 bg-background/80 pl-10 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:border-[#7C3AED] focus:outline-none"
+                  className="h-10 w-full rounded-xl border border-white/10 bg-background/80 pl-10 pr-3 text-xs text-foreground placeholder:text-muted-foreground focus:border-[#7C3AED] focus:outline-none"
                 />
               </div>
             </div>
@@ -665,8 +671,8 @@ export function FlashcardStudy() {
                 </button>
               </div>
             ) : (
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {filteredTopics.map((tp) => {
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {filteredTopics.map((tp, idx) => {
                   const progress = getTopicProgress(tp)
                   const matchingWordsCount =
                     libraryLevelFilter === 'Tất cả'
@@ -674,6 +680,11 @@ export function FlashcardStudy() {
                       : tp.levelCounts?.[libraryLevelFilter] ?? progress.totalCount
                   const topicLevels =
                     tp.levels && tp.levels.length > 0 ? tp.levels : ['Nhập môn', 'TOPIK I - Cấp 1']
+                  const topicVisual = getTopicIllustrationTheme(
+                    tp.topicCode,
+                    tp.topicId,
+                    tp.imageUrl,
+                  )
 
                   return (
                     <article
@@ -687,58 +698,87 @@ export function FlashcardStudy() {
                       }}
                       role="button"
                       tabIndex={0}
-                      className="group flex cursor-pointer flex-col justify-between rounded-2xl border border-violet-500/25 bg-card p-5 shadow-sm transition hover:border-violet-500/50 hover:shadow-md"
+                      className="group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-violet-500/25 bg-card shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-violet-500/60 hover:shadow-xl hover:shadow-violet-500/15"
                     >
+                      {/* Hình nền chủ đề mờ nhẹ toàn thẻ */}
+                      <div
+                        className="pointer-events-none absolute inset-0 opacity-[0.07] transition-opacity duration-300 group-hover:opacity-[0.12]"
+                        style={{
+                          backgroundImage: `url(${topicVisual.bgPhotoUrl})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }}
+                      />
+
                       <div>
-                        {/* Đầu thẻ: Icon màu chủ đề + Tên chủ đề + Badge số lượng từ */}
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex items-center gap-3">
-                            <span
-                              className="flex size-11 shrink-0 items-center justify-center rounded-2xl text-white shadow-sm"
-                              style={{ backgroundColor: tp.colorCode || '#7C3AED' }}
-                            >
-                              {renderTopicIcon(tp.iconName, 'size-5')}
+                        {/* Banner hình ảnh minh họa đặc trưng của chủ đề */}
+                        <div
+                          className="relative h-32 w-full overflow-hidden border-b border-slate-200/80"
+                          style={{
+                            background: `linear-gradient(135deg, ${topicVisual.gradientFrom} 0%, ${topicVisual.gradientVia} 55%, ${topicVisual.gradientTo} 100%)`,
+                          }}
+                        >
+                          <img
+                            src={topicVisual.bgPhotoUrl}
+                            alt={tp.topicNameVi}
+                            loading="lazy"
+                            className="h-full w-full object-cover opacity-85 transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div
+                            className="absolute inset-0"
+                            style={{
+                              background: `linear-gradient(180deg, rgba(15,23,42,0.18) 0%, rgba(15,23,42,0.68) 100%)`,
+                            }}
+                          />
+
+                          {/* Badge thứ tự & Nhãn cảnh chủ đề */}
+                          <div className="absolute left-3.5 right-3.5 top-3 flex items-center justify-between gap-2">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-0.5 text-[11px] font-extrabold text-slate-800 shadow-sm backdrop-blur-sm">
+                              <span>#{idx + 1}</span>
+                              <span className="text-slate-400">·</span>
+                              <span>{topicVisual.sceneLabel}</span>
                             </span>
-                            <div>
-                              <h2 className="text-base font-extrabold text-foreground transition-colors group-hover:text-violet-300">
-                                {tp.topicNameVi}
-                              </h2>
-                              <p lang="ko" className="text-xs font-medium text-muted-foreground">
-                                {tp.topicNameKo}
-                              </p>
+
+                            <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-slate-900/80 px-2.5 py-0.5 text-[11px] font-bold text-white shadow-sm backdrop-blur-sm">
+                              <BookOpen className="size-3 text-violet-300" aria-hidden="true" />
+                              {matchingWordsCount} từ
+                            </span>
+                          </div>
+
+                          {/* Cụm biểu tượng & hình minh họa nổi bật trên nền ảnh */}
+                          <div className="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between gap-2">
+                            <div className="flex items-center gap-2.5">
+                              <span
+                                className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/40 text-white shadow-md"
+                                style={{ backgroundColor: tp.colorCode || topicVisual.accentColor }}
+                              >
+                                {renderTopicIcon(tp.iconName, 'size-5')}
+                              </span>
+                              <div>
+                                <h2 className="text-base font-extrabold leading-tight text-white drop-shadow-sm">
+                                  {tp.topicNameVi}
+                                </h2>
+                                <p lang="ko" className="text-xs font-semibold text-white/85">
+                                  {tp.topicNameKo}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-1 rounded-xl bg-white/90 px-2 py-1 text-lg shadow-sm backdrop-blur-sm">
+                              <span>{topicVisual.emojiMain}</span>
+                              <span className="text-sm">{topicVisual.emojiAccents[0]}</span>
                             </div>
                           </div>
-
-                          <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-violet-500/30 bg-violet-500/10 px-2.5 py-0.5 text-[11px] font-bold text-violet-300">
-                            <BookOpen className="size-3" aria-hidden="true" />
-                            {matchingWordsCount} từ
-                          </span>
                         </div>
 
-                        {/* Mô tả chủ đề */}
-                        <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-                          {tp.description || 'Chủ đề từ vựng tiếng Hàn thông dụng theo chuẩn TOPIK.'}
-                        </p>
+                        {/* Nội dung chi tiết bên dưới Banner */}
+                        <div className="relative z-10 p-4 pb-2">
+                          <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                            {tp.description || 'Chủ đề từ vựng tiếng Hàn thông dụng theo chuẩn TOPIK.'}
+                          </p>
 
-                        {/* Khung thông tin cấp độ TOPIK & Tiến độ ôn tập SRS */}
-                        <div className="mt-4 rounded-xl border border-white/10 bg-background/60 p-3">
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {topicLevels.map((lv) => (
-                              <span
-                                key={lv}
-                                className={cn(
-                                  'rounded-md px-2 py-0.5 text-[11px] font-semibold',
-                                  libraryLevelFilter === lv
-                                    ? 'bg-[#7C3AED]/25 text-violet-200 ring-1 ring-[#7C3AED]/50'
-                                    : 'bg-white/5 text-muted-foreground',
-                                )}
-                              >
-                                {lv}
-                              </span>
-                            ))}
-                          </div>
-
-                          <div className="mt-3 border-t border-white/10 pt-2.5">
+                          {/* Khung Tiến độ ôn tập SRS */}
+                          <div className="mt-3.5 rounded-xl border border-white/10 bg-background/75 p-3 backdrop-blur-xs">
                             <div className="flex items-center justify-between text-xs">
                               <span className="text-muted-foreground">
                                 Tiến độ SRS:{' '}
@@ -759,7 +799,7 @@ export function FlashcardStudy() {
                       </div>
 
                       {/* Hàng nút thao tác dưới cùng của Card */}
-                      <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3">
+                      <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 px-4 py-3">
                         {progress.dueCount > 0 ? (
                           <span className="inline-flex items-center gap-1 rounded-lg bg-amber-500/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">
                             <CalendarClock className="size-3.5" />
@@ -823,66 +863,84 @@ export function FlashcardStudy() {
             </div>
 
             {/* Phần đầu chủ đề đã chọn + Nút Bắt đầu học Flashcard */}
-            <section className="rounded-3xl border border-violet-500/25 bg-card p-6 shadow-sm">
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div className="flex items-start gap-4">
-                  <span
-                    className="flex size-13 shrink-0 items-center justify-center rounded-2xl text-white shadow-md"
-                    style={{ backgroundColor: selectedTopic.colorCode || '#7C3AED' }}
-                  >
-                    {renderTopicIcon(selectedTopic.iconName, 'size-6')}
-                  </span>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2.5">
-                      <h1 className="text-2xl font-black tracking-tight text-foreground md:text-3xl">
-                        {selectedTopic.topicNameVi}
-                      </h1>
+            {(() => {
+              const selectedVisual = getTopicIllustrationTheme(
+                selectedTopic.topicCode,
+                selectedTopic.topicId,
+                selectedTopic.imageUrl,
+              )
+              return (
+                <section className="relative overflow-hidden rounded-3xl border border-violet-500/25 bg-card p-6 shadow-sm">
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.12]"
+                    style={{
+                      backgroundImage: `url(${selectedVisual.bgPhotoUrl})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  />
+                  <div className="relative z-10 flex flex-wrap items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
                       <span
-                        lang="ko"
-                        className="inline-flex items-center rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-0.5 text-xs font-bold text-violet-300"
+                        className="flex size-14 shrink-0 items-center justify-center rounded-2xl text-white shadow-md"
+                        style={{ backgroundColor: selectedTopic.colorCode || '#7C3AED' }}
                       >
-                        {selectedTopic.topicNameKo}
+                        {renderTopicIcon(selectedTopic.iconName, 'size-6')}
                       </span>
-                      <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-xs font-semibold text-muted-foreground">
-                        {wordsInSelectedTopic.length} từ vựng
-                      </span>
-                    </div>
-                    <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-                      {selectedTopic.description}
-                    </p>
-
-                    {selectedTopicProgress && (
-                      <div className="mt-3 flex flex-wrap items-center gap-3 text-xs">
-                        <span className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-background/60 px-3 py-1.5">
-                          <CheckCircle2 className="size-4 text-emerald-400" />
-                          Đã ôn SRS:{' '}
-                          <strong>
-                            {selectedTopicProgress.learnedCount}/{selectedTopicProgress.totalCount} từ (
-                            {selectedTopicProgress.pct}%)
-                          </strong>
-                        </span>
-                        {selectedTopicProgress.dueCount > 0 && (
-                          <span className="inline-flex items-center gap-1.5 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-amber-300">
-                            <CalendarClock className="size-4" />
-                            Cần ôn tập hôm nay: <strong>{selectedTopicProgress.dueCount} từ</strong>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2.5">
+                          <h1 className="text-2xl font-black tracking-tight text-foreground md:text-3xl">
+                            {selectedTopic.topicNameVi}
+                          </h1>
+                          <span
+                            lang="ko"
+                            className="inline-flex items-center rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-0.5 text-xs font-bold text-violet-300"
+                          >
+                            {selectedTopic.topicNameKo}
                           </span>
+                          <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/80 px-3 py-0.5 text-xs font-semibold text-slate-700 shadow-2xs">
+                            <span>{selectedVisual.emojiMain}</span>
+                            <span>{wordsInSelectedTopic.length} từ vựng</span>
+                          </span>
+                        </div>
+                        <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+                          {selectedTopic.description}
+                        </p>
+
+                        {selectedTopicProgress && (
+                          <div className="mt-3 flex flex-wrap items-center gap-3 text-xs">
+                            <span className="inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-background/85 px-3 py-1.5 backdrop-blur-xs">
+                              <CheckCircle2 className="size-4 text-emerald-400" />
+                              Đã ôn SRS:{' '}
+                              <strong>
+                                {selectedTopicProgress.learnedCount}/{selectedTopicProgress.totalCount} từ (
+                                {selectedTopicProgress.pct}%)
+                              </strong>
+                            </span>
+                            {selectedTopicProgress.dueCount > 0 && (
+                              <span className="inline-flex items-center gap-1.5 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-amber-300">
+                                <CalendarClock className="size-4" />
+                                Cần ôn tập hôm nay: <strong>{selectedTopicProgress.dueCount} từ</strong>
+                              </span>
+                            )}
+                          </div>
                         )}
                       </div>
-                    )}
-                  </div>
-                </div>
+                    </div>
 
-                <button
-                  type="button"
-                  disabled={studyDeck.length === 0}
-                  onClick={() => handleStartStudy()}
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#7C3AED] px-5 text-xs font-bold text-white shadow-sm shadow-violet-500/25 transition hover:bg-violet-600 disabled:opacity-50"
-                >
-                  <Play className="size-4 fill-current" aria-hidden="true" />
-                  <span>Bắt đầu học Flashcard ({studyDeck.length} từ)</span>
-                </button>
-              </div>
-            </section>
+                    <button
+                      type="button"
+                      disabled={studyDeck.length === 0}
+                      onClick={() => handleStartStudy()}
+                      className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#7C3AED] px-5 text-xs font-bold text-white shadow-sm shadow-violet-500/25 transition hover:bg-violet-600 disabled:opacity-50"
+                    >
+                      <Play className="size-4 fill-current" aria-hidden="true" />
+                      <span>Bắt đầu học Flashcard ({studyDeck.length} từ)</span>
+                    </button>
+                  </div>
+                </section>
+              )
+            })()}
 
             {/* Thanh lọc & tìm kiếm từ vựng trong chủ đề (Cùng một hàng giống Admin) */}
             <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-violet-500/25 bg-card p-2.5 shadow-sm">
@@ -923,22 +981,6 @@ export function FlashcardStudy() {
                     </button>
                   ))}
                 </div>
-
-                <select
-                  aria-label="Lọc theo cấp độ TOPIK trong chủ đề"
-                  value={wordLevelFilter}
-                  onChange={(e) => {
-                    setWordLevelFilter(e.target.value)
-                    setWordListPage(1)
-                  }}
-                  className="h-9 rounded-xl border border-white/10 bg-background/80 px-3 text-xs font-semibold text-foreground focus:border-[#7C3AED] focus:outline-none"
-                >
-                  {LEVELS.map((lv) => (
-                    <option key={lv} value={lv}>
-                      Cấp độ: {lv}
-                    </option>
-                  ))}
-                </select>
               </div>
 
               <div className="relative w-full sm:w-72">
@@ -959,7 +1001,7 @@ export function FlashcardStudy() {
 
             {/* Danh sách từ vựng thuộc chủ đề */}
             {filteredTopicWords.length === 0 ? (
-              <div className="flex flex-col items-center justify-center rounded-3xl border border-border bg-card p-10 text-center">
+              <div className="flex flex-col items-center justify-center rounded-2xl border border-violet-500/25 bg-card p-10 text-center shadow-sm">
                 <p className="text-base font-bold">Không có từ vựng nào khớp bộ lọc hiện tại</p>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Hãy thử chuyển về bộ lọc &ldquo;Tất cả&rdquo; hoặc xóa từ khóa tìm kiếm.
@@ -972,53 +1014,98 @@ export function FlashcardStudy() {
                     setWordSrsFilter('all')
                     setWordListPage(1)
                   }}
-                  className="mt-4 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary/90"
+                  className="mt-4 rounded-xl bg-[#7C3AED] px-4 py-2 text-xs font-bold text-white shadow-sm shadow-violet-500/25 hover:bg-violet-600"
                 >
                   Đặt lại bộ lọc trong chủ đề
                 </button>
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {paginatedTopicWords.map((item) => {
                     const itemSrs = srsMap[item.id]
                     const due = isSrsDueToday(itemSrs)
+                    const wordVisual = getVocabVisualInfo(
+                      item.ko,
+                      item.meaning,
+                      selectedTopic.topicCode,
+                      selectedTopic.topicId,
+                      item.imageUrl,
+                    )
                     return (
                       <article
                         key={item.id}
-                        className="flex flex-col justify-between rounded-2xl border border-white/10 bg-card p-5 transition-colors hover:border-violet-500/40"
+                        className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-violet-500/25 bg-card p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-500/50 hover:shadow-md"
                       >
+                        {/* Dải màu & hình minh họa mờ làm nền góc thẻ từ vựng */}
+                        <div
+                          className="pointer-events-none absolute -right-4 -top-4 flex size-24 items-center justify-center rounded-full opacity-20 blur-[1px] transition-transform duration-300 group-hover:scale-110"
+                          style={{
+                            background: `linear-gradient(135deg, ${wordVisual.bgFrom}, ${wordVisual.bgTo})`,
+                          }}
+                        >
+                          <span className="text-4xl">{wordVisual.emoji}</span>
+                        </div>
+
                         <div>
-                          <div className="flex items-start justify-between gap-2">
-                            <div>
-                              <div className="flex items-center gap-2">
-                                <h2 lang="ko" className="text-2xl font-extrabold text-foreground">
-                                  {item.ko}
-                                </h2>
-                                <button
-                                  type="button"
-                                  onClick={(e) => speakWord(e, item.ko)}
-                                  aria-label={`Nghe phát âm từ ${item.ko}`}
-                                  className="flex size-8 items-center justify-center rounded-lg bg-primary/15 text-violet-300 transition-colors hover:bg-primary hover:text-white"
-                                >
-                                  <Volume2 className="size-4" aria-hidden="true" />
-                                </button>
+                          <div className="flex items-start justify-between gap-2.5">
+                            <div className="flex items-start gap-3">
+                              {/* Khung hình ảnh minh họa theo nghĩa của từ vựng */}
+                              <div
+                                className="relative flex size-13 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs transition-transform duration-200 group-hover:scale-105"
+                                style={{
+                                  background: `linear-gradient(135deg, ${wordVisual.bgFrom} 0%, ${wordVisual.bgTo} 100%)`,
+                                }}
+                                title={`Minh họa: ${item.meaning}`}
+                              >
+                                {wordVisual.imageUrl ? (
+                                  <img
+                                    src={wordVisual.imageUrl}
+                                    alt={item.meaning}
+                                    className="h-full w-full object-cover"
+                                  />
+                                ) : (
+                                  <>
+                                    <span className="text-2xl leading-none drop-shadow-2xs">
+                                      {wordVisual.emoji}
+                                    </span>
+                                    <span className="absolute -bottom-1 -right-1 flex size-5 items-center justify-center rounded-full border border-white bg-white text-[11px] shadow-2xs">
+                                      {wordVisual.subEmoji}
+                                    </span>
+                                  </>
+                                )}
                               </div>
-                              <p className="mt-0.5 text-xs text-muted-foreground">[{item.roman}]</p>
+
+                              <div>
+                                <div className="flex items-center gap-2">
+                                  <h2 lang="ko" className="text-2xl font-extrabold text-foreground">
+                                    {item.ko}
+                                  </h2>
+                                  <button
+                                    type="button"
+                                    onClick={(e) => speakWord(e, item.ko)}
+                                    aria-label={`Nghe phát âm từ ${item.ko}`}
+                                    className="flex size-8 items-center justify-center rounded-lg bg-violet-500/15 text-violet-300 transition-colors hover:bg-[#7C3AED] hover:text-white"
+                                  >
+                                    <Volume2 className="size-4" aria-hidden="true" />
+                                  </button>
+                                </div>
+                                <p className="mt-0.5 text-xs text-muted-foreground">[{item.roman}]</p>
+                              </div>
                             </div>
 
                             <div className="flex flex-col items-end gap-1">
-                              <span className="rounded-lg bg-white/10 px-2.5 py-0.5 text-[11px] font-semibold text-violet-200">
+                              <span className="rounded-lg border border-violet-500/30 bg-violet-500/10 px-2.5 py-0.5 text-[11px] font-bold text-violet-300">
                                 {item.pos}
                               </span>
-                              <span className="text-[10px] text-muted-foreground">{item.level}</span>
+                              <span className="text-[10px] font-medium text-muted-foreground">{item.level}</span>
                             </div>
                           </div>
 
-                          <p className="mt-3 text-base font-bold text-violet-200">{item.meaning}</p>
+                          <p className="mt-3.5 text-base font-bold text-violet-200">{item.meaning}</p>
 
                           {item.exKo && (
-                            <div className="mt-3 rounded-xl bg-background/70 p-3 text-xs">
+                            <div className="mt-3 rounded-xl border border-white/10 bg-background/60 p-3 text-xs">
                               <p lang="ko" className="font-medium text-foreground">
                                 {item.exKo}
                               </p>
@@ -1036,9 +1123,9 @@ export function FlashcardStudy() {
                                 <span
                                   key={tp.topicId}
                                   className={cn(
-                                    'rounded px-1.5 py-0.5 text-[10px]',
+                                    'rounded-md px-1.5 py-0.5 text-[10px]',
                                     tp.topicId === selectedTopic.topicId
-                                      ? 'bg-primary/20 font-semibold text-violet-200'
+                                      ? 'bg-[#7C3AED]/25 font-semibold text-violet-200'
                                       : 'bg-white/5 text-muted-foreground',
                                   )}
                                 >
@@ -1063,7 +1150,7 @@ export function FlashcardStudy() {
                               Ôn tiếp: {itemSrs.NgayOnTiepTheoHienThi}
                             </span>
                           ) : (
-                            <span className="rounded-lg bg-white/5 px-2.5 py-1 text-[11px] text-muted-foreground">
+                            <span className="rounded-lg bg-white/5 px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
                               Chưa học SRS
                             </span>
                           )}
@@ -1072,14 +1159,14 @@ export function FlashcardStudy() {
                             <button
                               type="button"
                               onClick={() => openWordDetailDrawer(item)}
-                              className="rounded-lg border border-white/10 bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground hover:border-violet-500/40 hover:text-foreground"
+                              className="rounded-lg border border-white/10 bg-background px-2.5 py-1.5 text-xs font-semibold text-muted-foreground transition hover:border-violet-500/40 hover:text-foreground"
                             >
                               Chi tiết
                             </button>
                             <button
                               type="button"
                               onClick={() => handleStartStudy(item.id)}
-                              className="inline-flex items-center gap-1 rounded-lg bg-primary/20 px-2.5 py-1.5 text-xs font-semibold text-violet-200 hover:bg-primary hover:text-white"
+                              className="inline-flex items-center gap-1 rounded-lg bg-[#7C3AED] px-3 py-1.5 text-xs font-bold text-white shadow-sm shadow-violet-500/25 transition hover:bg-violet-600"
                             >
                               <Play className="size-3 fill-current" />
                               <span>Học thẻ này</span>
@@ -1093,7 +1180,7 @@ export function FlashcardStudy() {
 
                 {/* Phân trang danh sách từ trong chủ đề */}
                 {totalWordPages > 1 && (
-                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-card px-4 py-3 text-xs">
+                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-violet-500/25 bg-card px-4 py-3 text-xs shadow-sm">
                     <span className="text-muted-foreground">
                       Hiển thị{' '}
                       <strong className="text-foreground">
@@ -1108,7 +1195,7 @@ export function FlashcardStudy() {
                         type="button"
                         disabled={safeWordPage <= 1}
                         onClick={() => setWordListPage((p) => Math.max(1, p - 1))}
-                        className="rounded-lg border border-white/10 bg-background px-3 py-1.5 font-semibold disabled:opacity-40"
+                        className="rounded-lg border border-white/10 bg-background px-3 py-1.5 font-semibold transition hover:border-violet-500/40 disabled:opacity-40"
                       >
                         Trang trước
                       </button>
@@ -1119,7 +1206,7 @@ export function FlashcardStudy() {
                         type="button"
                         disabled={safeWordPage >= totalWordPages}
                         onClick={() => setWordListPage((p) => Math.min(totalWordPages, p + 1))}
-                        className="rounded-lg border border-white/10 bg-background px-3 py-1.5 font-semibold disabled:opacity-40"
+                        className="rounded-lg border border-white/10 bg-background px-3 py-1.5 font-semibold transition hover:border-violet-500/40 disabled:opacity-40"
                       >
                         Trang sau
                       </button>
@@ -1183,7 +1270,7 @@ export function FlashcardStudy() {
             </header>
 
             <main className="relative flex flex-col items-center justify-center gap-6 py-2">
-              {/* Thông báo kết quả tính toán SRS vừa thực hiện */}
+              {/* Thông báo kết quả ghi nhận ôn tập vừa thực hiện */}
               {lastSrsBanner && (
                 <div
                   role="status"
@@ -1191,15 +1278,9 @@ export function FlashcardStudy() {
                 >
                   <Sparkles className="size-4 shrink-0 text-violet-400" aria-hidden="true" />
                   <span>
-                    SRS cho từ <strong lang="ko">{lastSrsBanner.wordKo}</strong>:{' '}
-                    <code className="rounded bg-white/10 px-1.5 py-0.5 text-emerald-300">
-                      KhoangCachNgay = {lastSrsBanner.state.KhoangCachNgay} ngày
-                    </code>{' '}
-                    ·{' '}
-                    <code className="rounded bg-white/10 px-1.5 py-0.5 text-sky-300">
-                      NgayOnTiepTheo = {lastSrsBanner.state.NgayOnTiepTheoHienThi}
-                    </code>{' '}
-                    (Lặp: {lastSrsBanner.state.SoLanLap}, EF: {lastSrsBanner.state.HeSoGhiNho})
+                    Đã lưu lịch ôn từ <strong lang="ko">{lastSrsBanner.wordKo}</strong>: Ôn lại sau{' '}
+                    <strong>{lastSrsBanner.state.KhoangCachNgay} ngày</strong> (vào ngày{' '}
+                    <strong>{lastSrsBanner.state.NgayOnTiepTheoHienThi}</strong>).
                   </span>
                 </div>
               )}
@@ -1226,88 +1307,139 @@ export function FlashcardStudy() {
               </div>
 
               {/* Thẻ lật Flashcard 3D */}
-              <div className="perspective-1000 w-full max-w-md">
-                <div
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => setFlipped((f) => !f)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault()
-                      setFlipped((f) => !f)
-                    }
-                  }}
-                  aria-label={flipped ? 'Lật về mặt trước' : 'Lật thẻ để xem nghĩa'}
-                  className={cn(
-                    'preserve-3d relative aspect-[4/5] w-full cursor-pointer rounded-3xl transition-transform duration-500 sm:aspect-[5/4]',
-                    flipped && 'rotate-y-180',
-                  )}
-                >
-                  {/* Mặt trước: Từ tiếng Hàn + Phiên âm + Nút phát âm */}
-                  <span className="backface-hidden absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-400 via-primary to-fuchsia-500 p-[3px] shadow-[0_30px_80px_-20px_rgba(124,58,237,0.6)]">
-                    <span className="flex h-full flex-col rounded-[22px] bg-white p-6 text-[#0F0F1A]">
-                      <span className="flex items-center justify-between gap-2">
-                        <span className="truncate rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
-                          {selectedTopic?.topicNameVi || activeStudyWord.topic}
-                        </span>
-                        <span className="shrink-0 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                          {activeStudyWord.level}
-                        </span>
-                      </span>
-                      <span className="flex flex-1 flex-col items-center justify-center gap-3">
-                        <span lang="ko" className="text-5xl font-extrabold md:text-6xl">
-                          {activeStudyWord.ko}
-                        </span>
-                        <span className="text-lg text-slate-500">{activeStudyWord.roman}</span>
-                        {currentSrs && (
-                          <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                            <CalendarClock className="size-3.5" />
-                            Ôn tiếp: {currentSrs.NgayOnTiepTheoHienThi} ({currentSrs.KhoangCachNgay} ngày)
-                          </span>
-                        )}
-                      </span>
-                      <span className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <button
-                            type="button"
-                            onClick={(e) => speakWord(e, activeStudyWord.ko)}
-                            aria-label="Nghe phát âm"
-                            title="Nhấn lần 1 đọc chuẩn, nhấn lần 2 để đọc chậm"
-                            className="flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform hover:scale-105"
-                          >
-                            <Volume2 className="size-5" aria-hidden="true" />
-                          </button>
-                          {lastSpokenText === activeStudyWord.ko && isSlowAudio && (
-                            <span className="animate-fade-in rounded-md bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-600">
-                              🐢 0.6x Đọc chậm
+              {(() => {
+                const activeVisual = getVocabVisualInfo(
+                  activeStudyWord.ko,
+                  activeStudyWord.meaning,
+                  selectedTopic?.topicCode || activeStudyWord.topicCode,
+                  selectedTopic?.topicId || activeStudyWord.topicId,
+                  activeStudyWord.imageUrl,
+                )
+                return (
+                  <div className="perspective-1000 w-full max-w-md">
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setFlipped((f) => !f)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          setFlipped((f) => !f)
+                        }
+                      }}
+                      aria-label={flipped ? 'Lật về mặt trước' : 'Lật thẻ để xem nghĩa'}
+                      className={cn(
+                        'preserve-3d relative aspect-[4/5] w-full cursor-pointer rounded-3xl transition-transform duration-500 sm:aspect-[5/4]',
+                        flipped && 'rotate-y-180',
+                      )}
+                    >
+                      {/* Mặt trước: Hình minh họa theo nghĩa + Từ tiếng Hàn + Phiên âm + Nút phát âm */}
+                      <span className="backface-hidden absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-400 via-primary to-fuchsia-500 p-[3px] shadow-[0_30px_80px_-20px_rgba(124,58,237,0.6)]">
+                        <span className="relative flex h-full flex-col overflow-hidden rounded-[22px] bg-white p-6 text-[#0F0F1A]">
+                          <span className="flex items-center justify-between gap-2">
+                            <span className="truncate rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                              {selectedTopic?.topicNameVi || activeStudyWord.topic}
                             </span>
-                          )}
-                        </div>
-                        <span className="flex items-center gap-1.5 text-sm text-slate-400">
-                          <RotateCw className="size-4" aria-hidden="true" />
-                          Nhấn để lật
+                            <span className="shrink-0 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                              {activeStudyWord.level}
+                            </span>
+                          </span>
+                          <span className="flex flex-1 flex-col items-center justify-center gap-2.5">
+                            {/* Hình ảnh minh họa trực quan theo nghĩa của từ */}
+                            <span
+                              className="relative flex size-16 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs"
+                              style={{
+                                background: `linear-gradient(135deg, ${activeVisual.bgFrom} 0%, ${activeVisual.bgTo} 100%)`,
+                              }}
+                            >
+                              {activeVisual.imageUrl ? (
+                                <img
+                                  src={activeVisual.imageUrl}
+                                  alt={activeStudyWord.meaning}
+                                  className="h-full w-full object-cover"
+                                />
+                              ) : (
+                                <>
+                                  <span className="text-3xl leading-none">{activeVisual.emoji}</span>
+                                  <span className="absolute -bottom-1 -right-1 flex size-6 items-center justify-center rounded-full border border-white bg-white text-xs shadow-2xs">
+                                    {activeVisual.subEmoji}
+                                  </span>
+                                </>
+                              )}
+                            </span>
+                            <span lang="ko" className="text-4xl font-extrabold md:text-5xl">
+                              {activeStudyWord.ko}
+                            </span>
+                            <span className="text-base font-medium text-slate-500">
+                              {activeStudyWord.roman}
+                            </span>
+                            {currentSrs && (
+                              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-0.5 text-[11px] font-semibold text-emerald-700">
+                                <CalendarClock className="size-3" />
+                                Ôn tiếp: {currentSrs.NgayOnTiepTheoHienThi} ({currentSrs.KhoangCachNgay} ngày)
+                              </span>
+                            )}
+                          </span>
+                          <span className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <button
+                                type="button"
+                                onClick={(e) => speakWord(e, activeStudyWord.ko)}
+                                aria-label="Nghe phát âm"
+                                title="Nhấn lần 1 đọc chuẩn, nhấn lần 2 để đọc chậm"
+                                className="flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform hover:scale-105"
+                              >
+                                <Volume2 className="size-5" aria-hidden="true" />
+                              </button>
+                              {lastSpokenText === activeStudyWord.ko && isSlowAudio && (
+                                <span className="animate-fade-in rounded-md bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold text-amber-600">
+                                  🐢 0.6x Đọc chậm
+                                </span>
+                              )}
+                            </div>
+                            <span className="flex items-center gap-1.5 text-sm text-slate-400">
+                              <RotateCw className="size-4" aria-hidden="true" />
+                              Nhấn để lật
+                            </span>
+                          </span>
                         </span>
                       </span>
-                    </span>
-                  </span>
 
-                  {/* Mặt sau: Từ loại + Nghĩa tiếng Việt + Câu ví dụ */}
-                  <span className="backface-hidden rotate-y-180 absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-400 via-primary to-fuchsia-500 p-[3px]">
-                    <span className="flex h-full flex-col items-center justify-center gap-3 rounded-[22px] bg-white p-6 text-center text-[#0F0F1A]">
-                      <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
-                        {activeStudyWord.pos}
+                      {/* Mặt sau: Hình minh họa + Từ loại + Nghĩa tiếng Việt + Câu ví dụ */}
+                      <span className="backface-hidden rotate-y-180 absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-400 via-primary to-fuchsia-500 p-[3px]">
+                        <span className="flex h-full flex-col items-center justify-center gap-2.5 rounded-[22px] bg-white p-6 text-center text-[#0F0F1A]">
+                          <span
+                            className="flex size-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 text-3xl shadow-xs"
+                            style={{
+                              background: `linear-gradient(135deg, ${activeVisual.bgFrom} 0%, ${activeVisual.bgTo} 100%)`,
+                            }}
+                          >
+                            {activeVisual.imageUrl ? (
+                              <img
+                                src={activeVisual.imageUrl}
+                                alt={activeStudyWord.meaning}
+                                className="h-full w-full object-cover"
+                              />
+                            ) : (
+                              activeVisual.emoji
+                            )}
+                          </span>
+                          <span className="rounded-full bg-slate-100 px-3 py-0.5 text-xs font-medium text-slate-600">
+                            {activeStudyWord.pos}
+                          </span>
+                          <span className="text-2xl font-bold md:text-3xl">{activeStudyWord.meaning}</span>
+                          <span lang="ko" className="mt-1 text-base font-medium text-slate-700">
+                            {activeStudyWord.exKo}
+                          </span>
+                          <span className="text-sm text-slate-500">{activeStudyWord.exVi}</span>
+                        </span>
                       </span>
-                      <span className="text-3xl font-bold md:text-4xl">{activeStudyWord.meaning}</span>
-                      <span lang="ko" className="mt-1 text-base font-medium text-slate-700">
-                        {activeStudyWord.exKo}
-                      </span>
-                      <span className="text-sm text-slate-500">{activeStudyWord.exVi}</span>
-                    </span>
-                  </span>
-                </div>
-              </div>
+                    </div>
+                  </div>
+                )
+              })()}
 
-              {/* 3 nút đánh giá SRS hiển thị trực tiếp KhoangCachNgay dự kiến */}
+              {/* 3 nút đánh giá mức độ nhớ */}
               <div className="grid w-full max-w-md grid-cols-3 gap-3">
                 {responses.map((r) => {
                   const previewDays = intervalsPreview[r.rating]
@@ -1322,11 +1454,10 @@ export function FlashcardStudy() {
                       )}
                     >
                       <div className="flex items-center gap-1.5 text-base">
-                        <span aria-hidden="true">{r.emoji}</span>
                         <span>{r.label}</span>
                       </div>
                       <span className="text-[11px] font-medium opacity-85">
-                        KhoangCachNgay: {previewDays} ngày
+                        Ôn lại sau: {previewDays} ngày
                       </span>
                     </button>
                   )
@@ -1360,12 +1491,13 @@ export function FlashcardStudy() {
                 </div>
 
                 <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-1.5 text-xs font-semibold text-orange-300">
-                  <span aria-hidden="true">🔥</span> Đã ôn {totalLearnedAllTopics} từ bằng thuật toán SRS
+                  Đã ôn tập {totalLearnedAllTopics} từ vựng
                 </span>
               </div>
             </footer>
           </div>
         )}
+      </div>
       </div>
 
       {/* =====================================================================
@@ -1400,40 +1532,74 @@ export function FlashcardStudy() {
           </button>
         </div>
 
-        <div className="flex items-center justify-between">
-          <div>
-            <p lang="ko" className="text-3xl font-bold">
-              {drawerWord.ko}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">[{drawerWord.roman}]</p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              <span className="inline-block rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-violet-300">
-                {drawerWord.pos}
-              </span>
-              <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-muted-foreground">
-                {drawerWord.level}
-              </span>
-              {(drawerWord.niklLevel || detailData?.niklLevel) && (
-                <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-muted-foreground">
-                  NIKL {drawerWord.niklLevel || detailData?.niklLevel}
-                </span>
-              )}
-              {(drawerWord.hanja || detailData?.hanja) && (
-                <span className="inline-block rounded-full bg-amber-500/15 px-3 py-1 text-xs font-medium text-amber-300">
-                  Hanja: {drawerWord.hanja || detailData?.hanja}
-                </span>
-              )}
+        {(() => {
+          const drawerVisual = getVocabVisualInfo(
+            drawerWord.ko,
+            drawerWord.meaning,
+            selectedTopic?.topicCode || drawerWord.topicCode,
+            selectedTopic?.topicId || drawerWord.topicId,
+            drawerWord.imageUrl,
+          )
+          return (
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-start gap-3.5">
+                <div
+                  className="relative flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs"
+                  style={{
+                    background: `linear-gradient(135deg, ${drawerVisual.bgFrom} 0%, ${drawerVisual.bgTo} 100%)`,
+                  }}
+                >
+                  {drawerVisual.imageUrl ? (
+                    <img
+                      src={drawerVisual.imageUrl}
+                      alt={drawerWord.meaning}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <span className="text-3xl leading-none">{drawerVisual.emoji}</span>
+                      <span className="absolute -bottom-1 -right-1 flex size-5 items-center justify-center rounded-full border border-white bg-white text-[11px] shadow-2xs">
+                        {drawerVisual.subEmoji}
+                      </span>
+                    </>
+                  )}
+                </div>
+                <div>
+                  <p lang="ko" className="text-3xl font-bold">
+                    {drawerWord.ko}
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">[{drawerWord.roman}]</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="inline-block rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-violet-300">
+                      {drawerWord.pos}
+                    </span>
+                    <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-muted-foreground">
+                      {drawerWord.level}
+                    </span>
+                    {(drawerWord.niklLevel || detailData?.niklLevel) && (
+                      <span className="inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-muted-foreground">
+                        NIKL {drawerWord.niklLevel || detailData?.niklLevel}
+                      </span>
+                    )}
+                    {(drawerWord.hanja || detailData?.hanja) && (
+                      <span className="inline-block rounded-full bg-amber-500/15 px-3 py-1 text-xs font-medium text-amber-300">
+                        Hanja: {drawerWord.hanja || detailData?.hanja}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={(e) => speakWord(e, drawerWord.ko)}
+                className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-violet-300 hover:bg-primary hover:text-white"
+                aria-label="Nghe phát âm"
+              >
+                <Volume2 className="size-5" />
+              </button>
             </div>
-          </div>
-          <button
-            type="button"
-            onClick={(e) => speakWord(e, drawerWord.ko)}
-            className="flex size-11 items-center justify-center rounded-xl bg-primary/15 text-violet-300 hover:bg-primary hover:text-white"
-            aria-label="Nghe phát âm"
-          >
-            <Volume2 className="size-5" />
-          </button>
-        </div>
+          )
+        })()}
 
         <section>
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Nghĩa tiếng Việt</h3>
@@ -1451,7 +1617,7 @@ export function FlashcardStudy() {
         {drawerWord.topics && drawerWord.topics.length > 0 && (
           <section>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Chủ đề liên quan (Cùng VocabId #{drawerWord.id})
+              Chủ đề liên quan
             </h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {drawerWord.topics.map((tp) => (
@@ -1473,33 +1639,33 @@ export function FlashcardStudy() {
           </section>
         )}
 
-        {/* Thông số thuật toán SRS (KhoangCachNgay & NgayOnTiepTheo) */}
+        {/* Lịch ôn tập định kỳ */}
         <section className="rounded-2xl border border-primary/30 bg-primary/10 p-4">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-violet-300">
-            Trạng thái thuật toán SRS (SM-2)
+            Lịch ôn tập từ vựng
           </h3>
           {drawerSrs ? (
             <dl className="mt-3 grid grid-cols-2 gap-2.5 text-xs">
               <div className="rounded-xl bg-card p-2.5">
-                <dt className="text-muted-foreground">KhoangCachNgay</dt>
+                <dt className="text-muted-foreground">Khoảng cách ôn</dt>
                 <dd className="mt-1 text-base font-bold text-emerald-400">{drawerSrs.KhoangCachNgay} ngày</dd>
               </div>
               <div className="rounded-xl bg-card p-2.5">
-                <dt className="text-muted-foreground">NgayOnTiepTheo</dt>
+                <dt className="text-muted-foreground">Ngày ôn tiếp theo</dt>
                 <dd className="mt-1 text-base font-bold text-sky-400">{drawerSrs.NgayOnTiepTheoHienThi}</dd>
               </div>
               <div className="rounded-xl bg-card p-2.5">
-                <dt className="text-muted-foreground">Số lần lặp (SoLanLap)</dt>
+                <dt className="text-muted-foreground">Số lần ôn tập</dt>
                 <dd className="mt-1 font-bold">{drawerSrs.SoLanLap} lần</dd>
               </div>
               <div className="rounded-xl bg-card p-2.5">
-                <dt className="text-muted-foreground">Hệ số nhớ (EF)</dt>
+                <dt className="text-muted-foreground">Mức độ ghi nhớ</dt>
                 <dd className="mt-1 font-bold">{drawerSrs.HeSoGhiNho}</dd>
               </div>
             </dl>
           ) : (
             <p className="mt-2 text-xs text-muted-foreground">
-              Từ này chưa được ôn tập trong phiên hiện tại. Hãy bấm <strong>Quên / Khó / Nhớ</strong> trong màn hình học Flashcard để thuật toán SRS tính toán <code>KhoangCachNgay</code> và <code>NgayOnTiepTheo</code>.
+              Từ này chưa được ôn tập trong phiên hiện tại. Hãy bấm <strong>Quên / Khó / Nhớ</strong> trong màn hình học Flashcard để hệ thống lập lịch nhắc ôn tập phù hợp.
             </p>
           )}
         </section>
@@ -1507,7 +1673,7 @@ export function FlashcardStudy() {
         {detailData?.syllables && detailData.syllables.length > 0 && (
           <section>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Phân tách âm tiết (API /api/vocabularies/{drawerWord.id})
+              Cấu tạo âm tiết chữ Hàn
             </h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {detailData.syllables.map((s, idx) => (

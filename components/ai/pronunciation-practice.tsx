@@ -12,7 +12,7 @@ interface SyllableItem {
 }
 
 const TARGET_SENTENCE = '오늘 날씨가 좋네요'
-const TARGET_ROMAN = 'o-neul nal-ssi-ga jo-ne-yo'
+const TARGET_ROMAN = 'o neul nal ssi ga jo ne yo'
 const TARGET_MEANING = 'Hôm nay thời tiết đẹp nhỉ'
 
 const targetSyllables = ['오늘', '날씨', '가', '좋', '네', '요']
@@ -585,31 +585,6 @@ export function PronunciationPractice() {
       <div className="mt-10 border-t border-border pt-6">
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold">Phân tích từng âm tiết</h3>
-          {/* Nút test nhanh cho bạn kiểm tra thuật toán */}
-          <div className="hidden sm:flex items-center gap-1.5 text-xs text-muted-foreground">
-            <span>Chấm thử:</span>
-            <button
-              type="button"
-              onClick={() => simulateTest('perfect')}
-              className="rounded bg-green-500/20 px-2 py-0.5 text-green-300 hover:bg-green-500/30 cursor-pointer"
-            >
-              Đúng (100đ)
-            </button>
-            <button
-              type="button"
-              onClick={() => simulateTest('medium')}
-              className="rounded bg-amber-500/20 px-2 py-0.5 text-amber-300 hover:bg-amber-500/30 cursor-pointer"
-            >
-              Gần đúng (60đ)
-            </button>
-            <button
-              type="button"
-              onClick={() => simulateTest('wrong')}
-              className="rounded bg-red-500/20 px-2 py-0.5 text-red-300 hover:bg-red-500/30 cursor-pointer"
-            >
-              Sai (0đ)
-            </button>
-          </div>
         </div>
 
         <ul className="mt-4 flex flex-wrap gap-2.5">

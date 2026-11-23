@@ -1,0 +1,166 @@
+{
+  "examId": "topik-1-de-01",
+  "title": "Đề thi thử TOPIK I - Đề số 01 (Sơ cấp – Cấp 1 & 2)",
+  "description": "Cấu trúc chuẩn TOPIK I: Kiểm tra kỹ năng Nghe hiểu (có file nghe .mp4) và Đọc hiểu (đoạn văn cụ thể). Tổng điểm 200 điểm (Cấp 1: 80–139 điểm, Cấp 2: từ 140 điểm trở lên). Thời gian thi: 100 phút.",
+  "level": "TOPIK I",
+  "durationMinutes": 100,
+  "maxListenCount": 2,
+  "isActive": true,
+  "questions": [
+    {
+      "number": 1,
+      "section": "listening",
+      "prompt": "다음을 듣고 물음에 맞는 대답을 고르십시오.",
+      "hint": "Nghe hội thoại và chọn câu trả lời phù hợp nhất.",
+      "audioUrl": "/audio/topik/topik1-de1-listen.mp4",
+      "audioScript": "여자: 오늘 날씨가 어때요? 남자: 비가 오고 바람이 많이 불어요.",
+      "options": [
+        "네, 날씨가 아주 따뜻해요.",
+        "그럼 우산을 가지고 가야겠네요.",
+        "어제 친구와 같이 공원에 갔어요.",
+        "아니요, 내일 아침에 출발해요."
+      ],
+      "correctIndex": 1,
+      "explanation": "Người nam nói trời mưa và gió to ('비가 오고 바람이 많이 불어요') → Đáp lại hợp lý nhất là 'Vậy thì phải mang theo ô rồi' ('그럼 우산을 가지고 가야겠네요')."
+    },
+    {
+      "number": 2,
+      "section": "listening",
+      "prompt": "다음을 듣고 여자가 이어서 할 행동으로 알맞은 것을 고르십시오.",
+      "hint": "Nghe hội thoại và chọn hành động tiếp theo của người phụ nữ.",
+      "audioUrl": "/audio/topik/topik1-de1-listen.mp4",
+      "audioScript": "남자: 수진 씨, 내일 발표 준비는 다 끝났어요? 여자: 발표 자료는 다 만들었는데, 아직 복사를 못 했어요. 지금 복사하러 가려고요.",
+      "options": [
+        "발표 자료를 복사한다.",
+        "컴퓨터로 자료를 만든다.",
+        "회의실을 청소한다.",
+        "남자와 같이 점심을 먹는다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nữ nói '지금 복사하러 가려고요' (Bây giờ tôi định đi photo tài liệu) → Hành động tiếp theo là photo tài liệu thuyết trình."
+    },
+    {
+      "number": 3,
+      "section": "listening",
+      "prompt": "여기는 어디입니까? 알맞은 것을 고르십시오.",
+      "hint": "Nghe hội thoại và xác định địa điểm diễn ra cuộc trò chuyện.",
+      "audioUrl": "/audio/topik/topik1-de1-listen.mp4",
+      "audioScript": "여자: 어서 오세요. 무엇을 도와드릴까요? 남자: 소포를 부산으로 보내고 싶은데요. 얼마나 걸려요? 여자: 내일 오후에 도착합니다.",
+      "options": [
+        "우체국",
+        "도서관",
+        "박물관",
+        "미용실"
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nam muốn gửi bưu kiện đi Busan ('소포를 부산으로 보내고 싶은데요') → Địa điểm là Bưu điện ('우체국')."
+    },
+    {
+      "number": 4,
+      "section": "listening",
+      "prompt": "다음을 듣고 내용과 같은 것을 고르십시오.",
+      "hint": "Nghe thông báo và chọn phương án đúng với nội dung.",
+      "audioUrl": "/audio/topik/topik1-de1-listen.mp4",
+      "audioScript": "남자: 안내 말씀 드립니다. 오늘 오후 두 시에 시작하는 한국 문화 특강 장소가 3층 강당에서 5층 세미나실로 변경되었습니다. 학생 여러분은 착오 없으시기 바랍니다.",
+      "options": [
+        "특강은 오전에 시작합니다.",
+        "특강 장소가 5층으로 바뀌었습니다.",
+        "오늘 한국 문화 특강이 취소되었습니다.",
+        "학생들은 3층 강당으로 가야 합니다."
+      ],
+      "correctIndex": 1,
+      "explanation": "Thông báo nêu rõ địa điểm buổi giảng chuyên đề đổi từ hội trường tầng 3 lên phòng hội thảo tầng 5 ('5층 세미나실로 변경되었습니다')."
+    },
+    {
+      "number": 5,
+      "section": "listening",
+      "prompt": "다음을 듣고 남자의 중심 생각을 고르십시오.",
+      "hint": "Nghe hội thoại và chọn quan điểm chính của người đàn ông.",
+      "audioUrl": "/audio/topik/topik1-de1-listen.mp4",
+      "audioScript": "여자: 민수 씨는 아침마다 조깅을 하네요. 피곤하지 않아요? 남자: 처음에는 힘들었는데 매일 아침 운동을 하니까 몸도 가벼워지고 하루 종일 기분도 상쾌해요.",
+      "options": [
+        "아침 운동은 건강과 기분에 도움이 된다.",
+        "운동은 저녁에 하는 것이 더 효과적이다.",
+        "피곤할 때는 운동을 쉬는 것이 좋다.",
+        "조깅보다 수영을 배우는 것이 재미있다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nam nhấn mạnh tập thể dục mỗi sáng giúp cơ thể nhẹ nhàng và tinh thần sảng khoái cả ngày."
+    },
+    {
+      "number": 6,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 무엇에 대한 글인지 고르십시오.",
+      "hint": "Đọc đoạn văn sau và chọn chủ đề chính của đoạn văn.",
+      "passage": "우리 가족은 주말마다 함께 저녁을 만듭니다. 아버지는 김치찌개를 끓이시고 어머니는 불고기를 만드십니다. 저와 동생은 식탁을 깨끗하게 정리합니다. 함께 요리하고 밥을 먹으면 이야기도 많이 할 수 있어서 정말 행복합니다.",
+      "options": [
+        "가족의 주말 저녁 시간",
+        "한국 음식 만드는 방법",
+        "설거지를 빨리 하는 법",
+        "식당을 예약하는 방법"
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn miêu tả cảnh cả gia đình cùng nhau nấu bữa tối và trò chuyện vui vẻ vào mỗi dịp cuối tuần."
+    },
+    {
+      "number": 7,
+      "section": "reading",
+      "prompt": "다음 안내문을 읽고 내용과 같은 것을 고르십시오.",
+      "hint": "Đọc bảng thông báo sau và chọn thông tin đúng với nội dung.",
+      "passage": "[한고 도서관 이용 안내]\n• 이용 시간: 평일 09:00 ~ 21:00 / 주말 09:00 ~ 17:00\n• 휴관일: 매주 월요일 및 공휴일\n• 대출 안내: 1인당 최대 5권까지, 14일 동안 빌릴 수 있습니다.\n※ 도서관 안에서는 음식물을 먹을 수 없습니다.",
+      "options": [
+        "월요일에도 도서관을 이용할 수 있습니다.",
+        "주말에는 밤 아홉 시까지 문을 엽니다.",
+        "한 사람이 책을 다섯 권까지 빌릴 수 있습니다.",
+        "도서관 안에서 빵과 우유를 먹어도 됩니다."
+      ],
+      "correctIndex": 2,
+      "explanation": "Theo thông báo: '1인당 최대 5권까지' (Mỗi người được mượn tối đa 5 cuốn sách)."
+    },
+    {
+      "number": 8,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 (   )에 들어갈 가장 알맞은 말을 고르십시오.",
+      "hint": "Đọc đoạn văn và chọn từ nối phù hợp nhất điền vào chỗ trống.",
+      "passage": "저는 지난달에 한국어 학원에 등록했습니다. 처음에는 발음도 어렵고 단어도 잘 외워지지 않았습니다. (   ) 매일 단어장을 보면서 연습했더니 지금은 한국 친구와 간단하게 대화할 수 있게 되었습니다.",
+      "options": [
+        "그러나",
+        "그래서",
+        "그러면",
+        "그러니까"
+      ],
+      "correctIndex": 0,
+      "explanation": "Vế trước nói ban đầu phát âm khó và khó nhớ từ; vế sau nói nhờ luyện tập mỗi ngày nên nay đã giao tiếp được → Dùng '그러나' (Tuy nhiên / Nhưng)."
+    },
+    {
+      "number": 9,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 중심 생각을 고르십시오.",
+      "hint": "Đọc đoạn văn và chọn ý chính của tác giả.",
+      "passage": "새로운 외국어를 배울 때 실수하는 것을 부끄러워하는 사람들이 많습니다. 하지만 틀리는 것을 두려워해서 말을 하지 않으면 실력이 늘기 어렵습니다. 조금 틀리더라도 자신감을 가지고 자꾸 말해 보는 태도가 중요합니다.",
+      "options": [
+        "외국어를 배울 때는 자신감을 가지고 많이 말해 봐야 한다.",
+        "문법을 완벽하게 공부한 후에 대화를 시작해야 한다.",
+        "외국어는 어릴 때부터 배우는 것이 가장 중요하다.",
+        "실수를 줄이려면 말하기보다 쓰기 연습을 먼저 해야 한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Câu cuối nêu rõ ý chính: '조금 틀리더라도 자신감을 가지고 자꾸 말해 보는 태도가 중요합니다' (Dù có sai một chút nhưng thái độ tự tin và thường xuyên nói thử là rất quan trọng)."
+    },
+    {
+      "number": 10,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 글쓴이가 제주도에 다시 가고 싶어 하는 이유를 고르십시오.",
+      "hint": "Đọc đoạn văn và chọn lý do tác giả muốn quay lại đảo Jeju.",
+      "passage": "작년 가을에 친구들과 제주도로 3박 4일 여행을 다녀왔습니다. 푸른 바다를 보면서 해안 도로를 산책하고 맛있는 해산물 요리도 많이 먹었습니다. 특히 성산일출봉에서 본 아침 해돋이가 너무 아름다워서 올해 가을에도 꼭 다시 가고 싶습니다.",
+      "options": [
+        "성산일출봉에서 본 해돋이가 매우 아름다웠기 때문에",
+        "작년에 비가 와서 바다를 구경하지 못했기 때문에",
+        "제주도에 친한 친구가 이사를 갔기 때문에",
+        "비행기 표를 무료로 선물 받았기 때문에"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tác giả viết: '특히 성산일출봉에서 본 아침 해돋이가 너무 아름다워서 올해 가을에도 꼭 다시 가고 싶습니다' (Đặc biệt vì cảnh bình minh ngắm từ đỉnh Seongsan Ilchulbong quá đẹp nên muốn quay lại)."
+    }
+  ]
+}

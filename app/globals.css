@@ -99,6 +99,111 @@
   }
 }
 
+/* ==========================================================================
+   HANGO Unified Grid Paper Theme (Đồng bộ theo giao diện Lộ trình - Hình 1)
+   ========================================================================== */
+.hango-grid-theme {
+  color-scheme: light;
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --primary: #2563EB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #0F172A;
+  --muted: #F1F5F9;
+  --muted-foreground: #475569;
+  --accent: #EFF6FF;
+  --accent-foreground: #1E3A8A;
+  --border: #1E293B;
+  --input: #CBD5E1;
+  --field: #FFFFFF;
+  --panel: #F8FAFC;
+  background-color: #EEF5FB;
+  background-image:
+    linear-gradient(to right, #D8E6F5 1px, transparent 1px),
+    linear-gradient(to bottom, #D8E6F5 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #0F172A;
+}
+
+.hango-grid-theme .bg-card,
+.hango-grid-theme .bg-card\/60,
+.hango-grid-theme .bg-card\/50 {
+  background-color: #FFFFFF !important;
+  border-color: #1E293B !important;
+  border-width: 1.5px !important;
+  box-shadow: 0 2px 0 rgba(15, 23, 42, 0.06);
+}
+
+.hango-grid-theme .bg-background,
+.hango-grid-theme .bg-background\/60,
+.hango-grid-theme .bg-background\/70,
+.hango-grid-theme .bg-background\/80,
+.hango-grid-theme .bg-field,
+.hango-grid-theme .bg-panel {
+  background-color: #F8FAFC !important;
+}
+
+.hango-grid-theme .border-white\/10,
+.hango-grid-theme .border-white\/15,
+.hango-grid-theme .border-white\/20,
+.hango-grid-theme .border-violet-500\/25,
+.hango-grid-theme .border-violet-500\/30,
+.hango-grid-theme .border-violet-500\/40,
+.hango-grid-theme .border-border,
+.hango-grid-theme .border-border\/50 {
+  border-color: #CBD5E1 !important;
+}
+
+.hango-grid-theme .bg-white\/5,
+.hango-grid-theme .bg-white\/10 {
+  background-color: #F1F5F9 !important;
+}
+
+.hango-grid-theme .text-violet-100,
+.hango-grid-theme .text-violet-200,
+.hango-grid-theme .text-violet-300,
+.hango-grid-theme .text-violet-400 {
+  color: #5B21B6 !important;
+}
+
+.hango-grid-theme .text-emerald-200,
+.hango-grid-theme .text-emerald-300,
+.hango-grid-theme .text-emerald-400,
+.hango-grid-theme .text-green-300,
+.hango-grid-theme .text-green-400 {
+  color: #15803D !important;
+}
+
+.hango-grid-theme .text-amber-100\/90,
+.hango-grid-theme .text-amber-200,
+.hango-grid-theme .text-amber-300,
+.hango-grid-theme .text-amber-400,
+.hango-grid-theme .text-orange-300 {
+  color: #B45309 !important;
+}
+
+.hango-grid-theme .text-red-200,
+.hango-grid-theme .text-red-300,
+.hango-grid-theme .text-red-400 {
+  color: #B91C1C !important;
+}
+
+.hango-grid-theme .text-sky-200,
+.hango-grid-theme .text-sky-300,
+.hango-grid-theme .text-sky-400,
+.hango-grid-theme .text-indigo-300 {
+  color: #1D4ED8 !important;
+}
+
+.hango-grid-theme .text-slate-400 {
+  color: #64748B !important;
+}
+
 @keyframes float {
   0%,
   100% {
@@ -150,4 +255,12 @@
   .animate-pulse {
     animation: none;
   }
+}
+
+/* Ẩn hoàn toàn nút Next.js DevTools Indicator (N) ở góc màn hình */
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dev-tools-button],
+#__next-build-watcher {
+  display: none !important;
 }

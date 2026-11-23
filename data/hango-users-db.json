@@ -29,15 +29,15 @@
       "role": "student",
       "isRootAdmin": false,
       "locked": false,
-      "level": 1,
-      "xp": 0,
-      "streak": 0,
-      "lastStudyDate": null,
-      "totalStudyMinutes": 0,
-      "learnedVocabCount": 0,
+      "level": 2,
+      "xp": 465,
+      "streak": 2,
+      "lastStudyDate": "2026-11-19",
+      "totalStudyMinutes": 87,
+      "learnedVocabCount": 13,
       "createdAt": "2026-11-12T15:23:41.252Z",
-      "lastLoginAt": "2026-11-14T09:52:54.477Z",
-      "updatedAt": "2026-11-14T09:52:54.477Z"
+      "lastLoginAt": "2026-11-19T07:56:08.980Z",
+      "updatedAt": "2026-11-19T08:10:10.768Z"
     },
     "usr_52aad2d411ca6d09acb0": {
       "uid": "usr_52aad2d411ca6d09acb0",
@@ -94,11 +94,499 @@
     },
     "MyaOaictDgSomIkD8YJL1uCiKA62": {
       "uid": "MyaOaictDgSomIkD8YJL1uCiKA62",
-      "srsProgress": {},
+      "srsProgress": {
+        "1": {
+          "vocabId": "1",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:35.417Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.6,
+          "MucDoNho": "remember",
+          "NgayOnGanNhat": "2026-11-18T14:38:35.417Z",
+          "wordKo": "아이",
+          "meaning": "Trẻ em, em bé",
+          "updatedAt": "2026-11-18T14:38:35.525Z"
+        },
+        "4": {
+          "vocabId": "4",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-20T08:10:10.681Z",
+          "NgayOnTiepTheoHienThi": "20/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 1.3,
+          "MucDoNho": "hard",
+          "NgayOnGanNhat": "2026-11-19T08:10:10.681Z",
+          "wordKo": "어머니",
+          "meaning": "Mẹ",
+          "updatedAt": "2026-11-19T08:10:10.768Z"
+        },
+        "8": {
+          "vocabId": "8",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:38.676Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 0,
+          "HeSoGhiNho": 1.96,
+          "MucDoNho": "forgot",
+          "NgayOnGanNhat": "2026-11-18T14:38:38.676Z",
+          "wordKo": "요리",
+          "meaning": "Món ăn, việc nấu ăn",
+          "updatedAt": "2026-11-18T14:38:38.749Z"
+        },
+        "14": {
+          "vocabId": "14",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:39.175Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 0,
+          "HeSoGhiNho": 1.96,
+          "MucDoNho": "forgot",
+          "NgayOnGanNhat": "2026-11-18T14:38:39.175Z",
+          "wordKo": "치마",
+          "meaning": "Chân váy",
+          "updatedAt": "2026-11-18T14:38:39.246Z"
+        },
+        "17": {
+          "vocabId": "17",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:39.669Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 0,
+          "HeSoGhiNho": 1.96,
+          "MucDoNho": "forgot",
+          "NgayOnGanNhat": "2026-11-18T14:38:39.669Z",
+          "wordKo": "토끼",
+          "meaning": "Con thỏ",
+          "updatedAt": "2026-11-18T14:38:39.736Z"
+        },
+        "18": {
+          "vocabId": "18",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:40.789Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.36,
+          "MucDoNho": "hard",
+          "NgayOnGanNhat": "2026-11-18T14:38:40.789Z",
+          "wordKo": "오빠",
+          "meaning": "Anh trai (em gái gọi)",
+          "updatedAt": "2026-11-18T14:38:40.863Z"
+        },
+        "19": {
+          "vocabId": "19",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:41.381Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.6,
+          "MucDoNho": "remember",
+          "NgayOnGanNhat": "2026-11-18T14:38:41.381Z",
+          "wordKo": "아빠",
+          "meaning": "Bố, ba",
+          "updatedAt": "2026-11-18T14:38:41.452Z"
+        },
+        "26": {
+          "vocabId": "26",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:41.878Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.36,
+          "MucDoNho": "hard",
+          "NgayOnGanNhat": "2026-11-18T14:38:41.878Z",
+          "wordKo": "의자",
+          "meaning": "Cái ghế",
+          "updatedAt": "2026-11-18T14:38:41.957Z"
+        },
+        "31": {
+          "vocabId": "31",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:42.430Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 0,
+          "HeSoGhiNho": 1.96,
+          "MucDoNho": "forgot",
+          "NgayOnGanNhat": "2026-11-18T14:38:42.430Z",
+          "wordKo": "꽃",
+          "meaning": "Bông hoa",
+          "updatedAt": "2026-11-18T14:38:42.503Z"
+        },
+        "35": {
+          "vocabId": "35",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:43.213Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.6,
+          "MucDoNho": "remember",
+          "NgayOnGanNhat": "2026-11-18T14:38:43.213Z",
+          "wordKo": "학생",
+          "meaning": "Học sinh, sinh viên",
+          "updatedAt": "2026-11-18T14:38:43.293Z"
+        },
+        "36": {
+          "vocabId": "36",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:43.737Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.36,
+          "MucDoNho": "hard",
+          "NgayOnGanNhat": "2026-11-18T14:38:43.737Z",
+          "wordKo": "사랑해요",
+          "meaning": "Tôi yêu bạn",
+          "updatedAt": "2026-11-18T14:38:43.805Z"
+        },
+        "60": {
+          "vocabId": "60",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:38:44.259Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 0,
+          "HeSoGhiNho": 1.96,
+          "MucDoNho": "forgot",
+          "NgayOnGanNhat": "2026-11-18T14:38:44.259Z",
+          "wordKo": "있지.",
+          "meaning": "Này.",
+          "updatedAt": "2026-11-18T14:38:44.329Z"
+        },
+        "61": {
+          "vocabId": "61",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-19T14:47:14.124Z",
+          "NgayOnTiepTheoHienThi": "19/11/2026",
+          "SoLanLap": 0,
+          "HeSoGhiNho": 1.96,
+          "MucDoNho": "forgot",
+          "NgayOnGanNhat": "2026-11-18T14:47:14.124Z",
+          "wordKo": "잘 봐.",
+          "meaning": "Hãy nhìn thật kỹ.",
+          "updatedAt": "2026-11-18T14:47:14.195Z"
+        }
+      },
       "pomodoroSessions": [],
-      "handwritingRecords": {},
-      "topikResults": [],
+      "handwritingRecords": {
+        "가": {
+          "char": "가",
+          "unicode": "U+AC00",
+          "datasetClassId": "KANG_01_GA",
+          "lastScore": 59,
+          "bestScore": 59,
+          "attempts": 2,
+          "updatedAt": "2026-11-18T13:20:02.753Z"
+        },
+        "아": {
+          "char": "아",
+          "unicode": "U+C544",
+          "datasetClassId": "KANG_35_A",
+          "lastScore": 47,
+          "bestScore": 85,
+          "attempts": 9,
+          "updatedAt": "2026-11-18T14:43:17.448Z"
+        },
+        "으": {
+          "char": "으",
+          "unicode": "U+C73C",
+          "datasetClassId": "KANG_43_EU",
+          "lastScore": 59,
+          "bestScore": 61,
+          "attempts": 2,
+          "updatedAt": "2026-11-18T14:43:48.924Z"
+        }
+      },
+      "topikResults": [
+        {
+          "examId": "topik-2-mwmdc7s5",
+          "examTitle": "Đề thi thử TOPIK II - Đề số 02 (Học thuật, Kinh tế & Xã hội)",
+          "score": 20,
+          "maxScore": 200,
+          "correctCount": 1,
+          "totalQuestions": 10,
+          "levelAchieved": "Chưa đạt cấp",
+          "durationSeconds": 488,
+          "submittedAt": "2026-11-18T18:55:15.499Z"
+        },
+        {
+          "examId": "topik-1-mwmd7lkq",
+          "examTitle": "Đề thi thử TOPIK I - Đề số 01 (Sơ cấp – Cấp 1 & 2)",
+          "score": 60,
+          "maxScore": 200,
+          "correctCount": 3,
+          "totalQuestions": 10,
+          "levelAchieved": "Chưa đạt cấp",
+          "durationSeconds": 96,
+          "submittedAt": "2026-11-18T17:00:24.000Z"
+        },
+        {
+          "examId": "topik-1-mock-01",
+          "examTitle": "Đề thi thử TOPIK I - Đề mẫu số 01",
+          "score": 60,
+          "maxScore": 200,
+          "correctCount": 3,
+          "totalQuestions": 10,
+          "levelAchieved": "Chưa đạt cấp",
+          "durationSeconds": 4626,
+          "submittedAt": "2026-11-18T14:35:53.377Z"
+        }
+      ],
       "studyHistory": [
+        {
+          "id": "srs_1795075810768_4",
+          "type": "srs",
+          "title": "Ôn tập SRS: 어머니 (Mẹ)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 20/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-19T08:10:10.768Z"
+        },
+        {
+          "id": "srs_1795075713938_4",
+          "type": "srs",
+          "title": "Ôn tập SRS: 어머니 (Mẹ)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 20/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-19T08:08:33.938Z"
+        },
+        {
+          "id": "topik_1795028115499",
+          "type": "topik",
+          "title": "Nộp bài thi: Đề thi thử TOPIK II - Đề số 02 (Học thuật, Kinh tế & Xã hội)",
+          "detail": "Điểm: 20/200 (1/10 câu đúng · Chưa đạt cấp)",
+          "xpEarned": 25,
+          "timestamp": "2026-11-18T18:55:15.499Z"
+        },
+        {
+          "id": "srs_1795027570381_4",
+          "type": "srs",
+          "title": "Ôn tập SRS: 어머니 (Mẹ)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 20/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T18:46:10.378Z"
+        },
+        {
+          "id": "topik_1795021224000",
+          "type": "topik",
+          "title": "Nộp bài thi: Đề thi thử TOPIK I - Đề số 01 (Sơ cấp – Cấp 1 & 2)",
+          "detail": "Điểm: 60/200 (3/10 câu đúng · Chưa đạt cấp)",
+          "xpEarned": 30,
+          "timestamp": "2026-11-18T17:00:24.000Z"
+        },
+        {
+          "id": "srs_1795013234195_61",
+          "type": "srs",
+          "title": "Học từ mới: 잘 봐. (Hãy nhìn thật kỹ.)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:47:14.195Z"
+        },
+        {
+          "id": "hw_1795013028924_으",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"으\" (U+C73C)",
+          "detail": "Điểm đạt được: 59/100 (Cao nhất: 61/100 · Lần thử #2)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:43:48.924Z"
+        },
+        {
+          "id": "hw_1795013016423_으",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"으\" (U+C73C)",
+          "detail": "Điểm đạt được: 61/100 (Cao nhất: 61/100 · Lần thử #1)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:43:36.423Z"
+        },
+        {
+          "id": "hw_1795012997448_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 47/100 (Cao nhất: 85/100 · Lần thử #9)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:43:17.448Z"
+        },
+        {
+          "id": "hw_1795012981776_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 67/100 (Cao nhất: 85/100 · Lần thử #8)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:43:01.776Z"
+        },
+        {
+          "id": "hw_1795012967978_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 66/100 (Cao nhất: 85/100 · Lần thử #7)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:42:47.977Z"
+        },
+        {
+          "id": "hw_1795012961592_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 66/100 (Cao nhất: 85/100 · Lần thử #6)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:42:41.592Z"
+        },
+        {
+          "id": "hw_1795012936941_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 85/100 (Cao nhất: 85/100 · Lần thử #5)",
+          "xpEarned": 20,
+          "timestamp": "2026-11-18T14:42:16.941Z"
+        },
+        {
+          "id": "hw_1795012928270_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 15/100 (Cao nhất: 55/100 · Lần thử #4)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:42:08.270Z"
+        },
+        {
+          "id": "hw_1795012924231_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 46/100 (Cao nhất: 55/100 · Lần thử #3)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:42:04.231Z"
+        },
+        {
+          "id": "hw_1795012919865_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 55/100 (Cao nhất: 55/100 · Lần thử #2)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:41:59.865Z"
+        },
+        {
+          "id": "hw_1795012909551_아",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"아\" (U+C544)",
+          "detail": "Điểm đạt được: 53/100 (Cao nhất: 53/100 · Lần thử #1)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T14:41:49.551Z"
+        },
+        {
+          "id": "srs_1795012724329_60",
+          "type": "srs",
+          "title": "Học từ mới: 있지. (Này.)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:44.329Z"
+        },
+        {
+          "id": "srs_1795012723805_36",
+          "type": "srs",
+          "title": "Học từ mới: 사랑해요 (Tôi yêu bạn)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:43.805Z"
+        },
+        {
+          "id": "srs_1795012723293_35",
+          "type": "srs",
+          "title": "Học từ mới: 학생 (Học sinh, sinh viên)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:43.293Z"
+        },
+        {
+          "id": "srs_1795012722503_31",
+          "type": "srs",
+          "title": "Học từ mới: 꽃 (Bông hoa)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:42.503Z"
+        },
+        {
+          "id": "srs_1795012721958_26",
+          "type": "srs",
+          "title": "Học từ mới: 의자 (Cái ghế)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:41.957Z"
+        },
+        {
+          "id": "srs_1795012721452_19",
+          "type": "srs",
+          "title": "Học từ mới: 아빠 (Bố, ba)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:41.452Z"
+        },
+        {
+          "id": "srs_1795012720863_18",
+          "type": "srs",
+          "title": "Học từ mới: 오빠 (Anh trai (em gái gọi))",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:40.863Z"
+        },
+        {
+          "id": "srs_1795012719736_17",
+          "type": "srs",
+          "title": "Học từ mới: 토끼 (Con thỏ)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:39.736Z"
+        },
+        {
+          "id": "srs_1795012719246_14",
+          "type": "srs",
+          "title": "Học từ mới: 치마 (Chân váy)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:39.246Z"
+        },
+        {
+          "id": "srs_1795012718749_8",
+          "type": "srs",
+          "title": "Học từ mới: 요리 (Món ăn, việc nấu ăn)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:38.749Z"
+        },
+        {
+          "id": "srs_1795012717997_4",
+          "type": "srs",
+          "title": "Học từ mới: 어머니 (Mẹ)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:37.997Z"
+        },
+        {
+          "id": "srs_1795012715532_1",
+          "type": "srs",
+          "title": "Học từ mới: 아이 (Trẻ em, em bé)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 19/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-18T14:38:35.525Z"
+        },
+        {
+          "id": "topik_1795012553377",
+          "type": "topik",
+          "title": "Nộp bài thi: Đề thi thử TOPIK I - Đề mẫu số 01",
+          "detail": "Điểm: 60/200 (3/10 câu đúng · Chưa đạt cấp)",
+          "xpEarned": 30,
+          "timestamp": "2026-11-18T14:35:53.377Z"
+        },
+        {
+          "id": "hw_1795008002753_가",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"가\" (U+AC00)",
+          "detail": "Điểm đạt được: 59/100 (Cao nhất: 59/100 · Lần thử #2)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T13:20:02.753Z"
+        },
+        {
+          "id": "hw_1795007996206_가",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"가\" (U+AC00)",
+          "detail": "Điểm đạt được: 59/100 (Cao nhất: 59/100 · Lần thử #1)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-18T13:19:56.206Z"
+        },
         {
           "id": "act_1794497021252",
           "type": "account",

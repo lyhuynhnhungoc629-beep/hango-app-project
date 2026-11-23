@@ -315,9 +315,6 @@ export function AdminCurriculumModal({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg font-bold text-white">Quản trị Lộ trình & Nội dung học tập</h2>
-                <span className="rounded-full bg-amber-500/20 px-2.5 py-0.5 text-xs font-semibold text-amber-300">
-                  SQL Server: HangoDatasetDB
-                </span>
               </div>
               <p className="text-xs text-muted-foreground">
                 Quản lý 7 chặng, chủ đề, buổi học, lý thuyết, từ vựng, ngữ pháp, trắc nghiệm và điều kiện mở khóa.

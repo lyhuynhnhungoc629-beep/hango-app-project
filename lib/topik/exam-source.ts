@@ -8,7 +8,7 @@
  * Lưu ý: đề mẫu KHÔNG chứa đáp án; việc chấm điểm & lời giải do Backend xử lý.
  */
 
-export type TopikSection = 'listening' | 'reading'
+export type TopikSection = 'listening' | 'writing' | 'reading'
 
 export interface TopikQuestion {
   /** Số thứ tự câu hiển thị (1..n) */

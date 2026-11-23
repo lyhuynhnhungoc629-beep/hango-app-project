@@ -1,0 +1,166 @@
+{
+  "examId": "topik-1-de-02",
+  "title": "Đề thi thử TOPIK I - Đề số 02 (Giao tiếp & Đời sống Hàn Quốc)",
+  "description": "Đề thi TOPIK I số 02 chuẩn cấu trúc: Phần Nghe tích hợp file nghe .mp4 và Phần Đọc hiểu có đoạn văn thực tế về mua sắm, bệnh viện, lễ hội ẩm thực. Tổng điểm 200 điểm (Thời gian thi: 100 phút).",
+  "level": "TOPIK I",
+  "durationMinutes": 100,
+  "maxListenCount": 2,
+  "isActive": true,
+  "questions": [
+    {
+      "number": 1,
+      "section": "listening",
+      "prompt": "다음을 듣고 물음에 맞는 대답을 고르십시오.",
+      "hint": "Nghe câu hỏi và chọn câu trả lời tự nhiên nhất.",
+      "audioUrl": "/audio/topik/topik1-de2-listen.mp4",
+      "audioScript": "남자: 이 구두가 마음에 드는데 한 치수 더 큰 것도 있어요? 여자: 잠시만요, 창고에 있는지 확인해 볼게요.",
+      "options": [
+        "네, 어제 백화점에서 구두를 샀어요.",
+        "네, 맞으면 이걸로 바로 살게요.",
+        "아니요, 구두보다 운동화를 자주 신어요.",
+        "아니요, 창고가 아주 넓고 깨끗해요."
+      ],
+      "correctIndex": 1,
+      "explanation": "Nhân viên đi kiểm tra size lớn hơn trong kho → Khách đáp '네, 맞으면 이걸로 바로 살게요' (Vâng, nếu vừa thì tôi sẽ mua đôi này luôn)."
+    },
+    {
+      "number": 2,
+      "section": "listening",
+      "prompt": "다음을 듣고 두 사람이 내일 만날 시간과 장소를 고르십시오.",
+      "hint": "Nghe hội thoại và chọn đúng thời gian, địa điểm hai người hẹn gặp ngày mai.",
+      "audioUrl": "/audio/topik/topik1-de2-listen.mp4",
+      "audioScript": "여자: 내일 영화가 오후 세 시에 시작하니까 두 시 반에 영화관 앞에서 만날까요? 남자: 제가 책을 반납해야 해서 그런데, 두 시에 먼저 도서관 정문 앞에서 만나서 같이 걸어가요. 여자: 좋아요, 그럼 그렇게 해요.",
+      "options": [
+        "오후 2시 - 도서관 정문 앞",
+        "오후 2시 30분 - 영화관 앞",
+        "오후 3시 - 영화관 매표소",
+        "오후 2시 - 서점 입구"
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nam đề nghị gặp lúc 2 giờ chiều trước cổng chính thư viện ('두 시에 먼저 도서관 정문 앞에서 만나서') và người nữ đồng ý."
+    },
+    {
+      "number": 3,
+      "section": "listening",
+      "prompt": "다음을 듣고 여자가 남자에게 부탁한 일을 고르십시오.",
+      "hint": "Nghe hội thoại và chọn việc người nữ đã nhờ người nam làm.",
+      "audioUrl": "/audio/topik/topik1-de2-listen.mp4",
+      "audioScript": "여자: 대리님, 제가 지금 거래처에 급히 가야 하는데 택배가 오후에 도착할 예정이에요. 혹시 택배가 오면 제 책상 위에 올려 주시겠어요? 남자: 네, 걱정하지 말고 다녀오세요.",
+      "options": [
+        "도착한 택배를 책상 위에 올려 주기",
+        "거래처에 전화해서 일정 바꾸기",
+        "우체국에 가서 서류 보내기",
+        "회의실 컴퓨터를 미리 켜 놓기"
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nữ nhờ: '택배가 오면 제 책상 위에 올려 주시겠어요?' (Nếu bưu kiện đến thì anh đặt lên bàn giúp tôi nhé?)."
+    },
+    {
+      "number": 4,
+      "section": "listening",
+      "prompt": "다음을 듣고 내용과 같은 것을 고르십시오.",
+      "hint": "Nghe bản tin thời tiết và chọn câu đúng với nội dung.",
+      "audioUrl": "/audio/topik/topik1-de2-listen.mp4",
+      "audioScript": "여자: 이번 주말에는 전국적으로 맑고 포근한 날씨가 이어지겠습니다. 다만 아침과 저녁에는 기온이 크게 내려가 쌀쌀하겠으니 외출하실 때 얇은 겉옷을 챙기시는 것이 좋겠습니다.",
+      "options": [
+        "이번 주말에는 하루 종일 비가 내립니다.",
+        "낮과 밤의 기온 차이가 크므로 겉옷을 챙기는 것이 좋습니다.",
+        "주말 내내 날씨가 매우 추워서 외출을 자제해야 합니다.",
+        "아침과 저녁에는 기온이 올라가서 덥겠습니다."
+      ],
+      "correctIndex": 1,
+      "explanation": "Bản tin lưu ý sáng và tối nhiệt độ hạ thấp se lạnh nên cần mang theo áo khoác mỏng ('아침과 저녁에는 기온이 크게 내려가... 얇은 겉옷을 챙기시는 것이 좋겠습니다')."
+    },
+    {
+      "number": 5,
+      "section": "listening",
+      "prompt": "다음을 듣고 남자의 생각으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Nghe hội thoại và chọn suy nghĩ của người đàn ông.",
+      "audioUrl": "/audio/topik/topik1-de2-listen.mp4",
+      "audioScript": "여자: 요즘 스마트폰으로 책을 읽는 사람들이 많아졌어요. 남자: 맞아요. 어디서나 편하게 읽을 수 있어서 좋지만, 눈이 쉽게 피로해지기 때문에 저는 아직 종이책이 더 좋아요.",
+      "options": [
+        "눈이 덜 피로해서 전자책보다 종이책이 더 좋다.",
+        "스마트폰으로 책을 읽으면 내용을 더 잘 기억할 수 있다.",
+        "종이책은 무거워서 가지고 다니기 불편하다.",
+        "앞으로는 모든 책이 전자책으로 바뀌어야 한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nam cho rằng đọc trên điện thoại dễ mỏi mắt nên anh vẫn thích sách giấy hơn ('눈이 쉽게 피로해지기 때문에 저는 아직 종이책이 더 좋아요')."
+    },
+    {
+      "number": 6,
+      "section": "reading",
+      "prompt": "다음 이메일을 읽고 쓴 목적을 고르십시오.",
+      "hint": "Đọc bức thư điện tử sau và chọn mục đích người viết.",
+      "passage": "김민준 선생님께.\n선생님, 안녕하세요? 한국어 초급반 학생 흐엉입니다. 다름이 아니라 제가 오늘 아침부터 감기가 심해서 병원에 가야 할 것 같습니다. 오늘 수업에 참석하지 못해서 정말 죄송합니다. 오늘 배운 숙제는 친구에게 물어봐서 내일까지 꼭 해 가겠습니다.",
+      "options": [
+        "수업 결석에 대해 양해를 구하려고",
+        "한국어 시험 날짜를 문의하려고",
+        "선생님께 생일 축하 인사를 드리려고",
+        "수업 시간을 다음 주로 변경하려고"
+      ],
+      "correctIndex": 0,
+      "explanation": "Học viên viết thư xin phép nghỉ học hôm nay vì bị cảm nặng phải đi bệnh viện ('오늘 수업에 참석하지 못해서 정말 죄송합니다')."
+    },
+    {
+      "number": 7,
+      "section": "reading",
+      "prompt": "다음 안내문을 읽고 내용과 다른 것을 고르십시오.",
+      "hint": "Đọc thông báo lễ hội ẩm thực và chọn câu KHÔNG đúng với nội dung.",
+      "passage": "[제12회 서울 전통 음식 축제]\n• 기간: 10월 15일(토) ~ 10월 16일(일), 오전 10시 ~ 오후 6시\n• 장소: 남산 한옥마을 광장\n• 주요 행사: 김치 만들기 체험, 전통 떡 시식회, 한국 전통 음악 공연\n• 참가비: 무료 (단, 김치 만들기 체험은 홈페이지에서 사전 예약 필수)",
+      "options": [
+        "축제는 주말 이틀 동안 열립니다.",
+        "남산 한옥마을 광장에서 행사가 진행됩니다.",
+        "입장료는 무료이지만 김치 만들기 체험은 미리 예약해야 합니다.",
+        "예약을 하지 않아도 김치 만들기 체험에 참여할 수 있습니다."
+      ],
+      "correctIndex": 3,
+      "explanation": "Thông báo ghi rõ trải nghiệm làm Kimchi bắt buộc phải đặt chỗ trước trên trang chủ ('김치 만들기 체험은 홈페이지에서 사전 예약 필수'), nên câu D sai."
+    },
+    {
+      "number": 8,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 (   )에 들어갈 가장 알맞은 말을 고르십시오.",
+      "hint": "Đọc đoạn văn và chọn cụm từ phù hợp nhất điền vào chỗ trống.",
+      "passage": "저는 한국에 처음 왔을 때 매운 음식을 전혀 먹지 못했습니다. 떡볶이나 김치찌개를 먹으면 눈물이 날 정도로 매웠습니다. 하지만 친구들과 자주 먹다 보니까 이제는 매운 음식을 (   ) 되었습니다.",
+      "options": [
+        "잘 먹게",
+        "만들지 않게",
+        "구경하러 가게",
+        "포기하게"
+      ],
+      "correctIndex": 0,
+      "explanation": "Cấu trúc '-게 되다' diễn tả sự thay đổi trạng thái: từ chỗ không ăn được đồ cay, nay đã ăn cay giỏi ('잘 먹게 되었습니다')."
+    },
+    {
+      "number": 9,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 중심 생각을 고르십시오.",
+      "hint": "Đọc đoạn văn và chọn thông điệp chính của đoạn văn.",
+      "passage": "물건을 사기 전에 필요한 물건의 목록을 미리 적어 가는 습관은 매우 좋습니다. 목록 없이 마트에 가면 할인 행사를 하는 물건을 충동적으로 사게 되기 쉽습니다. 계획적인 소비를 하려면 쇼핑 목록을 작성하는 작은 습관부터 시작해야 합니다.",
+      "options": [
+        "계획적인 소비를 위해 쇼핑 전에 구매 목록을 작성하는 것이 좋다.",
+        "마트에서 할인 행사를 할 때 물건을 많이 사 두어야 한다.",
+        "시장보다 인터넷 쇼핑몰을 이용하는 것이 시간을 절약해 준다.",
+        "비싼 물건을 살수록 오랫동안 사용할 수 있다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn khuyên nên lập danh sách mua sắm trước khi đi siêu thị để chi tiêu có kế hoạch và tránh mua sắm bốc đồng."
+    },
+    {
+      "number": 10,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 내용과 같은 것을 고르십시오.",
+      "hint": "Đọc đoạn văn về thói quen viết nhật ký và chọn thông tin đúng.",
+      "passage": "저는 일 년 전부터 매일 밤 자기 전에 한국어로 일기를 쓰고 있습니다. 처음에는 한 문장을 쓰는 데도 사전을 여러 번 찾아야 해서 시간이 오래 걸렸습니다. 하지만 지금은 사전을 보지 않고도 하루 동안 있었던 일과 제 생각을 자연스럽게 쓸 수 있습니다.",
+      "options": [
+        "글쓴이는 아침에 일어나자마자 일기를 씁니다.",
+        "글쓴이는 일 년 동안 매일 한국어로 일기를 썼습니다.",
+        "글쓴이는 지금도 사전을 보지 않으면 일기를 쓸 수 없습니다.",
+        "글쓴이는 처음부터 사전을 찾지 않고 일기를 빨리 썼습니다."
+      ],
+      "correctIndex": 1,
+      "explanation": "Câu đầu tiên nêu rõ: '저는 일 년 전부터 매일 밤 자기 전에 한국어로 일기를 쓰고 있습니다' (Tôi viết nhật ký bằng tiếng Hàn mỗi tối trước khi ngủ từ một năm trước)."
+    }
+  ]
+}

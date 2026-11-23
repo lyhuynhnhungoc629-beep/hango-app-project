@@ -1,6 +1,5 @@
 'use client'
 
-import { ShieldCheck } from 'lucide-react'
 import { useAuth } from '@/lib/auth-context'
 
 function getInitials(name: string) {
@@ -24,73 +23,77 @@ export function ProfileBanner() {
   const nextLevelXp = level * 250
   const progressPercent = Math.min(100, Math.round((xp / Math.max(nextLevelXp, 1)) * 100)) || 5
 
-  // Giao diện tinh gọn dành riêng cho Admin (chỉ giữ lại Avatar, Tên: Quản trị viên, Email; xóa badge, XP và Streak)
+  // Giao diện tinh gọn dành riêng cho Admin
   if (isAdmin) {
     return (
-      <section className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-r from-[#2a1356] via-card to-card p-6">
-        <div aria-hidden="true" className="absolute -right-10 -top-20 size-64 rounded-full bg-primary/30 blur-3xl" />
-        <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
-          <span className="flex size-20 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-400 to-primary text-2xl font-bold ring-4 ring-primary/30">
+      <section className="rounded-2xl border-[1.5px] border-slate-800 bg-white p-5 text-slate-900 shadow-[0_2px_0_rgba(15,23,42,0.06)] md:p-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl border-2 border-slate-900 bg-[#2563EB] text-xl font-black text-white shadow-[0_2px_0_rgba(15,23,42,0.15)]">
             {profile?.photoURL ? (
               <img
                 src={profile.photoURL}
                 alt="Quản trị viên"
-                className="size-full rounded-full object-cover"
+                className="size-full rounded-2xl object-cover"
               />
             ) : (
               getInitials('Quản trị viên')
             )}
           </span>
           <div className="flex-1">
-            <h1 className="text-2xl font-bold text-white">Quản trị viên</h1>
-            <p className="mt-1 text-sm text-muted-foreground">{email}</p>
+            <h1 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl">
+              Quản trị viên
+            </h1>
+            <p className="mt-1 text-sm text-slate-600">{email}</p>
           </div>
         </div>
       </section>
     )
   }
 
-  // Giao diện dành cho Học viên (Student): Giữ nguyên 100% Cấp độ, XP, Thanh tiến trình và Streak
+  // Giao diện dành cho Học viên (Student): Đồng bộ phong cách Lộ trình (Hình 1)
   return (
-    <section className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-r from-[#2a1356] via-card to-card p-6">
-      <div aria-hidden="true" className="absolute -right-10 -top-20 size-64 rounded-full bg-primary/30 blur-3xl" />
-      <div className="relative flex flex-col gap-6 md:flex-row md:items-center">
-        <span className="flex size-20 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-400 to-primary text-2xl font-bold ring-4 ring-primary/30">
+    <section className="rounded-2xl border-[1.5px] border-slate-800 bg-white p-5 text-slate-900 shadow-[0_2px_0_rgba(15,23,42,0.06)] md:p-6">
+      <div className="flex flex-col gap-5 md:flex-row md:items-center">
+        <span className="flex size-16 shrink-0 items-center justify-center rounded-2xl border-2 border-slate-900 bg-[#2563EB] text-xl font-black text-white shadow-[0_2px_0_rgba(15,23,42,0.15)]">
           {profile?.photoURL ? (
             <img
               src={profile.photoURL}
               alt={displayName}
-              className="size-full rounded-full object-cover"
+              className="size-full rounded-2xl object-cover"
             />
           ) : (
             getInitials(displayName)
           )}
         </span>
         <div className="flex-1">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <h1 className="text-2xl font-bold">{displayName}</h1>
-            <span className="rounded-full bg-primary px-3 py-0.5 text-xs font-bold">Cấp {level}</span>
-            <span className="rounded-full border border-sky-400/30 bg-sky-500/15 px-3 py-0.5 text-xs font-semibold text-sky-300">
+          <div className="flex flex-wrap items-center gap-2">
+            <h1 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl">
+              {displayName}
+            </h1>
+            <span className="rounded-md border border-amber-400 bg-[#FEF08A] px-2.5 py-0.5 text-xs font-bold text-amber-950">
+              Cấp {level}
+            </span>
+            <span className="rounded-md border border-emerald-400 bg-[#DCFCE7] px-2.5 py-0.5 text-xs font-bold text-emerald-900">
               Học viên (Student)
             </span>
           </div>
-          <p className="mt-1 text-sm text-muted-foreground">{email}</p>
-          <div className="mt-4 max-w-md">
-            <div className="flex justify-between text-sm">
-              <span className="font-semibold">{xp.toLocaleString('vi-VN')} XP</span>
-              <span className="text-muted-foreground">
+          <p className="mt-1 text-sm text-slate-600">{email}</p>
+          <div className="mt-3.5 max-w-md">
+            <div className="flex justify-between text-xs font-semibold">
+              <span className="font-bold text-slate-900">{xp.toLocaleString('vi-VN')} XP</span>
+              <span className="text-slate-600">
                 {nextLevelXp.toLocaleString('vi-VN')} XP để lên Cấp {level + 1}
               </span>
             </div>
-            <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-white/10">
+            <div className="mt-1.5 h-2.5 overflow-hidden rounded-full border border-slate-800 bg-slate-100">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-violet-400 to-primary transition-all"
+                className="h-full rounded-full bg-[#2563EB] transition-all"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
           </div>
         </div>
-        <span className="self-start rounded-2xl border border-orange-500/30 bg-orange-500/10 px-4 py-3 font-semibold text-orange-300 md:self-center">
+        <span className="self-start rounded-xl border border-slate-800 bg-[#FEF08A] px-4 py-2.5 text-xs font-bold text-amber-950 shadow-sm md:self-center">
           <span aria-hidden="true">🔥</span> {streak} ngày liên tiếp
         </span>
       </div>

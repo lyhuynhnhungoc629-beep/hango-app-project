@@ -1,6 +1,6 @@
 {
   "version": "4.6.1",
-  "updatedAt": "2026-11-14T09:42:06.477Z",
+  "updatedAt": "2026-11-18T15:02:27.622Z",
   "topics": [
     {
       "TopicId": 1,
@@ -143,6 +143,19 @@
       "DisplayOrder": 11,
       "IsActive": 0,
       "IsAdminOnly": 1,
+      "IsDeleted": 0
+    },
+    {
+      "TopicId": 12,
+      "TopicCode": "CONG_NGHE",
+      "TopicNameVi": "công nghệ",
+      "TopicNameKo": "gggf",
+      "Description": "abc",
+      "IconName": "Sparkles",
+      "ColorCode": "#64748B",
+      "DisplayOrder": 12,
+      "IsActive": 0,
+      "IsAdminOnly": 0,
       "IsDeleted": 0
     }
   ],
@@ -733,795 +746,831 @@
       "IsDeleted": 0
     },
     {
-      "MappingId": 66,
+      "MappingId": 475,
       "VocabId": 37,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu hồi đáp giao tiếp cơ bản (vâng, dạ, đã hiểu)",
+      "ClassificationReason": "Câu hồi đáp giao tiếp lễ phép (vâng, dạ)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 67,
+      "MappingId": 476,
       "VocabId": 38,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu hồi đáp giao tiếp cơ bản (vâng, dạ, đã hiểu)",
+      "ClassificationReason": "Câu hồi đáp giao tiếp lễ phép (vâng, dạ)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 68,
+      "MappingId": 477,
       "VocabId": 39,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu hồi đáp giao tiếp cơ bản (vâng, dạ, đã hiểu)",
+      "ClassificationReason": "Câu hồi đáp thân mật giữa bạn bè (ừ, ừm)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 69,
+      "MappingId": 478,
       "VocabId": 40,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu hồi đáp giao tiếp cơ bản (vâng, dạ, đã hiểu)",
+      "ClassificationReason": "Câu hồi đáp giao tiếp thông dụng (vâng, dạ)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 70,
-      "VocabId": 41,
-      "TopicId": 7,
-      "IsPrimary": 1,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Hành động vận động cơ thể (chạy, nhảy múa)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 71,
+      "MappingId": 479,
       "VocabId": 41,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Hành động vận động cơ thể (chạy, nhảy múa)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 72,
-      "VocabId": 42,
-      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Hành động vận động cơ thể (chạy, nhảy múa)",
+      "ClassificationReason": "Khẩu lệnh di chuyển trong giao tiếp (đi đi!)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 73,
-      "VocabId": 42,
-      "TopicId": 8,
+      "MappingId": 480,
+      "VocabId": 41,
+      "TopicId": 4,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Hành động vận động cơ thể (chạy, nhảy múa)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Khẩu lệnh di chuyển trong giao tiếp (đi đi!)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 74,
+      "MappingId": 481,
+      "VocabId": 42,
+      "TopicId": 8,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Câu hồi đáp giao tiếp lịch sự (vâng ạ)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 482,
       "VocabId": 43,
       "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Hành động vận động cơ thể (chạy, nhảy múa)",
+      "ClassificationReason": "Thán từ biểu hiện cảm giác đau trên cơ thể",
       "IsDeleted": 0
     },
     {
-      "MappingId": 75,
+      "MappingId": 483,
       "VocabId": 43,
       "TopicId": 8,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Hành động vận động cơ thể (chạy, nhảy múa)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Thán từ biểu hiện cảm giác đau trên cơ thể",
       "IsDeleted": 0
     },
     {
-      "MappingId": 76,
-      "VocabId": 44,
-      "TopicId": 7,
-      "IsPrimary": 1,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Hành động vận động cơ thể (chạy, nhảy múa)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 77,
+      "MappingId": 484,
       "VocabId": 44,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Hành động vận động cơ thể (chạy, nhảy múa)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 78,
-      "VocabId": 45,
-      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Hành động vận động cơ thể (chạy, nhảy múa)",
+      "ClassificationReason": "Thán từ hỏi lại thân mật trong hội thoại (hử?)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 79,
+      "MappingId": 485,
       "VocabId": 45,
-      "TopicId": 8,
+      "TopicId": 10,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Từ vựng mô tả thời tiết và cảm giác cơ thể (lạnh)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 486,
+      "VocabId": 45,
+      "TopicId": 7,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Hành động vận động cơ thể (chạy, nhảy múa)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Từ vựng mô tả thời tiết và cảm giác cơ thể (lạnh)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 80,
+      "MappingId": 487,
       "VocabId": 46,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu giao tiếp đàm thoại thường nhật",
+      "ClassificationReason": "Câu trả lời phủ định lịch sự trong giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 81,
+      "MappingId": 488,
       "VocabId": 47,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Thán từ mở đầu lời nói ngập ngừng lịch sự",
       "IsDeleted": 0
     },
     {
-      "MappingId": 82,
+      "MappingId": 489,
       "VocabId": 48,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Lời chào tạm biệt thân mật khi người nghe rời đi",
       "IsDeleted": 0
     },
     {
-      "MappingId": 83,
+      "MappingId": 490,
+      "VocabId": 48,
+      "TopicId": 1,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời chào tạm biệt thân mật khi người nghe rời đi",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 491,
       "VocabId": 49,
-      "TopicId": 8,
+      "TopicId": 6,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Trạng thái công việc và sinh hoạt (bận rộn)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 84,
+      "MappingId": 492,
+      "VocabId": 49,
+      "TopicId": 8,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Trạng thái công việc và sinh hoạt (bận rộn)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 493,
       "VocabId": 50,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Thán từ cảm thán khi gặp chuyện không may",
       "IsDeleted": 0
     },
     {
-      "MappingId": 85,
+      "MappingId": 494,
+      "VocabId": 51,
+      "TopicId": 9,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Từ chỉ mốc thời gian hiện tại (ngay bây giờ)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 495,
       "VocabId": 51,
       "TopicId": 8,
-      "IsPrimary": 1,
+      "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Từ chỉ mốc thời gian hiện tại (ngay bây giờ)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 86,
+      "MappingId": 496,
+      "VocabId": 52,
+      "TopicId": 9,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Phó từ chỉ thời gian khẩn cấp (ngay lập tức)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 497,
       "VocabId": 52,
       "TopicId": 8,
-      "IsPrimary": 1,
+      "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Phó từ chỉ thời gian khẩn cấp (ngay lập tức)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 87,
+      "MappingId": 498,
       "VocabId": 53,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Từ biểu thị lời thỉnh cầu tha thiết trong giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 88,
+      "MappingId": 499,
       "VocabId": 54,
-      "TopicId": 8,
+      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Động tác vận động cơ thể (cúi đầu, khom lưng)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 89,
+      "MappingId": 500,
+      "VocabId": 54,
+      "TopicId": 8,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Động tác vận động cơ thể (cúi đầu, khom lưng)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 501,
       "VocabId": 55,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Hành động ẩn nấp, trốn tìm trong sinh hoạt",
       "IsDeleted": 0
     },
     {
-      "MappingId": 90,
+      "MappingId": 502,
+      "VocabId": 55,
+      "TopicId": 7,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Hành động ẩn nấp, trốn tìm trong sinh hoạt",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 503,
       "VocabId": 56,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Từ vay mượn thông dụng trong hội thoại thân mật",
       "IsDeleted": 0
     },
     {
-      "MappingId": 91,
+      "MappingId": 504,
       "VocabId": 57,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Từ phủ định thân mật trong đàm thoại",
       "IsDeleted": 0
     },
     {
-      "MappingId": 92,
+      "MappingId": 505,
       "VocabId": 58,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Lời chào tạm biệt thân mật của giới trẻ",
       "IsDeleted": 0
     },
     {
-      "MappingId": 93,
+      "MappingId": 506,
       "VocabId": 59,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Khẩu lệnh giao tiếp đời thường (nhanh lên, đợi chút, tránh ra)",
+      "ClassificationReason": "Từ hỏi lại thân mật trong hội thoại hàng ngày",
       "IsDeleted": 0
     },
     {
-      "MappingId": 94,
+      "MappingId": 507,
       "VocabId": 60,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Từ gợi mở câu chuyện thân mật với bạn bè, người thân",
       "IsDeleted": 0
     },
     {
-      "MappingId": 95,
+      "MappingId": 508,
       "VocabId": 60,
       "TopicId": 1,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Từ gợi mở câu chuyện thân mật với bạn bè, người thân",
       "IsDeleted": 0
     },
     {
-      "MappingId": 96,
+      "MappingId": 509,
       "VocabId": 61,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Mẫu câu hướng dẫn quan sát trong học tập và giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 97,
+      "MappingId": 510,
       "VocabId": 61,
-      "TopicId": 1,
+      "TopicId": 2,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Mẫu câu hướng dẫn quan sát trong học tập và giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 98,
+      "MappingId": 511,
       "VocabId": 62,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Hành động trò chuyện, giãi bày trong giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 99,
+      "MappingId": 512,
       "VocabId": 62,
       "TopicId": 1,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Hành động trò chuyện, giãi bày trong giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 100,
+      "MappingId": 513,
       "VocabId": 63,
-      "TopicId": 8,
+      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Thuật ngữ thi đấu thể thao, trò chơi (tấn công)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 101,
+      "MappingId": 514,
       "VocabId": 63,
-      "TopicId": 1,
+      "TopicId": 8,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Thuật ngữ thi đấu thể thao, trò chơi (tấn công)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 102,
+      "MappingId": 515,
       "VocabId": 64,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu phản ứng biểu cảm thường dùng (thật sao, không sao)",
+      "ClassificationReason": "Hành động lắng nghe trong giao tiếp và học tập",
       "IsDeleted": 0
     },
     {
-      "MappingId": 103,
+      "MappingId": 516,
+      "VocabId": 64,
+      "TopicId": 2,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Hành động lắng nghe trong giao tiếp và học tập",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 517,
       "VocabId": 65,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu phản ứng biểu cảm thường dùng (thật sao, không sao)",
+      "ClassificationReason": "Từ chỉ khoảng thời gian ngắn và lời gọi dừng lại",
       "IsDeleted": 0
     },
     {
-      "MappingId": 104,
+      "MappingId": 518,
+      "VocabId": 65,
+      "TopicId": 9,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Từ chỉ khoảng thời gian ngắn và lời gọi dừng lại",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 519,
+      "VocabId": 66,
+      "TopicId": 7,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Hoạt động vận động thể thao (bật nhảy)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 520,
       "VocabId": 66,
       "TopicId": 8,
-      "IsPrimary": 1,
+      "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu phản ứng biểu cảm thường dùng (thật sao, không sao)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Hoạt động vận động thể thao (bật nhảy)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 105,
+      "MappingId": 521,
+      "VocabId": 67,
+      "TopicId": 7,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Hoạt động vận động thể chất (chạy)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 522,
       "VocabId": 67,
       "TopicId": 8,
-      "IsPrimary": 1,
+      "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu phản ứng biểu cảm thường dùng (thật sao, không sao)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Hoạt động vận động thể chất (chạy)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 106,
+      "MappingId": 523,
       "VocabId": 68,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu phản ứng biểu cảm thường dùng (thật sao, không sao)",
+      "ClassificationReason": "Lời chào hỏi thân mật hàng ngày giữa bạn bè, người thân",
       "IsDeleted": 0
     },
     {
-      "MappingId": 107,
+      "MappingId": 524,
+      "VocabId": 68,
+      "TopicId": 1,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời chào hỏi thân mật hàng ngày giữa bạn bè, người thân",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 525,
       "VocabId": 69,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu hồi đáp giao tiếp cơ bản (vâng, dạ, đã hiểu)",
+      "ClassificationReason": "Phó từ cảm thán bày tỏ sự bất ngờ trong giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 108,
+      "MappingId": 526,
       "VocabId": 70,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Câu hồi đáp giao tiếp cơ bản (vâng, dạ, đã hiểu)",
+      "ClassificationReason": "Lời động viên khích lệ tinh thần người thân, bạn bè",
       "IsDeleted": 0
     },
     {
-      "MappingId": 109,
+      "MappingId": 527,
+      "VocabId": 70,
+      "TopicId": 1,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời động viên khích lệ tinh thần người thân, bạn bè",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 528,
+      "VocabId": 71,
+      "TopicId": 7,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Biểu hiện sức khỏe cơ thể khi hắt hơi, cảm lạnh",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 529,
       "VocabId": 71,
       "TopicId": 8,
-      "IsPrimary": 1,
+      "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu xã giao chuẩn mực (cảm ơn, xin lỗi, chúc mừng)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Biểu hiện sức khỏe cơ thể khi hắt hơi, cảm lạnh",
       "IsDeleted": 0
     },
     {
-      "MappingId": 110,
+      "MappingId": 530,
       "VocabId": 72,
-      "TopicId": 8,
+      "TopicId": 11,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu xã giao chuẩn mực (cảm ơn, xin lỗi, chúc mừng)",
+      "ClassificationReason": "Từ lóng cảm thán hạn chế sử dụng trong giao tiếp chuẩn mực",
       "IsDeleted": 0
     },
     {
-      "MappingId": 111,
+      "MappingId": 531,
       "VocabId": 73,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu xã giao chuẩn mực (cảm ơn, xin lỗi, chúc mừng)",
+      "ClassificationReason": "Lời chào thân mật hàng ngày",
       "IsDeleted": 0
     },
     {
-      "MappingId": 112,
+      "MappingId": 532,
+      "VocabId": 73,
+      "TopicId": 1,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời chào thân mật hàng ngày",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 533,
       "VocabId": 74,
-      "TopicId": 8,
+      "TopicId": 3,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu xã giao chuẩn mực (cảm ơn, xin lỗi, chúc mừng)",
+      "ClassificationReason": "Văn hóa ăn uống, chúc tụng trên bàn tiệc (cạn ly)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 113,
+      "MappingId": 534,
+      "VocabId": 74,
+      "TopicId": 8,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Văn hóa ăn uống, chúc tụng trên bàn tiệc (cạn ly)",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 535,
       "VocabId": 75,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu xã giao chuẩn mực (cảm ơn, xin lỗi, chúc mừng)",
+      "ClassificationReason": "Lời rủ rê cùng di chuyển trong giao tiếp hàng ngày",
       "IsDeleted": 0
     },
     {
-      "MappingId": 114,
+      "MappingId": 536,
+      "VocabId": 75,
+      "TopicId": 4,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời rủ rê cùng di chuyển trong giao tiếp hàng ngày",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 537,
       "VocabId": 76,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu xã giao chuẩn mực (cảm ơn, xin lỗi, chúc mừng)",
+      "ClassificationReason": "Lời chúc ngủ ngon thân mật với gia đình, bạn bè",
       "IsDeleted": 0
     },
     {
-      "MappingId": 115,
+      "MappingId": 538,
+      "VocabId": 76,
+      "TopicId": 1,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời chúc ngủ ngon thân mật với gia đình, bạn bè",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 539,
       "VocabId": 77,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Mẫu câu xã giao chuẩn mực (cảm ơn, xin lỗi, chúc mừng)",
+      "ClassificationReason": "Từ nghi vấn thông dụng trong hội thoại",
       "IsDeleted": 0
     },
     {
-      "MappingId": 116,
+      "MappingId": 540,
       "VocabId": 78,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Cách hỏi lại lịch sự trong giao tiếp tiếng Hàn",
       "IsDeleted": 0
     },
     {
-      "MappingId": 117,
-      "VocabId": 78,
-      "TopicId": 1,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 118,
+      "MappingId": 541,
       "VocabId": 79,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Từ nghi vấn hỏi nguyên nhân thông dụng",
       "IsDeleted": 0
     },
     {
-      "MappingId": 119,
-      "VocabId": 79,
-      "TopicId": 1,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 120,
+      "MappingId": 542,
       "VocabId": 80,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Câu phủ định hoặc khiêm tốn đáp lại trong giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 121,
-      "VocabId": 80,
-      "TopicId": 1,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 122,
+      "MappingId": 543,
       "VocabId": 81,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Mẫu câu trả lời thông dụng trong hội thoại thân mật",
       "IsDeleted": 0
     },
     {
-      "MappingId": 123,
-      "VocabId": 81,
-      "TopicId": 1,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 124,
+      "MappingId": 544,
       "VocabId": 82,
-      "TopicId": 3,
+      "TopicId": 11,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu hiện cảm giác ăn uống (đói bụng, khát nước, ngon miệng)",
+      "ClassificationReason": "Từ cảm thán cường điệu hạn chế dùng độc lập",
       "IsDeleted": 0
     },
     {
-      "MappingId": 125,
-      "VocabId": 82,
-      "TopicId": 7,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu hiện cảm giác ăn uống (đói bụng, khát nước, ngon miệng)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 126,
+      "MappingId": 545,
       "VocabId": 83,
-      "TopicId": 3,
+      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu hiện cảm giác ăn uống (đói bụng, khát nước, ngon miệng)",
+      "ClassificationReason": "Hành động chạy nhanh, di chuyển khẩn cấp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 127,
+      "MappingId": 546,
       "VocabId": 83,
-      "TopicId": 7,
+      "TopicId": 8,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu hiện cảm giác ăn uống (đói bụng, khát nước, ngon miệng)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Hành động chạy nhanh, di chuyển khẩn cấp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 128,
+      "MappingId": 547,
       "VocabId": 84,
-      "TopicId": 3,
+      "TopicId": 10,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu hiện cảm giác ăn uống (đói bụng, khát nước, ngon miệng)",
+      "ClassificationReason": "Mô tả thời tiết lạnh và cảm giác cơ thể (lịch sự)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 129,
+      "MappingId": 548,
       "VocabId": 84,
       "TopicId": 7,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu hiện cảm giác ăn uống (đói bụng, khát nước, ngon miệng)",
+      "ClassificationReason": "Chủ đề phụ liên quan: Mô tả thời tiết lạnh và cảm giác cơ thể (lịch sự)",
       "IsDeleted": 0
     },
     {
-      "MappingId": 130,
-      "VocabId": 85,
-      "TopicId": 7,
-      "IsPrimary": 1,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Cảm giác thể chất và thời tiết (mệt mỏi, nóng, lạnh)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 131,
+      "MappingId": 549,
       "VocabId": 85,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Cảm giác thể chất và thời tiết (mệt mỏi, nóng, lạnh)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 132,
-      "VocabId": 86,
-      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Cảm giác thể chất và thời tiết (mệt mỏi, nóng, lạnh)",
+      "ClassificationReason": "Từ hỏi xác nhận thể hiện sự ngạc nhiên trong hội thoại",
       "IsDeleted": 0
     },
     {
-      "MappingId": 133,
+      "MappingId": 550,
       "VocabId": 86,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Cảm giác thể chất và thời tiết (mệt mỏi, nóng, lạnh)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 134,
-      "VocabId": 87,
-      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Cảm giác thể chất và thời tiết (mệt mỏi, nóng, lạnh)",
+      "ClassificationReason": "Lời đáp phủ định lịch sự chuẩn mực",
       "IsDeleted": 0
     },
     {
-      "MappingId": 135,
+      "MappingId": 551,
       "VocabId": 87,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Cảm giác thể chất và thời tiết (mệt mỏi, nóng, lạnh)",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 136,
-      "VocabId": 88,
-      "TopicId": 1,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
+      "ClassificationReason": "Mẫu câu phủ định thân mật",
       "IsDeleted": 0
     },
     {
-      "MappingId": 137,
+      "MappingId": 552,
       "VocabId": 88,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 138,
-      "VocabId": 89,
-      "TopicId": 1,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
+      "ClassificationReason": "Mẫu câu trả lời lịch sự khi chưa biết thông tin",
       "IsDeleted": 0
     },
     {
-      "MappingId": 139,
+      "MappingId": 553,
       "VocabId": 89,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 140,
-      "VocabId": 90,
-      "TopicId": 1,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
+      "ClassificationReason": "Câu hỏi nguyên nhân lịch sự trong giao tiếp",
       "IsDeleted": 0
     },
     {
-      "MappingId": 141,
+      "MappingId": 554,
       "VocabId": 90,
-      "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 142,
-      "VocabId": 91,
-      "TopicId": 1,
+      "TopicId": 11,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
+      "ClassificationReason": "Khẩu ngữ nặng nề không dùng trong giao tiếp lịch sự",
       "IsDeleted": 0
     },
     {
-      "MappingId": 143,
+      "MappingId": 555,
       "VocabId": 91,
       "TopicId": 8,
-      "IsPrimary": 0,
-      "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
-      "IsDeleted": 0
-    },
-    {
-      "MappingId": 144,
-      "VocabId": 92,
-      "TopicId": 1,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
+      "ClassificationReason": "Cách gọi nhân viên phục vụ hoặc bắt chuyện lịch sự",
       "IsDeleted": 0
     },
     {
-      "MappingId": 145,
-      "VocabId": 92,
-      "TopicId": 8,
+      "MappingId": 556,
+      "VocabId": 91,
+      "TopicId": 3,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Biểu đạt cảm xúc, tình cảm cá nhân yêu thương",
+      "ClassificationReason": "Chủ đề phụ liên quan: Cách gọi nhân viên phục vụ hoặc bắt chuyện lịch sự",
       "IsDeleted": 0
     },
     {
-      "MappingId": 146,
+      "MappingId": 557,
+      "VocabId": 92,
+      "TopicId": 8,
+      "IsPrimary": 1,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Lời chào tạm biệt khi người nói rời đi còn người nghe ở lại",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 558,
+      "VocabId": 92,
+      "TopicId": 1,
+      "IsPrimary": 0,
+      "ReviewStatus": "ACTIVE",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời chào tạm biệt khi người nói rời đi còn người nghe ở lại",
+      "IsDeleted": 0
+    },
+    {
+      "MappingId": 559,
       "VocabId": 93,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Lời chào tạm biệt lịch sự khi tiễn người khác ra về",
       "IsDeleted": 0
     },
     {
-      "MappingId": 147,
+      "MappingId": 560,
       "VocabId": 93,
       "TopicId": 1,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời chào tạm biệt lịch sự khi tiễn người khác ra về",
       "IsDeleted": 0
     },
     {
-      "MappingId": 148,
+      "MappingId": 561,
       "VocabId": 94,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Lời chào hỏi thân mật khi gặp mặt",
       "IsDeleted": 0
     },
     {
-      "MappingId": 149,
+      "MappingId": 562,
       "VocabId": 94,
       "TopicId": 1,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Lời chào hỏi thân mật khi gặp mặt",
       "IsDeleted": 0
     },
     {
-      "MappingId": 150,
+      "MappingId": 563,
       "VocabId": 95,
       "TopicId": 8,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Mẫu câu khuyên ngăn thân mật trong đời sống",
       "IsDeleted": 0
     },
     {
-      "MappingId": 151,
+      "MappingId": 564,
       "VocabId": 95,
       "TopicId": 1,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Mẫu câu khuyên ngăn thân mật trong đời sống",
       "IsDeleted": 0
     },
     {
-      "MappingId": 152,
+      "MappingId": 565,
       "VocabId": 96,
-      "TopicId": 8,
+      "TopicId": 7,
       "IsPrimary": 1,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Biểu hiện trạng thái sức khỏe cơ thể mệt mỏi sau công việc",
       "IsDeleted": 0
     },
     {
-      "MappingId": 153,
+      "MappingId": 566,
       "VocabId": 96,
-      "TopicId": 1,
+      "TopicId": 6,
       "IsPrimary": 0,
       "ReviewStatus": "ACTIVE",
-      "ClassificationReason": "Chủ đề phụ liên quan: Nghi thức chào hỏi, tạm biệt, chúc ngủ ngon trong giao tiếp",
+      "ClassificationReason": "Chủ đề phụ liên quan: Biểu hiện trạng thái sức khỏe cơ thể mệt mỏi sau công việc",
       "IsDeleted": 0
     },
     {
@@ -4414,6 +4463,20 @@
       "IsDeleted": 0
     }
   ],
-  "vocabOverrides": {},
+  "vocabOverrides": {
+    "44": {
+      "koreanWord": "응?",
+      "romanization": "eung?"
+    },
+    "72": {
+      "status": "Hidden"
+    },
+    "82": {
+      "status": "Hidden"
+    },
+    "90": {
+      "status": "Hidden"
+    }
+  },
   "addedVocabularies": []
 }

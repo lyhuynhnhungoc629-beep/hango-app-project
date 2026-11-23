@@ -90,31 +90,31 @@ export function RoleplayChat() {
           {messages.map((m, i) => {
             if (m.role === 'ai')
               return (
-                <li key={i} className="max-w-[80%] self-start rounded-2xl rounded-tl-sm bg-[#25253d] px-4 py-3">
-                  <p lang="ko" className="font-medium">
+                <li key={i} className="max-w-[80%] self-start rounded-2xl rounded-tl-sm border border-slate-300 bg-slate-100 px-4 py-3 text-slate-900">
+                  <p lang="ko" className="font-semibold">
                     {m.ko}
                   </p>
-                  <p className="mt-1 text-sm text-muted-foreground">{m.vi}</p>
+                  <p className="mt-1 text-sm text-slate-600">{m.vi}</p>
                 </li>
               )
             if (m.role === 'user')
               return (
-                <li key={i} lang="ko" className="max-w-[80%] self-end rounded-2xl rounded-tr-sm bg-primary px-4 py-3 font-medium">
+                <li key={i} lang="ko" className="max-w-[80%] self-end rounded-2xl rounded-tr-sm border border-slate-900 bg-[#2563EB] px-4 py-3 font-semibold text-white">
                   {m.ko}
                 </li>
               )
             return (
-              <li key={i} className="flex max-w-[90%] gap-3 self-end rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-sm">
-                <Lightbulb className="size-5 shrink-0 text-amber-400" aria-hidden="true" />
+              <li key={i} className="flex max-w-[90%] gap-3 self-end rounded-xl border border-amber-500 bg-amber-50 p-4 text-sm text-slate-900">
+                <Lightbulb className="size-5 shrink-0 text-amber-600" aria-hidden="true" />
                 <div>
-                  <p className="font-semibold text-amber-300">Gợi ý sửa lỗi</p>
-                  <p className="mt-1 text-amber-100/90">
+                  <p className="font-bold text-amber-900">Gợi ý sửa lỗi</p>
+                  <p className="mt-1 text-slate-700">
                     Bạn nên dùng{' '}
-                    <span lang="ko" className="rounded bg-green-500/20 px-1.5 font-semibold text-green-300">
+                    <span lang="ko" className="rounded border border-emerald-400 bg-emerald-100 px-1.5 font-bold text-emerald-900">
                       {m.right}
                     </span>{' '}
                     thay vì{' '}
-                    <span lang="ko" className="rounded bg-red-500/20 px-1.5 text-red-300 line-through">
+                    <span lang="ko" className="rounded border border-red-300 bg-red-100 px-1.5 font-semibold text-red-800 line-through">
                       {m.wrong}
                     </span>
                     . {m.text}

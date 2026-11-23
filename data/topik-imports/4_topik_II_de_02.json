@@ -1,0 +1,165 @@
+{
+  "examId": "topik-2-de-02",
+  "title": "Đề thi thử TOPIK II - Đề số 02 (Học thuật, Kinh tế & Xã hội)",
+  "description": "Đề thi TOPIK II số 02 chuẩn 3 kỹ năng: Nghe hiểu (file nghe .mp4), Viết (điền biểu đạt & nghị luận xã hội) và Đọc hiểu chuyên sâu. Tổng điểm 300 điểm (Thời gian thi: 180 phút).",
+  "level": "TOPIK II",
+  "durationMinutes": 180,
+  "maxListenCount": 2,
+  "isActive": true,
+  "questions": [
+    {
+      "number": 1,
+      "section": "listening",
+      "prompt": "다음을 듣고 여자가 이어서 할 행동으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Nghe hội thoại tổ chức hội thảo và chọn hành động tiếp theo của người phụ nữ.",
+      "audioUrl": "/audio/topik/topik2-de2-listen.mp4",
+      "audioScript": "여자: 과장님, 내일 열리는 국제 학술 대회 통역사 섭외와 발표 자료 인쇄는 모두 완료되었습니다. 남자: 고생 많았어요. 혹시 발표자분들이 사용할 노트북과 음향 장비도 점검했나요? 여자: 아, 아직 확인하지 못했습니다. 지금 바로 대강당에 내려가서 장비를 점검하겠습니다.",
+      "options": [
+        "대강당에 내려가서 노트북과 음향 장비를 점검한다.",
+        "국제 학술 대회에 참가할 통역사에게 연락한다.",
+        "인쇄소에 가서 학술 대회 발표 자료를 찾아온다.",
+        "발표자들에게 학술 대회 일정 변경을 안내한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nữ nói '지금 바로 대강당에 내려가서 장비를 점검하겠습니다' (Tôi sẽ xuống hội trường lớn kiểm tra thiết bị ngay bây giờ)."
+    },
+    {
+      "number": 2,
+      "section": "listening",
+      "prompt": "다음을 듣고 남자의 중심 생각으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Nghe hội thoại về làm việc từ xa và chọn quan điểm chính của người đàn ông.",
+      "audioUrl": "/audio/topik/topik2-de2-listen.mp4",
+      "audioScript": "여자: 재택근무를 하면 출퇴근 시간이 절약돼서 업무 만족도가 높아지는 것 같아요. 남자: 그렇긴 하지만 모든 업무에 재택근무가 적합한 것은 아닙니다. 부서 간 긴밀한 협업이 필요할 때는 대면 회의를 통해 즉각적으로 소통하는 것이 훨씬 효과적이므로 업무 특성에 맞게 유연하게 운영해야 합니다.",
+      "options": [
+        "재택근무와 대면 근무는 업무 특성에 맞게 유연하게 병행되어야 한다.",
+        "직원들의 만족도를 높이기 위해 모든 부서가 전면 재택근무를 해야 한다.",
+        "재택근무는 소통이 전혀 불가능하므로 즉시 폐지하는 것이 바람직하다.",
+        "출퇴근 시간을 줄이기 위해 회사를 도심 외곽으로 이전해야 한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nam cho rằng cần vận hành linh hoạt giữa làm việc từ xa và làm việc trực tiếp tùy theo đặc thù công việc ('업무 특성에 맞게 유연하게 운영해야 합니다')."
+    },
+    {
+      "number": 3,
+      "section": "listening",
+      "prompt": "다음을 듣고 뉴스의 내용과 일치하는 것을 고르십시오.",
+      "hint": "Nghe bản tin kinh tế và chọn thông tin đúng với nội dung.",
+      "audioUrl": "/audio/topik/topik2-de2-listen.mp4",
+      "audioScript": "여자: 최근 전통 시장들이 젊은 고객을 유치하기 위해 디지털 전환에 적극적으로 나서고 있습니다. 모바일 앱을 통한 당일 배송 서비스를 도입하고 청년 상인들이 개발한 이색 먹거리를 선보이면서, 20대와 30대 방문객 비율이 지난해보다 30퍼센트 이상 증가한 것으로 나타났습니다.",
+      "options": [
+        "모바일 배송 서비스와 이색 먹거리 도입으로 전통 시장의 젊은 방문객이 늘었다.",
+        "전통 시장은 디지털 전환에 실패하여 방문객 수가 지난해보다 줄어들었다.",
+        "20대와 30대 소비자들은 전통 시장의 당일 배송 서비스를 이용하지 않는다.",
+        "전통 시장 상인들은 청년 상인들의 입점을 반대하고 있다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Bản tin nêu rõ nhờ dịch vụ giao hàng trong ngày qua ứng dụng di động và các món ăn độc đáo do thương nhân trẻ phát triển, tỷ lệ khách 20–30 tuổi đến chợ truyền thống tăng hơn 30%."
+    },
+    {
+      "number": 4,
+      "section": "listening",
+      "prompt": "다음을 듣고 강연자의 태도로 가장 알맞은 것을 고르십시오.",
+      "hint": "Nghe đoạn bài giảng và xác định thái độ của diễn giả.",
+      "audioUrl": "/audio/topik/topik2-de2-listen.mp4",
+      "audioScript": "남자: 실패를 단순히 부정적인 결과로만 여기는 사회 분위기에서는 누구도 새로운 도전에 나서기 어렵습니다. 실패의 과정에서 얻은 데이터를 분석하고 이를 다음 혁신의 자산으로 삼을 때 비로소 기술과 사회가 발전할 수 있습니다. 실패를 용인하고 재도전을 지원하는 제도가 뒷받침되어야 합니다.",
+      "options": [
+        "실패를 혁신의 자산으로 인식하고 재도전을 지원하는 사회적 환경을 촉구하고 있다.",
+        "실패를 줄이기 위해 검증된 사업에만 투자해야 한다고 경고하고 있다.",
+        "개인의 실패는 전적으로 개인의 책임이므로 정부의 지원은 불필요하다고 본다.",
+        "새로운 도전보다 기존의 성공 방식을 그대로 유지하는 것이 안전하다고 말한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Diễn giả kêu gọi nhìn nhận thất bại là tài sản cho đổi mới sáng tạo và cần có chế độ hỗ trợ tái khởi nghiệp/thử thách lại."
+    },
+    {
+      "number": 5,
+      "section": "writing",
+      "prompt": "[TOPIK II - 쓰기 51번 유형] 다음 이메일을 읽고 ( ㉠ )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+      "hint": "Phần Viết (Dạng câu 51): Đọc email công việc và chọn câu điền vào chỗ trống ( ㉠ ) đúng văn phong lịch sự.",
+      "passage": "박지훈 대리님께.\n안녕하세요, 기획팀 이수민입니다. 지난번 회의에서 요청하신 하반기 마케팅 전략 보고서 초안을 작성하여 첨부 파일로 보내 드립니다. 바쁘시겠지만 내용을 검토하신 후 수정하거나 보완할 사항이 있으면 ( ㉠ ). 감사합니다.",
+      "options": [
+        "금요일까지 의견을 회신해 주시기 바랍니다",
+        "제가 직접 보고서를 다시 가져가겠습니다",
+        "회의에 참석하지 않으셔도 괜찮습니다",
+        "마케팅 전략을 처음부터 취소하시기 바랍니다"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sau khi gửi bản thảo báo cáo đính kèm và nhờ xem xét, câu kết chuẩn mực trong email công sở là mong nhận được phản hồi ý kiến trước thứ Sáu ('금요일까지 의견을 회신해 주시기 바랍니다')."
+    },
+    {
+      "number": 6,
+      "section": "writing",
+      "prompt": "[TOPIK II - 쓰기 52번 유형] 다음 글을 읽고 ( ㉠ )에 들어갈 문장으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Phần Viết (Dạng câu 52): Đọc đoạn văn tâm lý học và chọn câu hoàn chỉnh phù hợp nhất điền vào ( ㉠ ).",
+      "passage": "사람들은 흔히 선택지가 많을수록 더 큰 만족을 느낄 것이라고 생각한다. 그러나 심리학 연구에 따르면 선택의 폭이 지나치게 넓어질 경우, 사람들은 오히려 결정을 내리는 데 극심한 피로감을 느끼고 자신이 고르지 않은 다른 대안에 대해 아쉬움을 갖게 된다. 결국 지나치게 많은 선택지가 ( ㉠ ).",
+      "options": [
+        "결정을 방해하고 선택 이후의 만족도를 떨어뜨리는 결과를 초래하는 것이다",
+        "소비자에게 항상 최상의 결정을 내릴 수 있도록 도움을 주는 것이다",
+        "고민하는 시간을 줄여 주어 심리적 안정감을 높여 주는 것이다",
+        "다른 대안에 대한 미련을 없애고 자신의 선택에 확신을 갖게 한다"
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn giải thích nghịch lý của sự lựa chọn: quá nhiều lựa chọn gây mệt mỏi khi quyết định và tiếc nuối các phương án khác → Dẫn đến cản trở việc ra quyết định và làm giảm sự hài lòng sau khi chọn."
+    },
+    {
+      "number": 7,
+      "section": "writing",
+      "prompt": "[TOPIK II - 쓰기 54번 논술 유형] ‘디지털 기술의 발전과 인간 소외’에 대한 논술문의 결론 부분으로 가장 적절한 문장을 고르십시오.",
+      "hint": "Phần Viết (Dạng câu 54 - Nghị luận xã hội): Chọn câu kết luận chuẩn xác và sâu sắc nhất cho bài văn nghị luận về Công nghệ số và con người.",
+      "passage": "디지털 기술의 비약적인 발전은 시공간을 초월한 연결을 가능하게 했으나, 역설적이게도 대면 소통의 감소와 정서적 고립이라는 부작용을 낳기도 했다. 기술은 어디까지나 인간의 삶을 풍요롭게 하기 위한 수단일 뿐 목적이 될 수 없다. 따라서 우리는 ( ㉠ ).",
+      "options": [
+        "기술의 편리함을 누리되 인간적인 교감과 공동체적 가치를 회복하려는 균형 잡힌 노력을 기울여야 한다",
+        "정서적 고립을 막기 위해 모든 디지털 기술의 개발과 보급을 즉각 중단해야 한다",
+        "대면 소통을 완전히 없애고 온라인 가상 공간에서의 관계만 유지하는 것이 바람직하다",
+        "인간 소외 문제는 기술이 더욱 발전하면 아무런 노력 없이도 자연히 해결될 것이다"
+      ],
+      "correctIndex": 0,
+      "explanation": "Câu kết chuẩn mực của bài nghị luận TOPIK II câu 54 luôn đề xuất giải pháp cân bằng: vừa tận hưởng sự tiện lợi của công nghệ vừa nỗ lực khôi phục sự giao cảm giữa người với người và giá trị cộng đồng."
+    },
+    {
+      "number": 8,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 글의 중심 내용으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Đọc đoạn văn về nghệ thuật và khoa học, sau đó chọn ý chính.",
+      "passage": "예술과 과학은 서로 전혀 다른 영역처럼 보이지만 실제로는 깊은 공통점을 지니고 있다. 과학자가 자연 현상의 이면에 숨겨진 법칙을 탐구한다면, 예술가는 인간과 세계의 본질을 새로운 시각으로 포착하여 표현한다. 두 분야 모두 기존의 통념에 의문을 제기하고 보이지 않는 진실을 발견하려는 창의적 상상력에서 출발한다는 점에서 본질적으로 맞닿아 있다.",
+      "options": [
+        "예술과 과학은 모두 창의적 상상력을 바탕으로 세계의 본질과 진실을 탐구한다.",
+        "과학은 객관적 사실만 다루므로 예술적 상상력이 개입될 여지가 전혀 없다.",
+        "예술가는 과학적 법칙을 증명하는 것을 유일한 창작 목표로 삼아야 한다.",
+        "현대 사회에서는 예술보다 과학 기술의 발전이 훨씬 더 높은 가치를 지닌다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn chỉ ra điểm giao thoa bản chất giữa nghệ thuật và khoa học: cả hai đều xuất phát từ trí tưởng tượng sáng tạo nhằm đặt câu hỏi trước lối mòn và khám phá bản chất/chân lý của thế giới."
+    },
+    {
+      "number": 9,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 내용과 일치하는 것을 고르십시오.",
+      "hint": "Đọc đoạn văn về đô thị thông minh và chọn phương án đúng với nội dung.",
+      "passage": "스마트 시티는 첨단 정보통신기술(ICT)을 도시 기반 시설에 접목하여 교통 체증, 에너지 낭비, 환경 오염 등 각종 도시 문제를 해결하는 미래형 도시 모델이다. 실시간 교통 데이터를 분석해 신호등을 제어하고, 전력 사용량을 자동으로 조절하는 스마트 그리드를 구축함으로써 도시의 운영 효율성과 시민의 삶의 질을 동시에 높이고 있다.",
+      "options": [
+        "스마트 시티는 실시간 데이터를 활용해 교통과 에너지 문제를 효율적으로 관리한다.",
+        "스마트 그리드는 도시의 전력 소비량을 늘려 환경 오염을 가속화하는 시스템이다.",
+        "스마트 시티에서는 신호등을 제어할 때 실시간 교통 데이터를 활용하지 않는다.",
+        "첨단 정보통신기술을 도시에 적용하면 시민의 삶의 질이 오히려 낮아진다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn nêu rõ Smart City phân tích dữ liệu giao thông thời gian thực để điều khiển đèn tín hiệu và dùng lưới điện thông minh (Smart Grid) để điều chỉnh lượng điện tiêu thụ."
+    },
+    {
+      "number": 10,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 필자의 태도로 가장 알맞은 것을 고르십시오.",
+      "hint": "Đọc đoạn văn về bảo tồn ngôn ngữ bản địa và chọn thái độ của tác giả.",
+      "passage": "세계화가 가속화되면서 소수 민족의 고유 언어가 빠른 속도로 사라지고 있다. 언어는 단순한 의사소통 도구가 아니라 그 공동체가 수천 년간 축적해 온 역사, 철학, 세계관이 담긴 문화적 보고이다. 하나의 언어가 소멸한다는 것은 인류의 소중한 지적 유산 하나가 영원히 사라지는 것과 같으므로, 소멸 위기 언어를 기록하고 보존하려는 국제 사회의 노력이 절실하다.",
+      "options": [
+        "언어의 문화적 가치를 강조하며 소멸 위기 언어의 보존 노력을 촉구하고 있다.",
+        "의사소통의 효율성을 위해 전 세계의 언어를 하나로 통일해야 한다고 본다.",
+        "소수 언어의 소멸은 자연스러운 현상이므로 인위적인 보존은 불필요하다고 여긴다.",
+        "세계화가 소수 민족의 언어를 더욱 다양하게 발전시키고 있다고 긍정적으로 평가한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Tác giả nhấn mạnh ngôn ngữ là kho tàng văn hóa chứa đựng lịch sử và thế giới quan của cộng đồng, từ đó kêu gọi nỗ lực quốc tế nhằm ghi chép và bảo tồn các ngôn ngữ có nguy cơ biến mất."
+    }
+  ]
+}

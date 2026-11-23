@@ -1,0 +1,165 @@
+{
+  "examId": "topik-2-de-01",
+  "title": "Đề thi thử TOPIK II - Đề số 01 (Trung & Cao cấp – Cấp 3 đến 6)",
+  "description": "Cấu trúc chuẩn TOPIK II (3 kỹ năng): Nghe hiểu (có file nghe .mp4), Viết (đoạn văn điền biểu đạt & phân tích biểu đồ) và Đọc hiểu (đoạn văn học thuật/xã hội). Tổng điểm 300 điểm (Cấp 3: 120–149đ, Cấp 4: 150–189đ, Cấp 5: 190–229đ, Cấp 6: từ 230đ trở lên). Thời gian thi: 180 phút.",
+  "level": "TOPIK II",
+  "durationMinutes": 180,
+  "maxListenCount": 2,
+  "isActive": true,
+  "questions": [
+    {
+      "number": 1,
+      "section": "listening",
+      "prompt": "다음을 듣고 남자가 이어서 할 행동으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Nghe hội thoại công sở và chọn hành động tiếp theo của người đàn ông.",
+      "audioUrl": "/audio/topik/topik2-de1-listen.mp4",
+      "audioScript": "남자: 팀장님, 이번 신제품 홍보 행사 기획안을 작성해 보았습니다. 여자: 수고했어요. 전체적인 구성은 좋은데 예산안이 조금 부족해 보이네요. 작년 행사 비용 자료를 참고해서 예산 부분만 보완해 주세요. 남자: 네, 지금 바로 작년 자료를 찾아서 수정하겠습니다.",
+      "options": [
+        "작년 행사 비용 자료를 참고하여 예산안을 수정한다.",
+        "신제품 홍보 행사 장소를 다시 예약한다.",
+        "기획안의 전체적인 구성을 처음부터 다시 작성한다.",
+        "홍보 행사에 참석할 초청 명단을 발송한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Trưởng nhóm yêu cầu bổ sung phần ngân sách dựa trên tài liệu chi phí năm ngoái và người nam đáp '네, 지금 바로 작년 자료를 찾아서 수정하겠습니다'."
+    },
+    {
+      "number": 2,
+      "section": "listening",
+      "prompt": "다음을 듣고 여자의 중심 생각으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Nghe ý kiến của người phụ nữ và chọn quan điểm trọng tâm.",
+      "audioUrl": "/audio/topik/topik2-de1-listen.mp4",
+      "audioScript": "남자: 요즘 기업들이 인공지능 상담 시스템을 빠르게 도입하고 있네요. 여자: 네, 단순한 질문은 빠르게 처리할 수 있어서 효율적이지요. 하지만 고객의 복잡한 불만이나 감정적인 공감이 필요한 상황에서는 여전히 숙련된 상담원의 역할이 반드시 필요하다고 생각합니다.",
+      "options": [
+        "인공지능 상담이 확대되어도 숙련된 인간 상담원의 역할은 여전히 중요하다.",
+        "기업의 비용 절감을 위해 모든 상담 업무를 인공지능으로 대체해야 한다.",
+        "인공지능 상담 시스템은 단순한 질문도 처리하지 못해 비효율적이다.",
+        "고객의 불만을 줄이려면 전화 상담보다 이메일 상담을 늘려야 한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nữ khẳng định trong các tình huống khiếu nại phức tạp hoặc cần sự đồng cảm thì vai trò của tư vấn viên giàu kinh nghiệm vẫn luôn cần thiết."
+    },
+    {
+      "number": 3,
+      "section": "listening",
+      "prompt": "다음을 듣고 대담의 내용과 일치하는 것을 고르십시오.",
+      "hint": "Nghe cuộc phỏng vấn chuyên gia và chọn phương án đúng với nội dung.",
+      "audioUrl": "/audio/topik/topik2-de1-listen.mp4",
+      "audioScript": "여자: 박사님, 최근 도시 내 작은 숲을 조성하는 사업이 큰 호응을 얻고 있는데요. 어떤 효과가 있습니까? 남자: 도심 숲은 여름철 열섬 현상을 완화해 줄 뿐만 아니라 미세먼지를 흡수해 공기를 정화하는 역할을 합니다. 또한 시민들에게 휴식 공간을 제공해 심리적 안정감을 높여 준다는 연구 결과도 있습니다.",
+      "options": [
+        "도심 숲은 여름철 도시의 기온을 낮추고 미세먼지를 줄여 준다.",
+        "도심 숲 조성 사업은 비용이 많이 들어 시민들의 반대가 심하다.",
+        "도심 숲은 공기 정화에는 도움이 되지만 심리적 효과는 없다.",
+        "열섬 현상을 막기 위해 도심 숲보다 고층 건물을 더 지어야 한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Chuyên gia nêu rõ rừng trong đô thị giúp giảm hiệu ứng đảo nhiệt mùa hè ('열섬 현상을 완화') và hấp thụ bụi mịn làm sạch không khí ('미세먼지를 흡수해 공기를 정화')."
+    },
+    {
+      "number": 4,
+      "section": "listening",
+      "prompt": "다음을 듣고 남자의 태도로 가장 알맞은 것을 고르십시오.",
+      "hint": "Nghe phát biểu của người đàn ông và chọn thái độ của người nói.",
+      "audioUrl": "/audio/topik/topik2-de1-listen.mp4",
+      "audioScript": "남자: 문화유산을 관광 자원으로 개방하면 지역 경제에는 도움이 될 수 있습니다. 그러나 무분별한 개방으로 인해 한 번 훼손된 문화유산은 원래의 모습으로 되돌리기 어렵습니다. 따라서 개방에 앞서 체계적인 보존 대책을 마련하는 것이 우선되어야 합니다.",
+      "options": [
+        "문화유산 개방에 따른 훼손을 우려하며 보존 대책 마련을 강조하고 있다.",
+        "지역 경제 활성화를 위해 모든 문화유산을 즉시 개방하자고 주장하고 있다.",
+        "문화유산 복원 기술이 발전했으므로 훼손을 걱정할 필요가 없다고 본다.",
+        "관광객 유치를 위해 입장료를 대폭 인하해야 한다고 제안하고 있다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Người nam lo ngại việc mở cửa ồ ạt làm hư hại di sản văn hóa và nhấn mạnh phải ưu tiên lập biện pháp bảo tồn bài bản trước khi mở cửa."
+    },
+    {
+      "number": 5,
+      "section": "writing",
+      "prompt": "[TOPIK II - 쓰기 51번 유형] 다음 안내문을 읽고 ( ㉠ )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+      "hint": "Phần Viết (Dạng câu 51): Đọc thông báo và chọn biểu đạt viết trang trọng phù hợp nhất điền vào chỗ trống ( ㉠ ).",
+      "passage": "[도서관 열람실 보수 공사 안내]\n항상 저희 중앙도서관을 이용해 주시는 여러분께 감사드립니다. 보다 쾌적한 학습 환경을 제공하기 위하여 오는 11월 20일부터 11월 25일까지 3층 열람실 조명 및 냉난방 시설 보수 공사를 진행합니다. 공사 기간에는 3층 열람실 이용이 ( ㉠ ). 이용자 여러분의 너그러운 양해를 부탁드립니다.",
+      "options": [
+        "제한되오니 2층과 4층 열람실을 이용해 주시기 바랍니다",
+        "불가능하니까 다른 도서관으로 빨리 가야 합니다",
+        "어려운 덕분에 공사가 일찍 끝날 것 같습니다",
+        "가능하므로 평소처럼 자유롭게 출입하셔도 됩니다"
+      ],
+      "correctIndex": 0,
+      "explanation": "Trong văn bản thông báo trang trọng (쓰기 51번), khi phòng đọc tầng 3 bảo trì thì việc sử dụng bị hạn chế nên hướng dẫn người đọc dùng tầng 2 và tầng 4 ('제한되오니 2층과 4층 열람실을 이용해 주시기 바랍니다')."
+    },
+    {
+      "number": 6,
+      "section": "writing",
+      "prompt": "[TOPIK II - 쓰기 52번 유형] 다음 설명문을 읽고 ( ㉠ )에 들어갈 문장으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Phần Viết (Dạng câu 52): Đọc đoạn văn giải thích khoa học và chọn câu hoàn chỉnh phù hợp nhất điền vào chỗ trống ( ㉠ ).",
+      "passage": "식물은 움직일 수 없기 때문에 해충의 공격을 받으면 스스로를 보호하기 위해 특별한 화학 물질을 만들어 낸다. 흥미로운 점은 이 화학 물질이 공기 중으로 퍼져 주변에 있는 다른 식물들에게도 위험을 알리는 신호가 된다는 것이다. 그래서 신호를 받은 주변 식물들은 해충이 오기도 전에 ( ㉠ ).",
+      "options": [
+        "미리 방어 물질을 분비하여 해충의 공격에 대비할 수 있게 된다",
+        "해충을 유인하기 위해 꽃향기를 더욱 강하게 내뿜기 시작한다",
+        "스스로 뿌리를 뽑아 안전한 장소로 이동할 준비를 마친다",
+        "성장을 완전히 멈추고 잎을 모두 떨어뜨려 수분을 아낀다"
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn nói về cơ chế cảnh báo sớm giữa các loài thực vật: khi nhận được tín hiệu hóa học, các cây xung quanh sẽ tiết ra chất phòng vệ trước để đối phó với sâu hại ('미리 방어 물질을 분비하여 해충의 공격에 대비할 수 있게 된다')."
+    },
+    {
+      "number": 7,
+      "section": "writing",
+      "prompt": "[TOPIK II - 쓰기 53번 유형] 다음 그래프 분석 글을 읽고 ( ㉠ )에 들어갈 내용으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Phần Viết (Dạng câu 53 - Phân tích biểu đồ): Chọn câu mô tả số liệu thống kê chuẩn xác nhất điền vào ( ㉠ ).",
+      "passage": "최근 5년간 국내 1인 가구의 소비 행태 조사에 따르면 간편식 시장 규모는 2021년 4조 원에서 2025년 7조 원으로 가파르게 증가한 것으로 나타났다. 이러한 변화의 주요 원인으로는 1인 가구 및 맞벌이 가구의 증가가 꼽혔으며, 조리 시간을 절약하려는 소비자의 요구가 커짐에 따라 앞으로도 간편식 시장이 ( ㉠ ).",
+      "options": [
+        "지속적인 성장세를 이어 갈 것으로 전망된다",
+        "급격하게 축소되어 사라질 것으로 보인다",
+        "전통 식재료 시장보다 규모가 작아질 것이다",
+        "소비자의 외면을 받아 생산량이 줄어들 전망이다"
+      ],
+      "correctIndex": 0,
+      "explanation": "Trong bài viết phân tích biểu đồ (쓰기 53번), khi quy mô thị trường tăng mạnh và nhu cầu tiết kiệm thời gian nấu nướng ngày càng lớn thì kết luận chuẩn mực là dự báo thị trường sẽ tiếp tục đà tăng trưởng ('지속적인 성장세를 이어 갈 것으로 전망된다')."
+    },
+    {
+      "number": 8,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 글의 주제로 가장 알맞은 것을 고르십시오.",
+      "hint": "Đọc đoạn văn nghị luận và chọn chủ đề chính của bài viết.",
+      "passage": "현대 사회에서는 정보가 넘쳐 나면서 오히려 필요한 정보를 선별하고 판단하는 능력이 무엇보다 중요해졌다. 과거에는 얼마나 많은 지식을 암기하고 있는지가 경쟁력이었지만, 이제는 수많은 정보 속에서 사실과 허위를 구별하고 이를 창의적으로 연결해 새로운 가치를 만들어 내는 비판적 사고력이 핵심 역량으로 요구되고 있다.",
+      "options": [
+        "정보 과잉 시대에는 정보를 비판적으로 선별하고 활용하는 능력이 중요하다.",
+        "많은 지식을 빠르고 정확하게 암기하는 교육 방식이 강화되어야 한다.",
+        "인터넷상의 잘못된 정보를 막기 위해 정보 유통을 법으로 금지해야 한다.",
+        "창의적인 사고를 기르기 위해서는 디지털 기기 사용을 완전히 중단해야 한다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn nhấn mạnh trong thời đại bùng nổ thông tin, năng lực cốt lõi là tư duy phản biện để chọn lọc thông tin đúng/sai và kết nối sáng tạo."
+    },
+    {
+      "number": 9,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 내용과 일치하는 것을 고르십시오.",
+      "hint": "Đọc đoạn văn về kinh tế tuần hoàn và chọn thông tin đúng với văn bản.",
+      "passage": "최근 환경 보호와 자원 절약을 동시에 달성할 수 있는 ‘순환 경제’가 주목받고 있다. 기존의 선형 경제가 자원을 채취하여 제품을 만들고 사용한 뒤 폐기하는 방식이었다면, 순환 경제는 제품 설계 단계부터 재사용과 재활용을 고려하여 폐기물 발생을 최소화하고 자원을 계속 순환시키는 경제 모델이다.",
+      "options": [
+        "순환 경제는 제품 설계 단계부터 재사용과 재활용을 고려하는 모델이다.",
+        "선형 경제는 폐기물을 최소화하고 자원을 반복해서 사용하는 방식이다.",
+        "순환 경제는 제품을 한 번 사용한 뒤 바로 폐기하는 것을 원칙으로 한다.",
+        "자원 절약과 환경 보호는 서로 상충되어 동시에 달성할 수 없다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Đoạn văn nêu rõ: '순환 경제는 제품 설계 단계부터 재사용과 재활용을 고려하여 폐기물 발생을 최소화하고 자원을 계속 순환시키는 경제 모델이다'."
+    },
+    {
+      "number": 10,
+      "section": "reading",
+      "prompt": "다음 글을 읽고 필자의 주장으로 가장 알맞은 것을 고르십시오.",
+      "hint": "Đọc đoạn văn về văn hóa đọc và chọn luận điểm chính của tác giả.",
+      "passage": "많은 사람들이 독서를 통해 지식을 얻는다고 생각하지만, 독서의 진정한 가치는 타인의 삶을 간접적으로 경험하며 공감 능력을 넓히는 데 있다. 자신과 다른 시대나 환경에 놓인 인물의 내면을 따라가다 보면 편견에서 벗어나 세상을 다각도로 바라보는 시야를 갖게 된다. 따라서 독서는 단순한 지식 습득을 넘어 성숙한 시민으로 성장하게 하는 밑거름이 된다.",
+      "options": [
+        "독서는 타인에 대한 공감 능력을 키우고 세상을 넓게 보는 안목을 길러 준다.",
+        "전문 지식을 빠르게 습득하기 위해서는 문학 작품보다 실용서를 읽어야 한다.",
+        "독서량을 늘리기 위해서는 짧은 요약본 위주로 책을 읽는 것이 효과적이다.",
+        "자신과 비슷한 생각을 가진 작가의 책만 골라 읽는 것이 바람직하다."
+      ],
+      "correctIndex": 0,
+      "explanation": "Tác giả khẳng định giá trị chân chính của việc đọc sách là mở rộng năng lực thấu cảm và có cái nhìn đa chiều vượt qua định kiến."
+    }
+  ]
+}

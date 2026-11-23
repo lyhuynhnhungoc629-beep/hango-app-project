@@ -637,7 +637,7 @@ export function UsersTable({ users, actorIsRootAdmin, actorUid, token, onRefresh
                     <p className="mt-1.5 text-lg font-bold text-violet-300">
                       {selectedUserDetail.user.learnedVocabCount} từ
                     </p>
-                    <p className="text-[11px] text-muted-foreground">Thuật toán SRS (SM-2)</p>
+                    <p className="text-[11px] text-muted-foreground">Ôn tập từ vựng định kỳ</p>
                   </div>
 
                   <div className="rounded-xl border border-border bg-background p-3.5">

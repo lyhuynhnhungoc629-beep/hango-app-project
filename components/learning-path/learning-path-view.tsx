@@ -858,7 +858,7 @@ export function LearningPathView() {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-3 p-8 text-sm text-muted-foreground">
         <Loader2 className="size-7 animate-spin text-primary" />
-        <span>Đang tải Lộ trình 7 chặng và tiến độ cá nhân từ SQL Server (HangoDatasetDB)...</span>
+        <span>Đang tải 7 chặng và tiến độ cá nhân...</span>
       </div>
     )
   }
@@ -902,8 +902,14 @@ export function LearningPathView() {
                       </h1>
                     </div>
                     <p className="mt-1.5 max-w-3xl text-sm font-normal leading-relaxed text-slate-600">
-                      {pathDescription ||
-                        'Một con đường liền mạch từ bảng chữ cái Hangeul đến TOPIK II. Mỗi chặng TOPIK bạn tự chọn giáo trình muốn theo — lộ trình 35–80 buổi bám đúng giáo trình đó, kèm luyện Nghe · Đọc · Viết bóc từ đề TOPIK thật và đề mix ở các buổi mốc. Đã có nền tảng? Vào thẳng chặng bạn muốn.'}
+                      {(
+                        pathDescription ||
+                        'Một con đường liền mạch từ bảng chữ cái Hangeul đến TOPIK II. Mỗi chặng TOPIK bám sát giáo trình chuẩn, kèm luyện Nghe · Đọc · Viết, Flashcard từ vựng, Luyện viết chữ Hàn và bài kiểm tra mở khóa tuần tự.'
+                      )
+                        .replace(/\s*\(PE92\)/gi, '')
+                        .replace(/Luyện viết PE92/gi, 'Luyện viết chữ Hàn')
+                        .replace(/PE92/gi, 'chữ Hàn')
+                        .replace(/Flashcard SRS/gi, 'Flashcard từ vựng')}
                     </p>
                   </div>
                 </div>
@@ -1342,7 +1348,7 @@ export function LearningPathView() {
           {loadingLevelId === selectedLevel.levelId ? (
             <div className="flex items-center justify-center gap-2 py-12 text-sm text-slate-500">
               <Loader2 className="size-5 animate-spin text-[#2563EB]" />
-              <span>Đang tải danh sách buổi học từ SQL Server...</span>
+              <span>Đang tải danh sách buổi học...</span>
             </div>
           ) : stageSubView === 'topics' ? (
             /* Chế độ xem gom theo Chủ đề (Topics) */
@@ -1598,7 +1604,7 @@ export function LearningPathView() {
           {loadingLesson || !activeLessonData ? (
             <div className="flex items-center justify-center gap-3 rounded-2xl border border-slate-800 bg-white p-12 text-sm text-slate-500 shadow-sm">
               <Loader2 className="size-6 animate-spin text-[#2563EB]" />
-              <span>Đang tải nội dung buổi học từ SQL Server...</span>
+              <span>Đang tải nội dung buổi học...</span>
             </div>
           ) : (
             <>
@@ -2093,14 +2099,14 @@ export function LearningPathView() {
                           </div>
                         )}
 
-                        {/* Mẫu chữ viết tay thực tế từ SQL Server PE92 */}
+                        {/* Mẫu chữ viết tay tham khảo */}
                         {activeLessonData.resources.map((res) => (
                           <div
                             key={res.resourceId}
                             className="rounded-xl border border-slate-300 bg-slate-50 p-4 text-slate-900"
                           >
                             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                              Mẫu chữ viết tay thực tế từ SQL Server (dbo.HangulCharacterClasses)
+                              Mẫu chữ viết tay tham khảo
                             </h4>
                             <div className="mt-3 grid gap-3 sm:grid-cols-3 md:grid-cols-5">
                               {res.targetChars.map((ch) => {

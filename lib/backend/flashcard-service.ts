@@ -25,6 +25,7 @@ export interface FlashcardTopicItem {
   description: string
   iconName: string
   colorCode: string
+  imageUrl: string | null
   displayOrder: number
   isActive: boolean
   isAdminOnly: boolean
@@ -60,6 +61,7 @@ export interface FlashcardVocabRecord {
   explanationKo: string | null
   exampleSentenceKo: string
   exampleSentenceVi: string
+  imageUrl: string | null
   niklLevel: string | null
   topikLevel: string
   originalTopicName: string | null
@@ -99,6 +101,7 @@ interface StoredTopicRow {
   Description: string
   IconName: string
   ColorCode: string
+  ImageUrl?: string | null
   DisplayOrder: number
   IsActive: number
   IsAdminOnly: number
@@ -124,6 +127,7 @@ interface StoredVocabOverride {
   explanationKo?: string | null
   exampleSentenceKo?: string
   exampleSentenceVi?: string
+  imageUrl?: string | null
   niklLevel?: string | null
   topikLevel?: string
   status?: 'Published' | 'Hidden'
@@ -141,6 +145,7 @@ interface AddedVocabRow {
   explanationKo: string | null
   exampleSentenceKo: string
   exampleSentenceVi: string
+  imageUrl?: string | null
   niklLevel: string | null
   topikLevel: string
   originalTopicName: string | null
@@ -194,6 +199,7 @@ interface RawProposalVocab {
 }
 
 let cachedProposalMap: Map<number, RawProposalVocab> | null = null
+let cachedProposalMtimeMs = 0
 let cachedSqlBaseVocab: {
   rows: BaseSqlVocabRow[]
   schemaStatus: FlashcardSchemaStatus
@@ -226,20 +232,25 @@ interface BaseSqlVocabRow {
 }
 
 function getProposalVocabMap(): Map<number, RawProposalVocab> {
-  if (cachedProposalMap) return cachedProposalMap
-  const map = new Map<number, RawProposalVocab>()
   try {
     if (fs.existsSync(VOCAB_PROPOSAL_PATH)) {
+      const stat = fs.statSync(VOCAB_PROPOSAL_PATH)
+      if (cachedProposalMap && stat.mtimeMs === cachedProposalMtimeMs) {
+        return cachedProposalMap
+      }
+      const map = new Map<number, RawProposalVocab>()
       const raw = JSON.parse(fs.readFileSync(VOCAB_PROPOSAL_PATH, 'utf8')) as RawProposalVocab[]
       for (const item of raw) {
         map.set(item.VocabId, item)
       }
+      cachedProposalMap = map
+      cachedProposalMtimeMs = stat.mtimeMs
+      return map
     }
   } catch {
     // ignore
   }
-  cachedProposalMap = map
-  return map
+  return cachedProposalMap || new Map<number, RawProposalVocab>()
 }
 
 function loadPersistentAdminState(): FlashcardAdminPersistentState {
@@ -546,6 +557,7 @@ export async function buildUnifiedFlashcardDataset(forceRefresh = false): Promis
       explanationKo: override.explanationKo !== undefined ? override.explanationKo : r.ExplanationKo || null,
       exampleSentenceKo: standardizedExKo,
       exampleSentenceVi: standardizedExVi,
+      imageUrl: override.imageUrl !== undefined ? override.imageUrl : null,
       niklLevel: override.niklLevel !== undefined ? override.niklLevel : r.NiklLevel || null,
       topikLevel: override.topikLevel || r.TopikLevel || 'TOPIK I - Cấp 1',
       originalTopicName: r.TopicName || null,
@@ -586,6 +598,8 @@ export async function buildUnifiedFlashcardDataset(forceRefresh = false): Promis
         override.exampleSentenceKo !== undefined ? override.exampleSentenceKo : added.exampleSentenceKo,
       exampleSentenceVi:
         override.exampleSentenceVi !== undefined ? override.exampleSentenceVi : added.exampleSentenceVi,
+      imageUrl:
+        override.imageUrl !== undefined ? override.imageUrl : added.imageUrl ?? null,
       niklLevel: override.niklLevel !== undefined ? override.niklLevel : added.niklLevel,
       topikLevel: override.topikLevel || added.topikLevel,
       originalTopicName: added.originalTopicName,
@@ -685,6 +699,7 @@ export async function buildUnifiedFlashcardDataset(forceRefresh = false): Promis
         description: t.Description || '',
         iconName: t.IconName || 'Sparkles',
         colorCode: t.ColorCode || '#7C3AED',
+        imageUrl: t.ImageUrl || null,
         displayOrder: t.DisplayOrder,
         isActive: Boolean(t.IsActive),
         isAdminOnly: Boolean(t.IsAdminOnly),
@@ -781,6 +796,7 @@ export async function getStudentFlashcards(filters?: {
     description: string
     iconName: string
     colorCode: string
+    imageUrl: string | null
     activeWordsCount: number
     levels: string[]
     levelCounts: Record<string, number>
@@ -792,6 +808,7 @@ export async function getStudentFlashcards(filters?: {
       vocabId: number
       vocabCode: string
       hanja: string | null
+      imageUrl: string | null
       niklLevel: string | null
       sourceName: string
       topicId: number
@@ -850,6 +867,7 @@ export async function getStudentFlashcards(filters?: {
         description: t.description,
         iconName: t.iconName,
         colorCode: t.colorCode,
+        imageUrl: t.imageUrl || null,
         activeWordsCount: meta.vocabIds.length,
         levels,
         levelCounts: meta.levelCounts,
@@ -909,6 +927,7 @@ export async function getStudentFlashcards(filters?: {
       vocabId: number
       vocabCode: string
       hanja: string | null
+      imageUrl: string | null
       niklLevel: string | null
       sourceName: string
       topicId: number
@@ -958,6 +977,7 @@ export async function getStudentFlashcards(filters?: {
       meaning: v.vietnameseMeaning,
       pos: (v.partOfSpeech as VocabularyItem['pos']) || 'Danh từ',
       hanja: v.hanja,
+      imageUrl: v.imageUrl,
       level: (v.topikLevel as VocabularyItem['level']) || 'TOPIK I - Cấp 1',
       niklLevel: v.niklLevel,
       topic: displayMapping.topicNameVi,
@@ -1029,6 +1049,7 @@ export async function createFlashcardTopic(input: {
   description?: string
   iconName?: string
   colorCode?: string
+  imageUrl?: string | null
   displayOrder?: number
   isActive?: boolean
   isAdminOnly?: boolean
@@ -1065,6 +1086,7 @@ export async function createFlashcardTopic(input: {
 
   const isAdminOnly = Boolean(input.isAdminOnly)
   const isActive = isAdminOnly ? false : input.isActive !== undefined ? Boolean(input.isActive) : true
+  const imageUrl = input.imageUrl ? String(input.imageUrl).trim() : null
 
   const newRow: StoredTopicRow = {
     TopicId: newTopicId,
@@ -1074,6 +1096,7 @@ export async function createFlashcardTopic(input: {
     Description: String(input.description || '').trim(),
     IconName: String(input.iconName || 'Sparkles').trim(),
     ColorCode: String(input.colorCode || '#7C3AED').trim(),
+    ImageUrl: imageUrl || null,
     DisplayOrder: Number(input.displayOrder) || newTopicId,
     IsActive: isActive ? 1 : 0,
     IsAdminOnly: isAdminOnly ? 1 : 0,
@@ -1092,7 +1115,7 @@ export async function createFlashcardTopic(input: {
 }
 
 /**
- * ADMIN: Chỉnh sửa chủ đề Flashcard (tên, mô tả, biểu tượng, bật/tắt hiển thị cho Student, ẩn/khôi phục)
+ * ADMIN: Chỉnh sửa chủ đề Flashcard (tên, mô tả, biểu tượng, hình ảnh nền, bật/tắt hiển thị cho Student, ẩn/khôi phục)
  */
 export async function updateFlashcardTopic(
   topicId: number,
@@ -1102,6 +1125,7 @@ export async function updateFlashcardTopic(
     description?: string
     iconName?: string
     colorCode?: string
+    imageUrl?: string | null
     displayOrder?: number
     isActive?: boolean
     isAdminOnly?: boolean
@@ -1134,6 +1158,10 @@ export async function updateFlashcardTopic(
   }
   if (input.colorCode !== undefined) {
     current.ColorCode = String(input.colorCode).trim() || '#7C3AED'
+  }
+  if (input.imageUrl !== undefined) {
+    const img = input.imageUrl ? String(input.imageUrl).trim() : null
+    current.ImageUrl = img || null
   }
   if (input.displayOrder !== undefined && Number.isFinite(Number(input.displayOrder))) {
     current.DisplayOrder = Number(input.displayOrder)
@@ -1292,6 +1320,7 @@ export async function createFlashcardVocabulary(input: {
   explanationKo?: string | null
   exampleSentenceKo?: string
   exampleSentenceVi?: string
+  imageUrl?: string | null
   topikLevel?: string
   niklLevel?: string | null
   primaryTopicId?: number | null
@@ -1322,6 +1351,7 @@ export async function createFlashcardVocabulary(input: {
     explanationKo: input.explanationKo ? String(input.explanationKo).trim() : null,
     exampleSentenceKo: String(input.exampleSentenceKo || '').trim(),
     exampleSentenceVi: String(input.exampleSentenceVi || '').trim(),
+    imageUrl: input.imageUrl ? String(input.imageUrl).trim() : null,
     niklLevel: input.niklLevel ? String(input.niklLevel).trim() : null,
     topikLevel: String(input.topikLevel || 'TOPIK I - Cấp 1').trim(),
     originalTopicName: null,
@@ -1365,6 +1395,7 @@ export async function updateFlashcardVocabulary(
     explanationKo?: string | null
     exampleSentenceKo?: string
     exampleSentenceVi?: string
+    imageUrl?: string | null
     topikLevel?: string
     niklLevel?: string | null
     status?: 'Published' | 'Hidden'
@@ -1415,6 +1446,10 @@ export async function updateFlashcardVocabulary(
   }
   if (input.exampleSentenceVi !== undefined) {
     currentOverride.exampleSentenceVi = String(input.exampleSentenceVi).trim()
+  }
+  if (input.imageUrl !== undefined) {
+    const img = input.imageUrl ? String(input.imageUrl).trim() : null
+    currentOverride.imageUrl = img || null
   }
   if (input.topikLevel !== undefined) {
     currentOverride.topikLevel = String(input.topikLevel).trim()

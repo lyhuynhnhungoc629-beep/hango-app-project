@@ -376,13 +376,13 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
 
     if (total >= 80) {
       grade = 'good'
-      feedback = `Tuyệt vời! Chữ "${selectedChar}" bạn viết có bố cục rất cân đối và tương đồng cao với bộ mẫu chữ viết tay Kaggle.`
+      feedback = `Tuyệt vời! Chữ "${selectedChar}" bạn viết có bố cục rất cân đối và đúng chuẩn.`
     } else if (total >= 60) {
       grade = 'warn'
       if (balance < 65) {
         feedback = `Khá tốt! Tuy nhiên chữ "${selectedChar}" hơi lệch tâm ô vuông, bạn hãy căn đều vào giữa giao điểm đường gióng nhé.`
       } else if (coverage < 65) {
-        feedback = `Nét viết đúng hướng nhưng còn thiếu một số nét của "${selectedChar}". Hãy đối chiếu với 6 ảnh mẫu viết tay thật ở cột bên trái.`
+        feedback = `Nét viết đúng hướng nhưng còn thiếu một số nét của "${selectedChar}". Hãy đối chiếu với các mẫu chữ bên trái.`
       } else {
         feedback = `Chữ "${selectedChar}" đã rõ hình dáng! Hãy chau chuốt lại khoảng cách giữa phụ âm (${activeItem.jamo.choseong}) và nguyên âm (${activeItem.jamo.jungseong}).`
       }
@@ -460,22 +460,16 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Thanh chọn toàn bộ 64 lớp từ Dataset Kaggle */}
+      {/* Thanh chọn chữ cái tiếng Hàn */}
       <section className="rounded-2xl border border-border bg-card p-5">
         <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
           <div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-xs font-semibold text-violet-300">
-                <Database className="size-3.5" aria-hidden="true" />
-                SQL Server ({sqlStats?.database || 'HangoDatasetDB'}): Đầy đủ {sqlStats?.totalClasses || 64} lớp
-              </span>
-              <span className="text-xs text-muted-foreground">
-                {(sqlStats?.originalSamplesCount ?? 6400).toLocaleString('vi-VN')} ảnh viết tay gốc (100 mẫu/lớp) · {(sqlStats?.augmentedSamplesCount ?? 128000).toLocaleString('vi-VN')} ảnh mở rộng
-              </span>
-            </div>
-            <h2 className="mt-2 text-lg font-bold">
-              Chọn 1 trong 64 âm tiết từ bộ dữ liệu hoặc nhập từ tiếng Hàn bất kỳ
+            <h2 className="text-lg font-bold">
+              Chọn chữ cái tiếng Hàn bên dưới hoặc nhập từ bất kỳ để luyện viết
             </h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Tập viết đúng thứ tự nét và căn chỉnh tỷ lệ âm tiết trong khung ô vuông.
+            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -580,35 +574,22 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
 
       {/* Khu vực chính */}
       <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-        {/* Cột trái: Chi tiết âm tiết + Ảnh viết tay thật từ Kaggle Dataset */}
+        {/* Cột trái: Chi tiết âm tiết + Mẫu chữ tham khảo */}
         <section className="flex flex-col justify-between gap-6 rounded-2xl border border-border bg-card p-6">
           <div>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="flex size-20 items-center justify-center rounded-2xl border border-primary/40 bg-primary/15 text-5xl font-black text-white">
+                <div className="flex size-20 items-center justify-center rounded-2xl border-2 border-slate-900 bg-[#2563EB] text-5xl font-black text-white shadow-sm">
                   <span lang="ko">{activeItem.char}</span>
                 </div>
                 <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-md bg-white/10 px-2 py-0.5 font-mono text-xs text-violet-300">
-                      {activeItem.datasetClassId}
-                    </span>
-                    <span className="rounded-md bg-white/5 px-2 py-0.5 font-mono text-xs text-muted-foreground">
-                      {activeItem.unicode}
-                    </span>
-                    {activeItem.folder && (
-                      <span className="rounded-md bg-emerald-500/15 px-2 py-0.5 text-xs font-medium text-emerald-300">
-                        Thư mục: /{activeItem.folder}/ (100 ảnh gốc)
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-2 text-lg font-bold">
+                  <p className="text-lg font-bold">
                     {activeItem.meaning}{' '}
                     {activeItem.roman && (
                       <span className="text-sm font-normal text-muted-foreground">({activeItem.roman})</span>
                     )}
                   </p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">Tổng số nét chuẩn: ~{activeItem.strokes} nét</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Tổng số nét chuẩn: ~{activeItem.strokes} nét</p>
                 </div>
               </div>
 
@@ -622,10 +603,10 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
               </button>
             </div>
 
-            {/* Phân rã cấu tạo Jamo */}
+            {/* Phân rã cấu tạo âm tiết */}
             <div className="mt-6">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Cấu tạo âm tiết (Jamo Decomposition)
+                Cấu tạo âm tiết
               </h3>
               <div className="mt-3 grid grid-cols-3 gap-3">
                 <div className="rounded-xl border border-border bg-background p-3 text-center">
@@ -641,7 +622,7 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
                   </p>
                 </div>
                 <div className="rounded-xl border border-border bg-background p-3 text-center">
-                  <p className="text-[11px] text-muted-foreground">Batchim (종성)</p>
+                  <p className="text-[11px] text-muted-foreground">Phụ âm cuối (종성)</p>
                   <p lang="ko" className="mt-1 text-2xl font-bold text-amber-300">
                     {activeItem.jamo.jongseong || 'Không có'}
                   </p>
@@ -649,13 +630,11 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
               </div>
             </div>
 
-            {/* 6 mẫu chữ viết tay thật từ bộ dữ liệu Kaggle (100 mẫu/lớp) */}
+            {/* 6 mẫu chữ viết tay tham khảo */}
             <div className="mt-6">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  {activeItem.folder
-                    ? `Ảnh viết tay thật từ Kaggle Dataset (${sampleOffset + 1}–${sampleOffset + 6} / 100 mẫu)`
-                    : 'Mẫu chữ tham khảo'}
+                  Chữ viết tay mẫu tham khảo
                 </h3>
                 {activeItem.folder && (
                   <button
@@ -664,14 +643,14 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
                     className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 py-1 text-xs font-medium text-violet-300 hover:border-primary/50 hover:text-white"
                   >
                     <RefreshCw className="size-3" aria-hidden="true" />
-                    Xem 6 mẫu khác
+                    Xem mẫu khác
                   </button>
                 )}
               </div>
 
               {activeItem.folder ? (
                 <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-6">
-                  {sampleIndices.map((sampleIdx) => (
+                  {sampleIndices.map((sampleIdx, i) => (
                     <div
                       key={sampleIdx}
                       className="flex flex-col items-center gap-1.5 rounded-xl border border-border bg-background p-2"
@@ -679,18 +658,18 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`/api/dataset/handwriting/image?folder=${encodeURIComponent(activeItem.folder)}&index=${sampleIdx}`}
-                        alt={`Mẫu viết tay chữ ${activeItem.char} số ${sampleIdx + 1}`}
+                        alt={`Mẫu viết tay chữ ${activeItem.char} số ${i + 1}`}
                         className="size-16 rounded-lg border border-white/15 bg-white object-contain"
                       />
-                      <span className="font-mono text-[10px] text-muted-foreground">
-                        #{String(sampleIdx + 1).padStart(3, '0')}
+                      <span className="text-[10px] font-medium text-muted-foreground">
+                        Mẫu {i + 1}
                       </span>
                     </div>
                   ))}
                 </div>
               ) : (
                 <p className="mt-3 rounded-xl border border-border bg-background p-3 text-xs text-muted-foreground">
-                  Âm tiết &ldquo;{activeItem.char}&rdquo; nằm ngoài 64 lớp gốc của bộ dữ liệu Kang Seung-sik, hệ thống tự động tạo khung chữ mẫu chuẩn bên phải để bạn luyện viết và chấm điểm.
+                  Hãy quan sát chữ mẫu mờ trong khung ô vuông bên phải để tập viết đúng vị trí và tỷ lệ nét chữ.
                 </p>
               )}
             </div>
@@ -784,7 +763,7 @@ export function HandwritingPractice({ initialWord }: { initialWord?: string }) {
           {savedToast && (
             <p className="mt-3 flex items-center gap-1.5 text-xs text-emerald-400">
               <CheckCircle2 className="size-3.5" />
-              Đã đồng bộ điểm luyện viết lên Firebase Firestore!
+              Đã lưu kết quả luyện viết!
             </p>
           )}
 

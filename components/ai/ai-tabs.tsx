@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MessageSquare, Mic, PenTool } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { RoleplayChat } from './roleplay-chat'
@@ -11,15 +11,24 @@ export type AiTab = 'chat' | 'pronounce' | 'handwriting'
 
 export function AiTabs({ initialTab, initialWord }: { initialTab: AiTab; initialWord?: string }) {
   const [tab, setTab] = useState<AiTab>(initialTab)
+
+  useEffect(() => {
+    setTab(initialTab)
+  }, [initialTab])
+
   const tabs = [
-    { id: 'chat' as const, label: 'AI Roleplay Chat', icon: MessageSquare },
+    { id: 'chat' as const, label: 'Hội thoại tình huống', icon: MessageSquare },
     { id: 'pronounce' as const, label: 'Luyện phát âm', icon: Mic },
-    { id: 'handwriting' as const, label: 'Luyện viết chữ Hàn (PE92)', icon: PenTool },
+    { id: 'handwriting' as const, label: 'Luyện viết chữ Hàn', icon: PenTool },
   ]
 
   return (
     <>
-      <div role="tablist" aria-label="Tính năng AI" className="mb-6 flex flex-wrap gap-1 rounded-xl border border-border bg-card p-1 sm:inline-flex">
+      <div
+        role="tablist"
+        aria-label="Tính năng AI"
+        className="flex flex-wrap gap-1.5 rounded-2xl border-[1.5px] border-slate-800 bg-white p-2 shadow-[0_2px_0_rgba(15,23,42,0.06)] sm:inline-flex"
+      >
         {tabs.map(({ id, label, icon: Icon }) => (
           <button
             key={id}
@@ -30,8 +39,10 @@ export function AiTabs({ initialTab, initialWord }: { initialTab: AiTab; initial
             aria-controls={`panel-${id}`}
             onClick={() => setTab(id)}
             className={cn(
-              'flex h-10 items-center gap-2 rounded-lg px-4 text-sm font-semibold transition-colors',
-              tab === id ? 'bg-primary text-white' : 'text-muted-foreground hover:text-foreground',
+              'flex h-10 items-center gap-2 rounded-xl px-4 text-xs font-bold transition-colors md:text-sm',
+              tab === id
+                ? 'border border-slate-900 bg-[#2563EB] text-white shadow-sm'
+                : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
             )}
           >
             <Icon className="size-4" aria-hidden="true" />

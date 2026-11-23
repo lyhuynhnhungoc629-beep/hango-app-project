@@ -917,10 +917,10 @@
       "ExampleSentenceVi": "Vâng!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Vâng!",
+      "VietnameseMeaning": "Vâng! / Dạ!",
       "Romanization": "ye!",
-      "ExampleSentenceKo": "예!",
-      "ExampleSentenceVi": "Vâng!"
+      "ExampleSentenceKo": "예! 지금 바로 가겠습니다.",
+      "ExampleSentenceVi": "Vâng! Tôi sẽ đi ngay bây giờ."
     },
     "CanonicalVocabId": null
   },
@@ -942,10 +942,10 @@
       "ExampleSentenceVi": "Vâng."
     },
     "Proposed": {
-      "VietnameseMeaning": "Vâng.",
+      "VietnameseMeaning": "Vâng. / Dạ.",
       "Romanization": "ye.",
-      "ExampleSentenceKo": "예.",
-      "ExampleSentenceVi": "Vâng."
+      "ExampleSentenceKo": "예, 잘 알겠습니다.",
+      "ExampleSentenceVi": "Vâng, tôi hiểu rõ rồi ạ."
     },
     "CanonicalVocabId": null
   },
@@ -967,10 +967,10 @@
       "ExampleSentenceVi": "Vâng."
     },
     "Proposed": {
-      "VietnameseMeaning": "Vâng.",
-      "Romanization": "ne!",
-      "ExampleSentenceKo": "응.",
-      "ExampleSentenceVi": "Vâng."
+      "VietnameseMeaning": "Ừ. / Ừm.",
+      "Romanization": "eung.",
+      "ExampleSentenceKo": "응, 나도 그렇게 생각해.",
+      "ExampleSentenceVi": "Ừ, mình cũng nghĩ như vậy."
     },
     "CanonicalVocabId": null
   },
@@ -992,10 +992,10 @@
       "ExampleSentenceVi": "Vâng."
     },
     "Proposed": {
-      "VietnameseMeaning": "Vâng.",
-      "Romanization": "ne.",
-      "ExampleSentenceKo": "네",
-      "ExampleSentenceVi": "Vâng."
+      "VietnameseMeaning": "Vâng / Dạ",
+      "Romanization": "ne",
+      "ExampleSentenceKo": "네, 맞습니다.",
+      "ExampleSentenceVi": "Vâng, đúng vậy ạ."
     },
     "CanonicalVocabId": null
   },
@@ -1018,9 +1018,9 @@
     },
     "Proposed": {
       "VietnameseMeaning": "Đi đi!",
-      "Romanization": "dalliryeogo?",
-      "ExampleSentenceKo": "가!",
-      "ExampleSentenceVi": "Đi đi!"
+      "Romanization": "ga!",
+      "ExampleSentenceKo": "빨리 학교에 가!",
+      "ExampleSentenceVi": "Mau đi đến trường đi!"
     },
     "CanonicalVocabId": null
   },
@@ -1042,10 +1042,10 @@
       "ExampleSentenceVi": "Vâng."
     },
     "Proposed": {
-      "VietnameseMeaning": "Vâng.",
-      "Romanization": "chumchwo!",
-      "ExampleSentenceKo": "네.",
-      "ExampleSentenceVi": "Vâng."
+      "VietnameseMeaning": "Vâng ạ.",
+      "Romanization": "ne.",
+      "ExampleSentenceKo": "네, 감사합니다.",
+      "ExampleSentenceVi": "Vâng, xin cảm ơn ạ."
     },
     "CanonicalVocabId": null
   },
@@ -1067,17 +1067,17 @@
       "ExampleSentenceVi": "Đau!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Đau!",
-      "Romanization": "chumchwoyo!",
-      "ExampleSentenceKo": "아야!",
-      "ExampleSentenceVi": "Đau!"
+      "VietnameseMeaning": "Ái! / Đau quá!",
+      "Romanization": "a-ya!",
+      "ExampleSentenceKo": "아야! 발을 찧었어.",
+      "ExampleSentenceVi": "Ái! Mình bị va vào chân rồi."
     },
     "CanonicalVocabId": null
   },
   {
     "VocabId": 44,
     "VocabCode": "TAT_KOR_VIE_13319304",
-    "KoreanWord": "ㅇ?",
+    "KoreanWord": "응?",
     "PartOfSpeech": "Biểu hiện / Câu mẫu",
     "TopikLevel": "TOPIK I",
     "NiklLevel": "A",
@@ -1092,10 +1092,10 @@
       "ExampleSentenceVi": "Hử?"
     },
     "Proposed": {
-      "VietnameseMeaning": "Hử?",
-      "Romanization": "chumchwora!",
-      "ExampleSentenceKo": "ㅇ?",
-      "ExampleSentenceVi": "Hử?"
+      "VietnameseMeaning": "Hử? / Sao cơ?",
+      "Romanization": "eung?",
+      "ExampleSentenceKo": "응? 방금 뭐라고 했어?",
+      "ExampleSentenceVi": "Hử? Bạn vừa nói gì cơ?"
     },
     "CanonicalVocabId": null
   },
@@ -1117,10 +1117,10 @@
       "ExampleSentenceVi": "Lạnh."
     },
     "Proposed": {
-      "VietnameseMeaning": "Lạnh.",
-      "Romanization": "chumchwoyo.",
-      "ExampleSentenceKo": "추워.",
-      "ExampleSentenceVi": "Lạnh."
+      "VietnameseMeaning": "Lạnh quá.",
+      "Romanization": "chu-wo.",
+      "ExampleSentenceKo": "오늘 날씨가 정말 추워.",
+      "ExampleSentenceVi": "Thời tiết hôm nay lạnh thật đấy."
     },
     "CanonicalVocabId": null
   },
@@ -1142,10 +1142,10 @@
       "ExampleSentenceVi": "Không."
     },
     "Proposed": {
-      "VietnameseMeaning": "Không.",
-      "Romanization": "eopseoyo.",
-      "ExampleSentenceKo": "아뇨.",
-      "ExampleSentenceVi": "Không."
+      "VietnameseMeaning": "Không ạ.",
+      "Romanization": "a-nyo.",
+      "ExampleSentenceKo": "아뇨, 괜찮습니다.",
+      "ExampleSentenceVi": "Không ạ, tôi không sao."
     },
     "CanonicalVocabId": null
   },
@@ -1167,10 +1167,10 @@
       "ExampleSentenceVi": "Ờm..."
     },
     "Proposed": {
-      "VietnameseMeaning": "Ờm...",
-      "Romanization": "bikkyeo!",
-      "ExampleSentenceKo": "저어...",
-      "ExampleSentenceVi": "Ờm..."
+      "VietnameseMeaning": "Ờm... / À mà...",
+      "Romanization": "jeo-eo...",
+      "ExampleSentenceKo": "저어... 말씀 좀 여쭙겠습니다.",
+      "ExampleSentenceVi": "Ờm... cho tôi xin phép hỏi một chút ạ."
     },
     "CanonicalVocabId": null
   },
@@ -1192,10 +1192,10 @@
       "ExampleSentenceVi": "Tạm biệt!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Tạm biệt!",
-      "Romanization": "bikkyeoyo!",
-      "ExampleSentenceKo": "잘 가!",
-      "ExampleSentenceVi": "Tạm biệt!"
+      "VietnameseMeaning": "Tạm biệt! / Đi cẩn thận nhé!",
+      "Romanization": "jal ga!",
+      "ExampleSentenceKo": "내일 또 만나, 잘 가!",
+      "ExampleSentenceVi": "Ngày mai gặp lại nhé, đi cẩn thận nha!"
     },
     "CanonicalVocabId": null
   },
@@ -1217,10 +1217,10 @@
       "ExampleSentenceVi": "Tôi đang bận."
     },
     "Proposed": {
-      "VietnameseMeaning": "Tôi đang bận.",
-      "Romanization": "bikkyeora!",
-      "ExampleSentenceKo": "바빠.",
-      "ExampleSentenceVi": "Tôi đang bận."
+      "VietnameseMeaning": "Mình đang bận.",
+      "Romanization": "ba-ppa.",
+      "ExampleSentenceKo": "지금 일이 많아서 너무 바빠.",
+      "ExampleSentenceVi": "Bây giờ nhiều việc nên mình bận lắm."
     },
     "CanonicalVocabId": null
   },
@@ -1242,10 +1242,10 @@
       "ExampleSentenceVi": "Mẹ nó!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Mẹ nó!",
-      "Romanization": "ppalli!",
-      "ExampleSentenceKo": "제미!",
-      "ExampleSentenceVi": "Mẹ nó!"
+      "VietnameseMeaning": "Trời đất! / Chết tiệt!",
+      "Romanization": "je-mi!",
+      "ExampleSentenceKo": "제미! 버스를 놓쳤잖아.",
+      "ExampleSentenceVi": "Trời đất! Lỡ mất chuyến xe buýt rồi."
     },
     "CanonicalVocabId": null
   },
@@ -1267,10 +1267,10 @@
       "ExampleSentenceVi": "Bây giờ!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Bây giờ!",
-      "Romanization": "geuman!",
-      "ExampleSentenceKo": "지금!",
-      "ExampleSentenceVi": "Bây giờ!"
+      "VietnameseMeaning": "Ngay bây giờ!",
+      "Romanization": "ji-geum!",
+      "ExampleSentenceKo": "지금 바로 출발하자!",
+      "ExampleSentenceVi": "Hãy xuất phát ngay bây giờ thôi!"
     },
     "CanonicalVocabId": null
   },
@@ -1292,10 +1292,10 @@
       "ExampleSentenceVi": "Bây giờ!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Bây giờ!",
-      "Romanization": "geumanhae!",
-      "ExampleSentenceKo": "당장!",
-      "ExampleSentenceVi": "Bây giờ!"
+      "VietnameseMeaning": "Ngay lập tức!",
+      "Romanization": "dang-jang!",
+      "ExampleSentenceKo": "당장 시작해야 해!",
+      "ExampleSentenceVi": "Phải bắt đầu ngay lập tức!"
     },
     "CanonicalVocabId": null
   },
@@ -1317,10 +1317,10 @@
       "ExampleSentenceVi": "Đi mà..."
     },
     "Proposed": {
-      "VietnameseMeaning": "Đi mà...",
-      "Romanization": "geumanhaeyo!",
-      "ExampleSentenceKo": "제발...",
-      "ExampleSentenceVi": "Đi mà..."
+      "VietnameseMeaning": "Làm ơn... / Đi mà...",
+      "Romanization": "je-bal...",
+      "ExampleSentenceKo": "제발 한 번만 도와주세요.",
+      "ExampleSentenceVi": "Làm ơn hãy giúp tôi một lần thôi."
     },
     "CanonicalVocabId": null
   },
@@ -1342,10 +1342,10 @@
       "ExampleSentenceVi": "Con vịt kìa!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Con vịt kìa!",
-      "Romanization": "geumanhaera!",
-      "ExampleSentenceKo": "숙여!",
-      "ExampleSentenceVi": "Con vịt kìa!"
+      "VietnameseMeaning": "Cúi đầu xuống!",
+      "Romanization": "sug-yeo!",
+      "ExampleSentenceKo": "위험하니까 고개를 숙여!",
+      "ExampleSentenceVi": "Nguy hiểm đấy nên hãy cúi đầu xuống!"
     },
     "CanonicalVocabId": null
   },
@@ -1368,9 +1368,9 @@
     },
     "Proposed": {
       "VietnameseMeaning": "Trốn đi.",
-      "Romanization": "gidaryeo!",
-      "ExampleSentenceKo": "숨어.",
-      "ExampleSentenceVi": "Trốn đi."
+      "Romanization": "sum-eo.",
+      "ExampleSentenceKo": "나무 뒤로 빨리 숨어.",
+      "ExampleSentenceVi": "Mau trốn ra phía sau cái cây đi."
     },
     "CanonicalVocabId": null
   },
@@ -1392,10 +1392,10 @@
       "ExampleSentenceVi": "Ô kê."
     },
     "Proposed": {
-      "VietnameseMeaning": "Ô kê.",
-      "Romanization": "gidaryeoyo!",
-      "ExampleSentenceKo": "오키.",
-      "ExampleSentenceVi": "Ô kê."
+      "VietnameseMeaning": "Ô kê. / Đồng ý.",
+      "Romanization": "o-ki.",
+      "ExampleSentenceKo": "오키, 그렇게 하자!",
+      "ExampleSentenceVi": "Ô kê, cứ làm như vậy nhé!"
     },
     "CanonicalVocabId": null
   },
@@ -1417,10 +1417,10 @@
       "ExampleSentenceVi": "Không."
     },
     "Proposed": {
-      "VietnameseMeaning": "Không.",
-      "Romanization": "gidaryeora!",
-      "ExampleSentenceKo": "아니.",
-      "ExampleSentenceVi": "Không."
+      "VietnameseMeaning": "Không. / Không phải.",
+      "Romanization": "a-ni.",
+      "ExampleSentenceKo": "아니, 그게 아니야.",
+      "ExampleSentenceVi": "Không, không phải thế đâu."
     },
     "CanonicalVocabId": null
   },
@@ -1442,10 +1442,10 @@
       "ExampleSentenceVi": "Bai nha!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Bai nha!",
-      "Romanization": "gidaryeo.",
-      "ExampleSentenceKo": "빠이!",
-      "ExampleSentenceVi": "Bai nha!"
+      "VietnameseMeaning": "Tạm biệt nhé! (Bye!)",
+      "Romanization": "ppa-i!",
+      "ExampleSentenceKo": "내일 봐, 빠이!",
+      "ExampleSentenceVi": "Mai gặp lại nhé, tạm biệt nha!"
     },
     "CanonicalVocabId": null
   },
@@ -1467,10 +1467,10 @@
       "ExampleSentenceVi": "Hử?"
     },
     "Proposed": {
-      "VietnameseMeaning": "Hử?",
-      "Romanization": "gidaryeoyo.",
-      "ExampleSentenceKo": "응?",
-      "ExampleSentenceVi": "Hử?"
+      "VietnameseMeaning": "Hử? / Gì cơ?",
+      "Romanization": "eung?",
+      "ExampleSentenceKo": "응? 나 불렀어?",
+      "ExampleSentenceVi": "Hử? Cậu vừa gọi mình à?"
     },
     "CanonicalVocabId": null
   },
@@ -1492,10 +1492,10 @@
       "ExampleSentenceVi": "Này."
     },
     "Proposed": {
-      "VietnameseMeaning": "Này.",
-      "Romanization": "annyeong!",
-      "ExampleSentenceKo": "있지.",
-      "ExampleSentenceVi": "Này."
+      "VietnameseMeaning": "Này nhé. / À này.",
+      "Romanization": "it-ji.",
+      "ExampleSentenceKo": "있지, 나 할 말이 있어.",
+      "ExampleSentenceVi": "À này, mình có chuyện muốn nói."
     },
     "CanonicalVocabId": null
   },
@@ -1517,10 +1517,10 @@
       "ExampleSentenceVi": "Hãy nhìn thật kỹ."
     },
     "Proposed": {
-      "VietnameseMeaning": "Hãy nhìn thật kỹ.",
-      "Romanization": "annyeonghaseyo!",
-      "ExampleSentenceKo": "잘 봐.",
-      "ExampleSentenceVi": "Hãy nhìn thật kỹ."
+      "VietnameseMeaning": "Hãy nhìn kỹ nhé.",
+      "Romanization": "jal bwa.",
+      "ExampleSentenceKo": "내가 하는 걸 잘 봐.",
+      "ExampleSentenceVi": "Hãy nhìn kỹ những gì mình làm nhé."
     },
     "CanonicalVocabId": null
   },
@@ -1542,10 +1542,10 @@
       "ExampleSentenceVi": "Nói cho tôi đi."
     },
     "Proposed": {
-      "VietnameseMeaning": "Nói cho tôi đi.",
-      "Romanization": "eoseo osipsio!",
-      "ExampleSentenceKo": "말해.",
-      "ExampleSentenceVi": "Nói cho tôi đi."
+      "VietnameseMeaning": "Nói đi. / Hãy nói cho mình biết.",
+      "Romanization": "mal-hae.",
+      "ExampleSentenceKo": "무슨 일인지 솔직하게 말해.",
+      "ExampleSentenceVi": "Có chuyện gì thì hãy thành thật nói đi."
     },
     "CanonicalVocabId": null
   },
@@ -1568,9 +1568,9 @@
     },
     "Proposed": {
       "VietnameseMeaning": "Tấn công!",
-      "Romanization": "hwanyeonghamnida!",
-      "ExampleSentenceKo": "공격!",
-      "ExampleSentenceVi": "Tấn công!"
+      "Romanization": "gong-gyeok!",
+      "ExampleSentenceKo": "우리 팀이 먼저 공격을 시작했다.",
+      "ExampleSentenceVi": "Đội của chúng tôi đã bắt đầu đợt tấn công trước."
     },
     "CanonicalVocabId": null
   },
@@ -1592,10 +1592,10 @@
       "ExampleSentenceVi": "Nghe này."
     },
     "Proposed": {
-      "VietnameseMeaning": "Nghe này.",
-      "Romanization": "jinjja?",
-      "ExampleSentenceKo": "들어.",
-      "ExampleSentenceVi": "Nghe này."
+      "VietnameseMeaning": "Nghe này. / Hãy lắng nghe.",
+      "Romanization": "deur-eo.",
+      "ExampleSentenceKo": "선생님 말씀을 잘 들어.",
+      "ExampleSentenceVi": "Hãy lắng nghe kỹ lời thầy cô giáo."
     },
     "CanonicalVocabId": null
   },
@@ -1617,10 +1617,10 @@
       "ExampleSentenceVi": "Đợi đã!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Đợi đã!",
-      "Romanization": "jeongmal?",
-      "ExampleSentenceKo": "잠깐!",
-      "ExampleSentenceVi": "Đợi đã!"
+      "VietnameseMeaning": "Khoan đã! / Đợi một chút!",
+      "Romanization": "jam-kkan!",
+      "ExampleSentenceKo": "잠깐! 지갑을 놓고 왔어.",
+      "ExampleSentenceVi": "Khoan đã! Mình để quên ví rồi."
     },
     "CanonicalVocabId": null
   },
@@ -1642,10 +1642,10 @@
       "ExampleSentenceVi": "Nhảy đi!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Nhảy đi!",
-      "Romanization": "jeongmalyo?",
-      "ExampleSentenceKo": "점프!",
-      "ExampleSentenceVi": "Nhảy đi!"
+      "VietnameseMeaning": "Nhảy lên! (Jump!)",
+      "Romanization": "jeom-peu!",
+      "ExampleSentenceKo": "높이 점프해 보세요!",
+      "ExampleSentenceVi": "Hãy thử nhảy lên thật cao xem!"
     },
     "CanonicalVocabId": null
   },
@@ -1667,10 +1667,10 @@
       "ExampleSentenceVi": "Chạy!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Chạy!",
-      "Romanization": "gwaenchanayo?",
-      "ExampleSentenceKo": "뛰어!",
-      "ExampleSentenceVi": "Chạy!"
+      "VietnameseMeaning": "Chạy đi!",
+      "Romanization": "ttwi-eo!",
+      "ExampleSentenceKo": "늦었으니까 빨리 뛰어!",
+      "ExampleSentenceVi": "Muộn rồi nên hãy mau chạy đi!"
     },
     "CanonicalVocabId": null
   },
@@ -1692,10 +1692,10 @@
       "ExampleSentenceVi": "Chào chị."
     },
     "Proposed": {
-      "VietnameseMeaning": "Chào chị.",
-      "Romanization": "gwaenchanayo.",
-      "ExampleSentenceKo": "안녕.",
-      "ExampleSentenceVi": "Chào chị."
+      "VietnameseMeaning": "Xin chào. / Tạm biệt.",
+      "Romanization": "an-nyeong.",
+      "ExampleSentenceKo": "안녕, 오늘 하루도 잘 보냈어?",
+      "ExampleSentenceVi": "Xin chào, hôm nay bạn có một ngày tốt lành chứ?"
     },
     "CanonicalVocabId": null
   },
@@ -1717,10 +1717,10 @@
       "ExampleSentenceVi": "Thật khó tin!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Thật khó tin!",
-      "Romanization": "algesseoyo.",
-      "ExampleSentenceKo": "설마!",
-      "ExampleSentenceVi": "Thật khó tin!"
+      "VietnameseMeaning": "Chẳng lẽ nào! / Khó tin thật!",
+      "Romanization": "seol-ma!",
+      "ExampleSentenceKo": "설마 벌써 다 잊어버린 건 아니지?",
+      "ExampleSentenceVi": "Chẳng lẽ nào bạn đã quên hết rồi sao?"
     },
     "CanonicalVocabId": null
   },
@@ -1742,10 +1742,10 @@
       "ExampleSentenceVi": "Đừng có rầu rĩ quá như thế."
     },
     "Proposed": {
-      "VietnameseMeaning": "Đừng có rầu rĩ quá như thế.",
-      "Romanization": "algesseumnida.",
-      "ExampleSentenceKo": "힘내.",
-      "ExampleSentenceVi": "Đừng có rầu rĩ quá như thế."
+      "VietnameseMeaning": "Cố lên nhé! / Mạnh mẽ lên.",
+      "Romanization": "him-nae.",
+      "ExampleSentenceKo": "힘들겠지만 조금만 더 힘내.",
+      "ExampleSentenceVi": "Dù vất vả nhưng hãy cố gắng thêm một chút nữa nhé."
     },
     "CanonicalVocabId": null
   },
@@ -1768,9 +1768,9 @@
     },
     "Proposed": {
       "VietnameseMeaning": "Hắt xì!",
-      "Romanization": "chukhahaeyo!",
-      "ExampleSentenceKo": "에취!",
-      "ExampleSentenceVi": "Hắt xì!"
+      "Romanization": "e-chwi!",
+      "ExampleSentenceKo": "에취! 감기에 걸렸나 봐요.",
+      "ExampleSentenceVi": "Hắt xì! Hình như tôi bị cảm cúm rồi."
     },
     "CanonicalVocabId": null
   },
@@ -1792,10 +1792,10 @@
       "ExampleSentenceVi": "Mẹ nó!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Mẹ nó!",
-      "Romanization": "chukhahamnida!",
-      "ExampleSentenceKo": "씨발!",
-      "ExampleSentenceVi": "Mẹ nó!"
+      "VietnameseMeaning": "Chết tiệt! (Từ lóng cảm thán)",
+      "Romanization": "ssi-bal!",
+      "ExampleSentenceKo": "화가 날 때 나쁜 말을 쓰지 마세요.",
+      "ExampleSentenceVi": "Đừng dùng lời lẽ không hay khi tức giận."
     },
     "CanonicalVocabId": null
   },
@@ -1817,10 +1817,10 @@
       "ExampleSentenceVi": "Chào bạn."
     },
     "Proposed": {
-      "VietnameseMeaning": "Chào bạn.",
-      "Romanization": "mianhaeyo.",
-      "ExampleSentenceKo": "안녕!",
-      "ExampleSentenceVi": "Chào bạn."
+      "VietnameseMeaning": "Chào bạn!",
+      "Romanization": "an-nyeong!",
+      "ExampleSentenceKo": "안녕! 반가워.",
+      "ExampleSentenceVi": "Chào bạn! Rất vui được gặp bạn."
     },
     "CanonicalVocabId": null
   },
@@ -1842,10 +1842,10 @@
       "ExampleSentenceVi": "Dô!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Dô!",
-      "Romanization": "joesonghamnida.",
-      "ExampleSentenceKo": "건배!",
-      "ExampleSentenceVi": "Dô!"
+      "VietnameseMeaning": "Cạn ly! / Dô!",
+      "Romanization": "geon-bae!",
+      "ExampleSentenceKo": "우리의 성공을 위하여 건배!",
+      "ExampleSentenceVi": "Cạn ly vì sự thành công của chúng ta!"
     },
     "CanonicalVocabId": null
   },
@@ -1867,10 +1867,10 @@
       "ExampleSentenceVi": "đi thôi!"
     },
     "Proposed": {
-      "VietnameseMeaning": "đi thôi!",
-      "Romanization": "gamsahamnida.",
-      "ExampleSentenceKo": "가자!",
-      "ExampleSentenceVi": "đi thôi!"
+      "VietnameseMeaning": "Đi thôi!",
+      "Romanization": "ga-ja!",
+      "ExampleSentenceKo": "이제 밥 먹으러 가자!",
+      "ExampleSentenceVi": "Bây giờ chúng mình đi ăn cơm thôi!"
     },
     "CanonicalVocabId": null
   },
@@ -1893,9 +1893,9 @@
     },
     "Proposed": {
       "VietnameseMeaning": "Chúc ngủ ngon.",
-      "Romanization": "gomawoyo.",
-      "ExampleSentenceKo": "잘자.",
-      "ExampleSentenceVi": "Chúc ngủ ngon."
+      "Romanization": "jal ja.",
+      "ExampleSentenceKo": "오늘 수고했어, 잘 자.",
+      "ExampleSentenceVi": "Hôm nay bạn vất vả rồi, chúc ngủ ngon nhé."
     },
     "CanonicalVocabId": null
   },
@@ -1917,10 +1917,10 @@
       "ExampleSentenceVi": "Hả?"
     },
     "Proposed": {
-      "VietnameseMeaning": "Hả?",
-      "Romanization": "cheonman-eyo.",
-      "ExampleSentenceKo": "뭐?",
-      "ExampleSentenceVi": "Hả?"
+      "VietnameseMeaning": "Cái gì? / Hả?",
+      "Romanization": "mwo?",
+      "ExampleSentenceKo": "뭐? 다시 한 번 말해 줄래?",
+      "ExampleSentenceVi": "Hả? Bạn có thể nói lại một lần nữa không?"
     },
     "CanonicalVocabId": null
   },
@@ -1942,10 +1942,10 @@
       "ExampleSentenceVi": "Hả?"
     },
     "Proposed": {
-      "VietnameseMeaning": "Hả?",
-      "Romanization": "tto bwayo.",
-      "ExampleSentenceKo": "네?",
-      "ExampleSentenceVi": "Hả?"
+      "VietnameseMeaning": "Dạ? / Sao ạ?",
+      "Romanization": "ne?",
+      "ExampleSentenceKo": "네? 잘 못 들었습니다.",
+      "ExampleSentenceVi": "Dạ? Tôi chưa nghe rõ ạ."
     },
     "CanonicalVocabId": null
   },
@@ -1967,10 +1967,10 @@
       "ExampleSentenceVi": "Tại sao?"
     },
     "Proposed": {
-      "VietnameseMeaning": "Tại sao?",
-      "Romanization": "jal gayo.",
-      "ExampleSentenceKo": "왜?",
-      "ExampleSentenceVi": "Tại sao?"
+      "VietnameseMeaning": "Tại sao? / Sao thế?",
+      "Romanization": "wae?",
+      "ExampleSentenceKo": "왜 그렇게 웃고 있어?",
+      "ExampleSentenceVi": "Tại sao bạn lại cười như thế?"
     },
     "CanonicalVocabId": null
   },
@@ -1992,10 +1992,10 @@
       "ExampleSentenceVi": "Không."
     },
     "Proposed": {
-      "VietnameseMeaning": "Không.",
-      "Romanization": "annyeonghi gyeseyo.",
-      "ExampleSentenceKo": "아냐.",
-      "ExampleSentenceVi": "Không."
+      "VietnameseMeaning": "Không đâu. / Không phải.",
+      "Romanization": "a-nya.",
+      "ExampleSentenceKo": "아냐, 신경 쓰지 마.",
+      "ExampleSentenceVi": "Không có gì đâu, đừng bận tâm nhé."
     },
     "CanonicalVocabId": null
   },
@@ -2017,10 +2017,10 @@
       "ExampleSentenceVi": "Tôi không biết."
     },
     "Proposed": {
-      "VietnameseMeaning": "Tôi không biết.",
-      "Romanization": "annyeonghi gaseyo.",
-      "ExampleSentenceKo": "몰라.",
-      "ExampleSentenceVi": "Tôi không biết."
+      "VietnameseMeaning": "Mình không biết.",
+      "Romanization": "mol-la.",
+      "ExampleSentenceKo": "그건 나도 잘 몰라.",
+      "ExampleSentenceVi": "Chuyện đó thì mình cũng không rõ nữa."
     },
     "CanonicalVocabId": null
   },
@@ -2042,10 +2042,10 @@
       "ExampleSentenceVi": "Chết đi!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Chết đi!",
-      "Romanization": "masisseoyo.",
-      "ExampleSentenceKo": "죽어!",
-      "ExampleSentenceVi": "Chết đi!"
+      "VietnameseMeaning": "Chết mất! (Từ cảm thán mạnh)",
+      "Romanization": "jug-eo!",
+      "ExampleSentenceKo": "더워서 죽겠어요.",
+      "ExampleSentenceVi": "Nóng muốn chết mất thôi."
     },
     "CanonicalVocabId": null
   },
@@ -2067,10 +2067,10 @@
       "ExampleSentenceVi": "Chạy!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Chạy!",
-      "Romanization": "bae gopayo.",
-      "ExampleSentenceKo": "도망가!",
-      "ExampleSentenceVi": "Chạy!"
+      "VietnameseMeaning": "Chạy trốn đi!",
+      "Romanization": "do-mang-ga!",
+      "ExampleSentenceKo": "비가 오니까 빨리 안으로 도망가!",
+      "ExampleSentenceVi": "Trời mưa rồi nên mau chạy trốn vào trong đi!"
     },
     "CanonicalVocabId": null
   },
@@ -2092,10 +2092,10 @@
       "ExampleSentenceVi": "Lạnh."
     },
     "Proposed": {
-      "VietnameseMeaning": "Lạnh.",
-      "Romanization": "mok mallayo.",
-      "ExampleSentenceKo": "추워요.",
-      "ExampleSentenceVi": "Lạnh."
+      "VietnameseMeaning": "Lạnh quá ạ.",
+      "Romanization": "chu-wo-yo.",
+      "ExampleSentenceKo": "밖이 너무 추워요.",
+      "ExampleSentenceVi": "Bên ngoài trời lạnh lắm ạ."
     },
     "CanonicalVocabId": null
   },
@@ -2117,10 +2117,10 @@
       "ExampleSentenceVi": "Thật sao?"
     },
     "Proposed": {
-      "VietnameseMeaning": "Thật sao?",
-      "Romanization": "pi-gonhaeyo.",
-      "ExampleSentenceKo": "정말?",
-      "ExampleSentenceVi": "Thật sao?"
+      "VietnameseMeaning": "Thật sao? / Thật à?",
+      "Romanization": "jeong-mal?",
+      "ExampleSentenceKo": "정말? 그게 사실이야?",
+      "ExampleSentenceVi": "Thật sao? Điều đó là sự thật à?"
     },
     "CanonicalVocabId": null
   },
@@ -2142,10 +2142,10 @@
       "ExampleSentenceVi": "Không."
     },
     "Proposed": {
-      "VietnameseMeaning": "Không.",
-      "Romanization": "chuwoyo.",
-      "ExampleSentenceKo": "아니요.",
-      "ExampleSentenceVi": "Không."
+      "VietnameseMeaning": "Không ạ.",
+      "Romanization": "a-ni-yo.",
+      "ExampleSentenceKo": "아니요, 아직 안 먹었어요.",
+      "ExampleSentenceVi": "Không ạ, tôi vẫn chưa ăn."
     },
     "CanonicalVocabId": null
   },
@@ -2167,10 +2167,10 @@
       "ExampleSentenceVi": "Không."
     },
     "Proposed": {
-      "VietnameseMeaning": "Không.",
-      "Romanization": "deowoyo.",
-      "ExampleSentenceKo": "아니야.",
-      "ExampleSentenceVi": "Không."
+      "VietnameseMeaning": "Không phải đâu.",
+      "Romanization": "a-ni-ya.",
+      "ExampleSentenceKo": "내 잘못이 아니야.",
+      "ExampleSentenceVi": "Đó không phải là lỗi của mình đâu."
     },
     "CanonicalVocabId": null
   },
@@ -2192,10 +2192,10 @@
       "ExampleSentenceVi": "Tôi không biết."
     },
     "Proposed": {
-      "VietnameseMeaning": "Tôi không biết.",
-      "Romanization": "jota!",
-      "ExampleSentenceKo": "몰라요.",
-      "ExampleSentenceVi": "Tôi không biết."
+      "VietnameseMeaning": "Tôi không biết ạ.",
+      "Romanization": "mol-la-yo.",
+      "ExampleSentenceKo": "저도 그 이유를 잘 몰라요.",
+      "ExampleSentenceVi": "Tôi cũng không biết rõ lý do đó ạ."
     },
     "CanonicalVocabId": null
   },
@@ -2217,10 +2217,10 @@
       "ExampleSentenceVi": "Tại sao?"
     },
     "Proposed": {
-      "VietnameseMeaning": "Tại sao?",
-      "Romanization": "siheoyo.",
-      "ExampleSentenceKo": "왜요?",
-      "ExampleSentenceVi": "Tại sao?"
+      "VietnameseMeaning": "Tại sao ạ? / Có chuyện gì ạ?",
+      "Romanization": "wae-yo?",
+      "ExampleSentenceKo": "왜요? 무슨 문제라도 있나요?",
+      "ExampleSentenceVi": "Tại sao ạ? Có vấn đề gì xảy ra sao?"
     },
     "CanonicalVocabId": null
   },
@@ -2242,10 +2242,10 @@
       "ExampleSentenceVi": "Im miệng!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Im miệng!",
-      "Romanization": "johaheyo.",
-      "ExampleSentenceKo": "입 닥쳐!",
-      "ExampleSentenceVi": "Im miệng!"
+      "VietnameseMeaning": "Im miệng! (Khẩu ngữ nặng)",
+      "Romanization": "ip dak-chyeo!",
+      "ExampleSentenceKo": "조용히 해 주세요.",
+      "ExampleSentenceVi": "Xin hãy giữ trật tự."
     },
     "CanonicalVocabId": null
   },
@@ -2267,10 +2267,10 @@
       "ExampleSentenceVi": "Chào bạn."
     },
     "Proposed": {
-      "VietnameseMeaning": "Chào bạn.",
-      "Romanization": "saranghaeyo.",
-      "ExampleSentenceKo": "저기요!",
-      "ExampleSentenceVi": "Chào bạn."
+      "VietnameseMeaning": "Xin lỗi! / Cho tôi hỏi!",
+      "Romanization": "jeo-gi-yo!",
+      "ExampleSentenceKo": "저기요! 여기 주문할게요.",
+      "ExampleSentenceVi": "Cho tôi hỏi! Tôi muốn gọi món ở đây ạ."
     },
     "CanonicalVocabId": null
   },
@@ -2292,10 +2292,10 @@
       "ExampleSentenceVi": "Tạm biệt!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Tạm biệt!",
-      "Romanization": "haengbokhaeyo.",
-      "ExampleSentenceKo": "잘 있어!",
-      "ExampleSentenceVi": "Tạm biệt!"
+      "VietnameseMeaning": "Ở lại mạnh giỏi nhé! / Tạm biệt!",
+      "Romanization": "jal iss-eo!",
+      "ExampleSentenceKo": "나는 먼저 갈게, 잘 있어!",
+      "ExampleSentenceVi": "Mình về trước đây, bạn ở lại nhé!"
     },
     "CanonicalVocabId": null
   },
@@ -2317,10 +2317,10 @@
       "ExampleSentenceVi": "Tạm biệt!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Tạm biệt!",
-      "Romanization": "jal jayo.",
-      "ExampleSentenceKo": "잘 가요!",
-      "ExampleSentenceVi": "Tạm biệt!"
+      "VietnameseMeaning": "Tạm biệt ạ! / Đi cẩn thận ạ!",
+      "Romanization": "jal ga-yo!",
+      "ExampleSentenceKo": "조심히 들어가세요, 잘 가요!",
+      "ExampleSentenceVi": "Hãy về cẩn thận nhé, tạm biệt ạ!"
     },
     "CanonicalVocabId": null
   },
@@ -2342,10 +2342,10 @@
       "ExampleSentenceVi": "Chào buổi sáng!"
     },
     "Proposed": {
-      "VietnameseMeaning": "Chào buổi sáng!",
-      "Romanization": "annyeonghi jumuseyo.",
-      "ExampleSentenceKo": "안녕?",
-      "ExampleSentenceVi": "Chào buổi sáng!"
+      "VietnameseMeaning": "Chào bạn? / Khỏe không?",
+      "Romanization": "an-nyeong?",
+      "ExampleSentenceKo": "안녕? 오랜만이야!",
+      "ExampleSentenceVi": "Chào bạn! Lâu rồi không gặp!"
     },
     "CanonicalVocabId": null
   },
@@ -2368,9 +2368,9 @@
     },
     "Proposed": {
       "VietnameseMeaning": "Đừng làm thế!",
-      "Romanization": "cheoeum boepgesseumnida.",
-      "ExampleSentenceKo": "하지 마!",
-      "ExampleSentenceVi": "Đừng làm thế!"
+      "Romanization": "ha-ji ma!",
+      "ExampleSentenceKo": "위험하니까 그런 장난은 하지 마!",
+      "ExampleSentenceVi": "Nguy hiểm lắm nên đừng đùa như thế!"
     },
     "CanonicalVocabId": null
   },
@@ -2392,10 +2392,10 @@
       "ExampleSentenceVi": "Tôi mệt"
     },
     "Proposed": {
-      "VietnameseMeaning": "Tôi mệt",
-      "Romanization": "mannaseo bangapseumnida.",
-      "ExampleSentenceKo": "피곤해.",
-      "ExampleSentenceVi": "Tôi mệt"
+      "VietnameseMeaning": "Mình mệt quá.",
+      "Romanization": "pi-gon-hae.",
+      "ExampleSentenceKo": "오늘 일을 많이 해서 너무 피곤해.",
+      "ExampleSentenceVi": "Hôm nay làm việc nhiều nên mình mệt quá."
     },
     "CanonicalVocabId": null
   },

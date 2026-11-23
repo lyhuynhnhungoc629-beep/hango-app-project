@@ -210,9 +210,6 @@ export function StudentTrackingModal({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg font-bold text-white">Theo dõi tiến độ học viên</h2>
-                <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-xs font-semibold text-emerald-300">
-                  SQL Server & Firestore
-                </span>
               </div>
               <p className="text-xs text-muted-foreground">
                 Dữ liệu thực tế 7 chặng, số buổi hoàn thành, hoạt động và điểm kiểm tra tuần tự.
