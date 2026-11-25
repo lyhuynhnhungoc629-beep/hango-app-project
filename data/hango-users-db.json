@@ -50,14 +50,14 @@
       "isRootAdmin": false,
       "locked": false,
       "level": 1,
-      "xp": 0,
-      "streak": 0,
-      "lastStudyDate": null,
+      "xp": 65,
+      "streak": 1,
+      "lastStudyDate": "2026-11-25",
       "totalStudyMinutes": 0,
-      "learnedVocabCount": 0,
+      "learnedVocabCount": 3,
       "createdAt": "2026-11-17T08:18:32.444Z",
-      "lastLoginAt": "2026-11-17T08:18:32.444Z",
-      "updatedAt": "2026-11-17T08:18:32.444Z"
+      "lastLoginAt": "2026-11-25T10:25:07.916Z",
+      "updatedAt": "2026-11-25T11:00:22.116Z"
     }
   },
   "progress": {
@@ -599,11 +599,110 @@
     },
     "usr_52aad2d411ca6d09acb0": {
       "uid": "usr_52aad2d411ca6d09acb0",
-      "srsProgress": {},
+      "srsProgress": {
+        "1": {
+          "vocabId": "1",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-26T10:59:08.153Z",
+          "NgayOnTiepTheoHienThi": "26/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.6,
+          "MucDoNho": "remember",
+          "NgayOnGanNhat": "2026-11-25T10:59:08.153Z",
+          "wordKo": "아이",
+          "meaning": "Trẻ em, em bé",
+          "updatedAt": "2026-11-25T10:59:08.272Z"
+        },
+        "4": {
+          "vocabId": "4",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-26T10:59:13.054Z",
+          "NgayOnTiepTheoHienThi": "26/11/2026",
+          "SoLanLap": 1,
+          "HeSoGhiNho": 2.36,
+          "MucDoNho": "hard",
+          "NgayOnGanNhat": "2026-11-25T10:59:13.054Z",
+          "wordKo": "어머니",
+          "meaning": "Mẹ",
+          "updatedAt": "2026-11-25T10:59:13.176Z"
+        },
+        "8": {
+          "vocabId": "8",
+          "KhoangCachNgay": 1,
+          "NgayOnTiepTheo": "2026-11-26T10:59:16.095Z",
+          "NgayOnTiepTheoHienThi": "26/11/2026",
+          "SoLanLap": 0,
+          "HeSoGhiNho": 1.96,
+          "MucDoNho": "forgot",
+          "NgayOnGanNhat": "2026-11-25T10:59:16.095Z",
+          "wordKo": "요리",
+          "meaning": "Món ăn, việc nấu ăn",
+          "updatedAt": "2026-11-25T10:59:16.214Z"
+        }
+      },
       "pomodoroSessions": [],
-      "handwritingRecords": {},
+      "handwritingRecords": {
+        "가": {
+          "char": "가",
+          "unicode": "U+AC00",
+          "datasetClassId": "KANG_01_GA",
+          "lastScore": 53,
+          "bestScore": 53,
+          "attempts": 1,
+          "updatedAt": "2026-11-25T10:59:57.937Z"
+        },
+        "그": {
+          "char": "그",
+          "unicode": "U+ADF8",
+          "datasetClassId": "KANG_03_GEU",
+          "lastScore": 76,
+          "bestScore": 76,
+          "attempts": 1,
+          "updatedAt": "2026-11-25T11:00:22.116Z"
+        }
+      },
       "topikResults": [],
       "studyHistory": [
+        {
+          "id": "hw_1795604422116_그",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"그\" (U+ADF8)",
+          "detail": "Điểm đạt được: 76/100 (Cao nhất: 76/100 · Lần thử #1)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-25T11:00:22.116Z"
+        },
+        {
+          "id": "hw_1795604397937_가",
+          "type": "handwriting",
+          "title": "Luyện viết chữ Hàn \"가\" (U+AC00)",
+          "detail": "Điểm đạt được: 53/100 (Cao nhất: 53/100 · Lần thử #1)",
+          "xpEarned": 10,
+          "timestamp": "2026-11-25T10:59:57.937Z"
+        },
+        {
+          "id": "srs_1795604356214_8",
+          "type": "srs",
+          "title": "Học từ mới: 요리 (Món ăn, việc nấu ăn)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 26/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-25T10:59:16.214Z"
+        },
+        {
+          "id": "srs_1795604353176_4",
+          "type": "srs",
+          "title": "Học từ mới: 어머니 (Mẹ)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 26/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-25T10:59:13.176Z"
+        },
+        {
+          "id": "srs_1795604348272_1",
+          "type": "srs",
+          "title": "Học từ mới: 아이 (Trẻ em, em bé)",
+          "detail": "Khoảng cách ôn: 1 ngày · Ôn tiếp: 26/11/2026",
+          "xpEarned": 15,
+          "timestamp": "2026-11-25T10:59:08.272Z"
+        },
         {
           "id": "act_1794903512559",
           "type": "account",
