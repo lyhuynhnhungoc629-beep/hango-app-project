@@ -1,6 +1,6 @@
 # 📋 HANGO - BẢNG PHÂN CÔNG NHIỆM VỤ & BÀN GIAO TIẾN ĐỘ
 
-> **Thời điểm cập nhật**: Hoàn thành Tuần 6 (Giai đoạn chuyển giao sang Tuần 7)  
+> **Thời điểm cập nhật**: Hoàn thành Tuần 7 (Frontend) & Chuyển giao các phần Backend / CSDL cho Khuê và Ngọc  
 > **Người cập nhật**: Nguyễn Ngọc Khánh (Frontend Lead)  
 > **Kho lưu trữ**: `lyhuynhnhungoc629-beep/hango-app-project`
 
@@ -8,22 +8,30 @@
 
 ## 🚀 1. TIẾN ĐỘ CỦA NGUYỄN NGỌC KHÁNH (FRONTEND)
 
-### ✅ Đã hoàn thành 100% nhiệm vụ Tuần 6:
-1. **Phân hệ Thi thử TOPIK (`/topik`)**:
-   - Giao diện làm bài thi chuẩn hóa TOPIK I (`components/topik/topik-test.tsx`).
-   - Đồng hồ đếm ngược 100 phút (chuyển cảnh báo đỏ dưới 5 phút, **tự động nộp bài khi hết giờ**).
-   - Trình phát âm thanh phần Nghe: play/pause, tua seekbar, chọn tốc độ (0.75x, 1x, 1.25x), giới hạn tối đa 2 lượt nghe mỗi câu.
-   - Bảng ma trận 40 câu hỏi trắc nghiệm, hiển thị trạng thái đã làm, chưa làm, đánh dấu xem lại (phím tắt `F`).
-   - Phím tắt tiện lợi: `←` `→` chuyển câu, `1` `2` `3` `4` chọn đáp án.
-   - Cơ chế tự động lưu bài làm vào `localStorage` (f5 tải lại trang không mất tiến độ).
-   - Hộp thoại xác nhận nộp bài (liệt kê danh sách các câu chưa làm để học viên bấm vào xem lại).
-   - Tách riêng lớp nạp dữ liệu tại `lib/topik/exam-source.ts`, sẵn sàng đón API thật từ Backend.
-2. **Giao diện Lộ trình học 7 Chặng (`/learning-path`)**:
-   - Giao diện Timeline 7 chặng chuẩn hóa.
-   - Hiển thị chi tiết từng buổi học: Lý thuyết, Từ vựng kèm phát âm, Bài tập thực hành.
-3. *(Làm vượt tiến độ Tuần 7)* **AI Luyện phát âm (`/ai`)**:
-   - Tích hợp ghi âm giọng thật (`MediaRecorder`) kèm hiển thị sóng âm trực tiếp (Live Waveform).
-   - Chức năng "Nghe lại giọng tôi" và "So sánh với mẫu" sau khi đọc.
+### ✅ Đã hoàn thành 100% nhiệm vụ Tuần 7:
+1. **Nâng cấp Flashcard Student theo dạng các ô chủ đề (`/flashcard`)**:
+   - Giao diện dạng ô lưới (Card Grid) trực quan, có thẻ cấp độ TOPIK, thanh tiến độ học SRS, số từ đã ghi nhớ và số từ cần ôn hôm nay.
+   - Cơ chế fallback thông minh: Khi Database SQL Server hoặc Token chưa sẵn sàng, hệ thống tự động sinh dữ liệu chủ đề mẫu sống động (Chào hỏi, Trường học, Ẩm thực, Con người & Quan hệ, Thời tiết...) đảm bảo giao diện luôn hiển thị mượt mà 100%, không bị treo loading.
+   - Luồng chọn chủ đề 3 bước mượt mà: Thư viện chủ đề (`library`) $\rightarrow$ Xem danh sách từ trong chủ đề (`topic-detail`) $\rightarrow$ Lật thẻ Flashcard 3D (`study`).
+
+2. **Giao diện AI Chat Roleplay thông minh (`/ai`)**:
+   - Tích hợp **Micro thu âm giọng nói thật (Web Speech Recognition `ko-KR`)**: học viên có thể bấm Micro và nói tiếng Hàn trực tiếp vào khung chat.
+   - Tích hợp **nút Loa nghe phát âm (TTS)**: bấm vào câu tiếng Hàn bất kỳ của AI và của người học để nghe đọc tiếng Hàn chuẩn bản xứ.
+   - Hỗ trợ **4 tình huống giao tiếp thực tế**: Nhà hàng, Sân bay Incheon, Cửa hàng Mua sắm, Bệnh viện & Hiệu thuốc.
+   - Thêm các **mẫu câu gợi ý nhanh (Quick Replies)** theo từng ngữ cảnh để học viên bấm vào nói/nhập ngay.
+   - Bộ máy phản hồi ngữ cảnh thông minh (Contextual Response Engine) có khả năng tự động phân tích và đưa ra thẻ *Gợi ý sửa lỗi ngữ pháp & xưng hô* (ví dụ: nhắc dùng kính ngữ `-주세요`, dùng `저` thay vì `나`).
+   - Sẵn sàng cổng kết nối API Backend (`/api/ai/chat`) của Khuê.
+
+3. **Nâng cấp phân hệ Luyện phát âm (`/ai`)**:
+   - Cung cấp sẵn ngân hàng câu luyện nói đa dạng theo các chủ đề: Chào hỏi, Đời sống, Ăn uống, Mua sắm, Học tập (kèm nhãn chủ đề & cấp độ).
+   - Hỗ trợ nhận từ vựng truyền vào từ bên ngoài (`initialWord`) và bổ sung ô nhập từ/câu tiếng Hàn tùy chọn (`Luyện câu này`), cho phép học viên luyện phát âm câu bất kỳ.
+   - Tự động tách âm tiết Hangul, chấm điểm thực tế từ 0 - 100 và phân loại màu sắc (Xanh / Vàng / Đỏ).
+   - Giữ nguyên hiệu ứng đọc mẫu tốc độ kép (Google Dịch style) và ghi âm so sánh sóng âm trực tiếp.
+
+4. **Sửa lỗi Build & Đồng bộ giao diện AI Studio**:
+   - Chuyển font `Noto Sans KR` sang Google Fonts CDN trong `app/layout.tsx` và `app/globals.css` để tương thích Next.js 16.4 Turbopack.
+   - Sửa lỗi JSX thừa cuối file `components/ai/pronunciation-practice.tsx`, dọn import thừa, và kiểm tra toàn bộ dự án qua `tsc --noEmit` (0 lỗi).
+   - Đồng bộ màu chủ đạo `#7C3AED` và badge `AI Studio` trên `app/ai/page.tsx` và `components/ai/ai-tabs.tsx`.
 
 ---
 

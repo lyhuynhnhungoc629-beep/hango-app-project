@@ -1,11 +1,10 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Noto_Sans_KR } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { AuthProvider } from '@/lib/auth-context'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin', 'vietnamese'], variable: '--font-inter' })
-const notoKr = Noto_Sans_KR({ subsets: ['latin'], weight: ['400', '500', '700', '800'], variable: '--font-noto-kr', preload: false })
 
 export const metadata: Metadata = {
   title: 'HANGO - Học tiếng Hàn thông minh, hoàn toàn miễn phí',
@@ -33,7 +32,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="vi" className={`${inter.variable} ${notoKr.variable} bg-background`}>
+    <html lang="vi" className={`${inter.variable} bg-background`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans antialiased">
         <AuthProvider>{children}</AuthProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}

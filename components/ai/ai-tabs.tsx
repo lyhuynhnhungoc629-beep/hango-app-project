@@ -39,9 +39,9 @@ export function AiTabs({ initialTab, initialWord }: { initialTab: AiTab; initial
             aria-controls={`panel-${id}`}
             onClick={() => setTab(id)}
             className={cn(
-              'flex h-10 items-center gap-2 rounded-xl px-4 text-xs font-bold transition-colors md:text-sm',
+              'flex h-10 items-center gap-2 rounded-xl px-4 text-xs font-bold transition-all md:text-sm',
               tab === id
-                ? 'border border-slate-900 bg-[#2563EB] text-white shadow-sm'
+                ? 'border-[1.5px] border-slate-900 bg-[#7C3AED] text-white shadow-[0_2px_0_rgba(15,23,42,0.12)]'
                 : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
             )}
           >
@@ -52,7 +52,7 @@ export function AiTabs({ initialTab, initialWord }: { initialTab: AiTab; initial
       </div>
       <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`}>
         {tab === 'chat' && <RoleplayChat />}
-        {tab === 'pronounce' && <PronunciationPractice />}
+        {tab === 'pronounce' && <PronunciationPractice initialWord={initialWord} />}
         {tab === 'handwriting' && <HandwritingPractice initialWord={initialWord} />}
       </div>
     </>

@@ -170,11 +170,59 @@ function isSrsDueToday(state?: SrsState): boolean {
   return state.NgayOnTiepTheo <= today
 }
 
+function buildDefaultStudentTopics(vocabList: VocabularyItem[]): StudentTopicOption[] {
+  const map = new Map<string, { count: number; levels: Set<string>; vocabIds: number[] }>()
+  vocabList.forEach((v, idx) => {
+    const t = v.topic || 'Từ vựng chung'
+    if (!map.has(t)) {
+      map.set(t, { count: 0, levels: new Set(), vocabIds: [] })
+    }
+    const item = map.get(t)!
+    item.count++
+    item.levels.add(v.level)
+    item.vocabIds.push(idx + 1)
+  })
+
+  const topicMeta: Record<string, { icon: string; color: string; ko: string; desc: string }> = {
+    'Chào hỏi': { icon: 'MessageCircle', color: '#10B981', ko: '인사와 소개', desc: 'Từ vựng câu chào hỏi, xưng hô và làm quen cơ bản.' },
+    'Trường học': { icon: 'GraduationCap', color: '#3B82F6', ko: '학교와 교육', desc: 'Từ vựng trường lớp, môn học, giáo viên và học tập.' },
+    'Ẩm thực': { icon: 'Utensils', color: '#F59E0B', ko: '음식 và 식당', desc: 'Từ vựng món ăn Hàn Quốc, gọi món và nấu nướng.' },
+    'Con người & Quan hệ': { icon: 'Users', color: '#EC4899', ko: '사람과 관계', desc: 'Từ vựng về bạn bè, gia đình và các mối quan hệ.' },
+    'Thời tiết': { icon: 'Sun', color: '#06B6D4', ko: '날씨와 계절', desc: 'Từ vựng về 4 mùa, nhiệt độ và khí hậu.' },
+  }
+
+  let idCounter = 1
+  const result: StudentTopicOption[] = []
+  map.forEach((data, topicName) => {
+    const meta = topicMeta[topicName] || {
+      icon: 'BookOpen',
+      color: '#8B5CF6',
+      ko: topicName,
+      desc: `Chủ đề từ vựng ${topicName} tiếng Hàn chuẩn TOPIK.`,
+    }
+    result.push({
+      topicId: idCounter++,
+      topicCode: topicName.toUpperCase().replace(/[^A-Z0-9]/g, '_'),
+      topicNameVi: topicName,
+      topicNameKo: meta.ko,
+      description: meta.desc,
+      iconName: meta.icon,
+      colorCode: meta.color,
+      imageUrl: null,
+      activeWordsCount: data.count,
+      levels: Array.from(data.levels),
+      vocabIds: data.vocabIds,
+    })
+  })
+  return result
+}
+
 const WORDS_PER_PAGE = 12
 
 export function FlashcardStudy() {
   const { user, profile, token, refreshProfile } = useAuth()
   const isAdmin = Boolean(profile?.role === 'admin' || profile?.isRootAdmin)
+  const fallbackTopics = useMemo(() => buildDefaultStudentTopics(INITIAL_VOCABULARIES), [])
 
   // Quy trình 3 bước cho Student: library (Chọn chủ đề) -> topic-detail (Danh sách từ trong chủ đề) -> study (Học Flashcard 3D)
   const [viewMode, setViewMode] = useState<StudentViewMode>('library')
@@ -192,8 +240,8 @@ export function FlashcardStudy() {
 
   // Dữ liệu từ API /api/vocabularies
   const [allStudentVocab, setAllStudentVocab] = useState<ExtendedVocabularyItem[]>(INITIAL_VOCABULARIES)
-  const [studentTopics, setStudentTopics] = useState<StudentTopicOption[]>([])
-  const [loadingLibrary, setLoadingLibrary] = useState(true)
+  const [studentTopics, setStudentTopics] = useState<StudentTopicOption[]>(fallbackTopics)
+  const [loadingLibrary, setLoadingLibrary] = useState(false)
 
   // Trạng thái học Flashcard 3D & Ngăn chi tiết từ vựng
   const [index, setIndex] = useState(0)
@@ -218,40 +266,38 @@ export function FlashcardStudy() {
 
   // Nạp toàn bộ danh sách chủ đề & kho từ vựng hợp lệ dành cho Student từ API /api/vocabularies
   useEffect(() => {
-    if (!token || isAdmin) return
+    if (isAdmin) return
     const controller = new AbortController()
     setLoadingLibrary(true)
 
     fetch('/api/vocabularies', {
       signal: controller.signal,
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
     })
       .then((res) => res.json())
       .then((json) => {
         if (json.success) {
-          if (Array.isArray(json.topics)) {
+          if (Array.isArray(json.topics) && json.topics.length > 0) {
             setStudentTopics(json.topics)
             setSelectedTopic((prev) => {
               if (!prev) return null
               return json.topics.find((t: StudentTopicOption) => t.topicId === prev.topicId) || prev
             })
           }
-          if (Array.isArray(json.data)) {
+          if (Array.isArray(json.data) && json.data.length > 0) {
             setAllStudentVocab(json.data)
           }
         }
       })
       .catch(() => {
-        // ignore abort
+        // Có lỗi mạng hoặc API chưa sẵn sàng thì giữ fallbackTopics
       })
       .finally(() => {
         setLoadingLibrary(false)
       })
 
     return () => controller.abort()
-  }, [token, isAdmin])
+  }, [token, isAdmin, fallbackTopics])
 
   // Nạp dữ liệu SRS đã lưu trong localStorage & đồng bộ từ Backend (/api/srs/review) theo VocabId
   useEffect(() => {
